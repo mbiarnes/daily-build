@@ -1,10 +1,10 @@
 #!/bin/sh
 #
-# Variable definition 
-rm -rf $USER_HOME/.m2/repository/org/drools
-rm -rf $USER_HOME/.m2/repository/org/kie
-rm -rf $USER_HOME/.m2/repository/org/jbpm
-rm -rf $USER_HOME/.m2/repository/org/optaplanner
-rm -rf $USER_HOME/.m2/repository/org/jboss
-rm -rf $USER_HOME/.m2/repository/org/guvnor
-rm -rf $USER_HOME/.m2/repository/org/uberfire
+# REMOVE PARTS OF LOCAL .m2 repository 
+rm -rf $HOME/.m2/repository/org/drools
+rm -rf $HOME/.m2/repository/org/kie
+rm -rf $HOME/.m2/repository/org/jbpm
+rm -rf $HOME/.m2/repository/org/optaplanner
+rm -rf $HOME/.m2/repository/org/jboss
+rm -rf $HOME/.m2/repository/org/guvnor
+rm -rf $HOME/.m2/repository/org/uberfire

@@ -1,4 +1,10 @@
 #!/bin/bash
+#
+# VARIABLE DEFINITION
+#
+export SCRIPTS=$HOME/scripts/
+export ARTIFACT_DIR=/var/jbpm-artifacts/6.0.x/
+export FILE=$SCRIPTS/copyToFilemgmt.txt/
 
 OPTA=$( ls  /var/jbpm-artifacts/6.0.x |grep optaplanner)
 SFVER=$( basename $(echo "$OPTA" |cut -c 26- ) .zip)

@@ -5,67 +5,73 @@
 #                      Copies all artifacts                         #
 #                                                                   #  
 #####################################################################
+#
+# VARIABLE DEFINITION
+export GIT_DIR=$HOME/GIT/
+export BUILD_LOG=$GIT_DIR/droolsjbpm-build-bootstrap/script/
+export SCRIPTS=$HOME/scripts/
+export ARTIFACT_DIR=/var/jbpm-artifacts/6.0.x/
+export FILE=$SCRIPTS/copyToFilemgmt.txt/
+
+# cleanup of $ARTIFACT_DIR/new where all built artifacts will be copied to
+rm -rf $ARTIFACT_DIR/new
+mkdir $ARTIFACT_DIR/new
+mkdir $ARTIFACT_DIR/new/docs
+
+# copy all artifacts to $ARTIFACT_DIR/new
+cp $HOME/GIT/dashboard-builder/builder/target/dashbuilder-*-jboss-as7.war $ARTIFACT_DIR/new
+cp $HOME/GIT/dashboard-builder/builder/target/dashbuilder-*-tomcat-7.war $ARTIFACT_DIR/new
+cp $HOME/GIT/jbpm/jbpm-distribution/target/jbpm-*-bin.zip $ARTIFACT_DIR/new
+cp $HOME/GIT/droolsjbpm-tools/drools-eclipse/org.drools.updatesite/target/org.drools.updatesite-*.zip $ARTIFACT_DIR/new
+cp $HOME/GIT/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-eap-6_1.war $ARTIFACT_DIR/new
+cp $HOME/GIT/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-jboss-as7.war $ARTIFACT_DIR/new
+cp $HOME/GIT/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-tomcat7.war $ARTIFACT_DIR/new
+cp $HOME/GIT/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-eap-6_1.war $ARTIFACT_DIR/new
+cp $HOME/GIT/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-jboss-as7.0.war $ARTIFACT_DIR/new
+cp $HOME/GIT/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-tomcat7.0.war $ARTIFACT_DIR/new
+cp $HOME/GIT/optaplanner/optaplanner-distribution/target/optaplanner-distribution-*.zip $ARTIFACT_DIR/new
+cp $HOME/GIT/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-jboss-as7.war $ARTIFACT_DIR/new
+cp $HOME/GIT/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-tomcat-7.war $ARTIFACT_DIR/new
+cp $HOME/GIT/kie-wb-distributions/kie-eap-integration/kie-eap-integration-distributions/kie-eap-integration-bpms/target/eap-modules-distributions-*-bpms-layer.zip $ARTIFACT_DIR/new
+cp $HOME/GIT/kie-wb-distributions/kie-eap-integration/kie-eap-integration-distributions/kie-eap-integration-bpms/target/eap-modules-distributions-*-org.kie.kie-wb-webapp.war $ARTIFACT_DIR/new
+cp $HOME/GIT/kie-wb-distributions/kie-eap-integration/kie-eap-integration-distributions/kie-eap-integration-bpms/target/eap-modules-distributions-*-org.jbpm.dashboard.jbpm-dashboard.war $ARTIFACT_DIR/new
+cp $HOME/GIT/kie-wb-distributions/kie-eap-integration/kie-eap-integration-distributions/kie-eap-integration-brms/target/eap-modules-distributions-*-brms-layer.zip $ARTIFACT_DIR/new
+cp $HOME/GIT/kie-wb-distributions/kie-eap-integration/kie-eap-integration-distributions/kie-eap-integration-brms/target/eap-modules-distributions-*-org.kie.kie-drools-wb-webapp.war $ARTIFACT_DIR/new
 
 
-# cleanup of /var/jbpm-artifacts/6.0.x/new where all built artifacts will be copied to
-rm -rf /var/jbpm-artifacts/6.0.x/new
-mkdir /var/jbpm-artifacts/6.0.x/new
-mkdir /var/jbpm-artifacts/6.0.x/new/docs
 
-# copy all artifacts to /var/jbpm-artifacts/6.0.x/new
-cp $USER_HOME/GIT/dashboard-builder/builder/target/dashbuilder-*-jboss-as7.war /var/jbpm-artifacts/6.0.x/new
-cp $USER_HOME/GIT/dashboard-builder/builder/target/dashbuilder-*-tomcat-7.war /var/jbpm-artifacts/6.0.x/new
-cp $USER_HOME/GIT/jbpm/jbpm-distribution/target/jbpm-*-bin.zip /var/jbpm-artifacts/6.0.x/new
-cp $USER_HOME/GIT/droolsjbpm-tools/drools-eclipse/org.drools.updatesite/target/org.drools.updatesite-*.zip /var/jbpm-artifacts/6.0.x/new
-cp $USER_HOME/GIT/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-eap-6_1.war /var/jbpm-artifacts/6.0.x/new
-cp $USER_HOME/GIT/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-jboss-as7.war /var/jbpm-artifacts/6.0.x/new
-cp $USER_HOME/GIT/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-tomcat7.war /var/jbpm-artifacts/6.0.x/new
-cp $USER_HOME/GIT/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-eap-6_1.war /var/jbpm-artifacts/6.0.x/new
-cp $USER_HOME/GIT/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-jboss-as7.0.war /var/jbpm-artifacts/6.0.x/new
-cp $USER_HOME/GIT/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-tomcat7.0.war /var/jbpm-artifacts/6.0.x/new
-cp $USER_HOME/GIT/optaplanner/optaplanner-distribution/target/optaplanner-distribution-*.zip /var/jbpm-artifacts/6.0.x/new
-cp $USER_HOME/GIT/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-jboss-as7.war /var/jbpm-artifacts/6.0.x/new
-cp $USER_HOME/GIT/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-tomcat-7.war /var/jbpm-artifacts/6.0.x/new
-cp $USER_HOME/GIT/kie-wb-distributions/kie-eap-integration/kie-eap-integration-distributions/kie-eap-integration-bpms/target/eap-modules-distributions-*-bpms-layer.zip /var/jbpm-artifacts/6.0.x/new
-cp $USER_HOME/GIT/kie-wb-distributions/kie-eap-integration/kie-eap-integration-distributions/kie-eap-integration-bpms/target/eap-modules-distributions-*-org.kie.kie-wb-webapp.war /var/jbpm-artifacts/6.0.x/new
-cp $USER_HOME/GIT/kie-wb-distributions/kie-eap-integration/kie-eap-integration-distributions/kie-eap-integration-bpms/target/eap-modules-distributions-*-org.jbpm.dashboard.jbpm-dashboard.war /var/jbpm-artifacts/6.0.x/new
-cp $USER_HOME/GIT/kie-wb-distributions/kie-eap-integration/kie-eap-integration-distributions/kie-eap-integration-brms/target/eap-modules-distributions-*-brms-layer.zip /var/jbpm-artifacts/6.0.x/new
-cp $USER_HOME/GIT/kie-wb-distributions/kie-eap-integration/kie-eap-integration-distributions/kie-eap-integration-brms/target/eap-modules-distributions-*-org.kie.kie-drools-wb-webapp.war /var/jbpm-artifacts/6.0.x/new
+# copy documentation to $ARTIFACT_DIR/new/docs
+mkdir $ARTIFACT_DIR/new/docs/drools-docs
+cp -r $HOME/GIT/droolsjbpm-knowledge/kie-docs/drools-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/new/docs/drools-docs
+mkdir $ARTIFACT_DIR/new/docs/jbpm-docs
+cp -r $HOME/GIT/droolsjbpm-knowledge/kie-docs/jbpm-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/new/docs/jbpm-docs
+mkdir $ARTIFACT_DIR/new/docs/dashbuilder-docs
+cp -r $HOME/GIT/droolsjbpm-knowledge/kie-docs/dashbuilder-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/new/docs/dashbuilder-docs
+mkdir $ARTIFACT_DIR/new/docs/optaplanner-docs
+cp -r $HOME/GIT/optaplanner/optaplanner-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/new/docs/optaplanner-docs
+mkdir $ARTIFACT_DIR/new/docs/optaplanner-javadoc
+cp -r $HOME/GIT/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/docs_jboss_org/*/optaplanner-javadoc/* $ARTIFACT_DIR/new/docs/optaplanner-javadoc
+cp -r $HOME/GIT/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/docs_jboss_org/*/kie-api-javadoc/* $ARTIFACT_DIR/new/docs/kie-api-javadoc
 
-
-
-# copy documentation to /var/jbpm-artifacts/6.0.x/new/docs
-mkdir /var/jbpm-artifacts/6.0.x/new/docs/drools-docs
-cp -r $USER_HOME/GIT/droolsjbpm-knowledge/kie-docs/drools-docs/target/docbook/publish/en-US/* /var/jbpm-artifacts/6.0.x/new/docs/drools-docs
-mkdir /var/jbpm-artifacts/6.0.x/new/docs/jbpm-docs
-cp -r $USER_HOME/GIT/droolsjbpm-knowledge/kie-docs/jbpm-docs/target/docbook/publish/en-US/* /var/jbpm-artifacts/6.0.x/new/docs/jbpm-docs
-mkdir /var/jbpm-artifacts/6.0.x/new/docs/dashbuilder-docs
-cp -r $USER_HOME/GIT/droolsjbpm-knowledge/kie-docs/dashbuilder-docs/target/docbook/publish/en-US/* /var/jbpm-artifacts/6.0.x/new/docs/dashbuilder-docs
-mkdir /var/jbpm-artifacts/6.0.x/new/docs/optaplanner-docs
-cp -r $USER_HOME/GIT/optaplanner/optaplanner-docs/target/docbook/publish/en-US/* /var/jbpm-artifacts/6.0.x/new/docs/optaplanner-docs
-mkdir /var/jbpm-artifacts/6.0.x/new/docs/optaplanner-javadoc
-cp -r $USER_HOME/GIT/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/docs_jboss_org/*/optaplanner-javadoc/* /var/jbpm-artifacts/6.0.x/new/docs/optaplanner-javadoc
-cp -r $USER_HOME/GIT/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/docs_jboss_org/*/kie-api-javadoc/* /var/jbpm-artifacts/6.0.x/new/docs/kie-api-javadoc
-
-# checks if file jbpm-dashbuilder-jboss-as7.war (last artifact build) is in /var/jbpm-artifacts/6.0.x/new/  and sends mails
-cd /var/jbpm-artifacts/6.0.x/new
+# checks if files are in $ARTIFACT_DIR/new/ and sends mail
+cd $ARTIFACT_DIR/new
 if [ -e 'kie-drools-wb-'*'-eap-6_1.war' ] || [ -e 'eap-modules-distributions-'*'-org.kie.kie-wb-webapp.war' ] ; then
 echo "Build successful"  | mail -s "[JBPM 6.0 BUILD] BUILD SUCCESS" mbiarnes@redhat.com pzapataf@redhat.com etirelli@redhat.com kverlaen@redhat.com
 
-# cleanup /var/jbpm-artifacts/6.0.x/
-rm -rf /var/jbpm-artifacts/6.0.x/docs
-rm -rf /var/jbpm-artifacts/6.0.x/logs
-rm /var/jbpm-artifacts/6.0.x/*
-mkdir /var/jbpm-artifacts/6.0.x/logs
-mkdir /var/jbpm-artifacts/6.0.x/docs
+# cleanup $ARTIFACT_DIR/
+rm -rf $ARTIFACT_DIR/docs
+rm -rf $ARTIFACT_DIR/logs
+rm $ARTIFACT_DIR/*
+mkdir $ARTIFACT_DIR/logs
+mkdir $ARTIFACT_DIR/docs
 
 # copies all artifacts from /new to /6.0.x if build was successful
-cp /var/jbpm-artifacts/6.0.x/new/* /var/jbpm-artifacts/6.0.x
-cp -r /var/jbpm-artifacts/6.0.x/new/docs/* /var/jbpm-artifacts/6.0.x/docs
+cp $ARTIFACT_DIR/new/* $ARTIFACT_DIR
+cp -r $ARTIFACT_DIR/new/docs/* $ARTIFACT_DIR/docs
 
 cd $BUILD_LOG
 gzip -r build-6-0.log
-mv $USER_HOME/GIT/droolsjbpm-build-bootstrap/script/build-6-0* /var/jbpm-artifacts/6.0.x/logs
+mv $HOME/GIT/droolsjbpm-build-bootstrap/script/build-6-0* $ARTIFACT_DIR/logs
 
 cd $SCRIPTS/
 touch copyToFilemgmt.txt
@@ -76,7 +82,7 @@ else
 cd $BUILD_LOG
 gzip -r build-6-0.log
 echo "Build NOT successful, see attached file" | mail -s "[JBPM 6.0 BUILD] BUILD FAILURE" -a build-6-0.log.gz  mbiarnes@redhat.com pzapataf@redhat.com etirelli@redhat.com kverlaen@redhat.com
-mv $USER_HOME/GIT/droolsjbpm-build-bootstrap/script/build-6-0* /var/jbpm-artifacts/6.0.x/logs
+mv $HOME/GIT/droolsjbpm-build-bootstrap/script/build-6-0* $ARTIFACT_DIR/logs
 
 fi
 

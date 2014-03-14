@@ -1,8 +1,12 @@
 #!/bin/bash
-rm $USER_HOME/dailyBuild.log
-rm -rf $USER_HOME/GIT
-mkdir -p $USER_HOME/GIT
-cd $USER_HOME/GIT
+#
+# REMOVES LOCAL GIT REPS AND CLONES ALL REPS AGAIN
+#
+
+rm $HOME/dailyBuild.log
+rm -rf $HOME/GIT
+mkdir -p $HOME/GIT
+cd $HOME/GIT
 
 git clone https://github.com/droolsjbpm/droolsjbpm-build-bootstrap.git
 git clone https://github.com/droolsjbpm/jbpm-console-ng.git
@@ -23,41 +27,45 @@ git clone https://github.com/droolsjbpm/kie-wb-common.git
 git clone https://github.com/droolsjbpm/drools-wb.git
 git clone https://github.com/droolsjbpm/jbpm-dashboard.git
 
-cd $USER_HOME/GIT/droolsjbpm-build-bootstrap
+#
+# CHECKS OUT TO THE RIGHT 6.0.x (UBERFIRE 0.3.x) BRANCHES
+#
+
+cd $HOME/GIT/droolsjbpm-build-bootstrap
 git checkout 6.0.x
-cd $USER_HOME/GIT/jbpm-console-ng
+cd $HOME/GIT/jbpm-console-ng
 git checkout 6.0.x
-cd $USER_HOME/GIT/uberfire
+cd $HOME/GIT/uberfire
 git checkout 0.3.x
-cd $USER_HOME/GIT/guvnor
+cd $HOME/GIT/guvnor
 git checkout 6.0.x
-cd $USER_HOME/GIT/optaplanner
+cd $HOME/GIT/optaplanner
 git checkout 6.0.x
-cd $USER_HOME/GIT/jbpm
+cd $HOME/GIT/jbpm
 git checkout 6.0.x
-cd $USER_HOME/GIT/jbpm-form-modeler
+cd $HOME/GIT/jbpm-form-modeler
 git checkout 6.0.x
-cd $USER_HOME/GIT/droolsjbpm-knowledge
+cd $HOME/GIT/droolsjbpm-knowledge
 git checkout 6.0.x
-cd $USER_HOME/GIT/dashboard-builder
+cd $HOME/GIT/dashboard-builder
 git checkout 6.0.x
-cd $USER_HOME/GIT/kie-wb-distributions
+cd $HOME/GIT/kie-wb-distributions
 git checkout 6.0.x
-cd $USER_HOME/GIT/jbpm-designer
+cd $HOME/GIT/jbpm-designer
 git checkout 6.0.x
-cd $USER_HOME/GIT/droolsjbpm-integration
+cd $HOME/GIT/droolsjbpm-integration
 git checkout 6.0.x
-cd $USER_HOME/GIT/droolsjbpm-build-distribution
+cd $HOME/GIT/droolsjbpm-build-distribution
 git checkout 6.0.x
-cd $USER_HOME/GIT/droolsjbpm-tools
+cd $HOME/GIT/droolsjbpm-tools
 git checkout 6.0.x
-cd $USER_HOME/GIT/drools
+cd $HOME/GIT/drools
 git checkout 6.0.x
-cd $USER_HOME/GIT/kie-wb-common
+cd $HOME/GIT/kie-wb-common
 git checkout 6.0.x
-cd $USER_HOME/GIT/drools-wb
+cd $HOME/GIT/drools-wb
 git checkout 6.0.x
-cd $USER_HOME/GIT/jbpm-dashboard
+cd $HOME/GIT/jbpm-dashboard
 git checkout 6.0.x
 
 

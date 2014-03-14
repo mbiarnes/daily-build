@@ -1,9 +1,6 @@
 #!/bin/sh
 #
-cd $HOME/daily-build/build/6.0.x
-
-# export all needed variables for the scripts
-./exportVariables.sh
+cd $HOME/scripts
 
 # 01. clone the repositories
 ./clone-all.sh
