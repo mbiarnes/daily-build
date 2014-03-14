@@ -13,6 +13,7 @@ git clone https://github.com/droolsjbpm/jbpm-console-ng.git
 git clone https://github.com/droolsjbpm/guvnor.git
 git clone https://github.com/droolsjbpm/optaplanner.git
 git clone https://github.com/droolsjbpm/jbpm.git
+git clone https://github.com/droolsjbpm/jbpm-dashboard.git
 git clone https://github.com/droolsjbpm/jbpm-form-modeler.git
 git clone https://github.com/droolsjbpm/droolsjbpm-knowledge.git
 git clone https://github.com/droolsjbpm/dashboard-builder.git

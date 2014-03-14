@@ -11,5 +11,5 @@ export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 export MAVEN_OPTS="-Xmx2024m -Xms1024m -XX:MaxPermSize=500m"
 
 cd $GIT_DIR/droolsjbpm-build-bootstrap/script
-./mvn-all.sh clean install -Dfull -Dmaven.test.failure.ignore=true > build-6-0.log
+./mvn-all.sh clean install -Dfull -Dmaven.test.failure.ignore=true > build-master.log
 

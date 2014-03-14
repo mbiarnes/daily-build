@@ -7,9 +7,9 @@
 #####################################################################
 
 # variable defining
-export GIT_DIR=$HOME/GIT/
-export BUILD_LOG=$GIT_DIR/droolsjbpm-build-bootstrap/script/
-export ARTIFACT_DIR=$ARTIFACT_DIR
+export GIT_DIR=$HOME/GIT
+export BUILD_LOG=$GIT_DIR/droolsjbpm-build-bootstrap/script
+export ARTIFACT_DIR=/var/jbpm-artifacts/master
 
  #cleanup of $ARTIFACT_DIR/new where all built artifacts will be copied to
 
