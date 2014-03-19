@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AutomatedInstallation langpack="eng">
+<com.izforge.izpack.panels.HTMLLicencePanel id="HTMLLicencePanel"/>
+<com.izforge.izpack.panels.TargetPanel id="DirectoryPanel">
+<installpath>/home/jbpm-6-0-deploy-eap-6-1</installpath>
+</com.izforge.izpack.panels.TargetPanel>
+<com.izforge.izpack.panels.UserInputPanel id="Userinputpanel.0">
+<userInput>
+<entry key="adminPassword" value="b05f10f5692bf8dececf05eb879fa178"/>
+<entry key="adminUser" value="admin"/>
+</userInput>
+</com.izforge.izpack.panels.UserInputPanel>
+<com.izforge.izpack.panels.UserInputPanel id="UserInputPanel.1">
+<userInput>
+<entry key="installQuickStarts" value="false"/>
+</userInput>
+</com.izforge.izpack.panels.UserInputPanel>
+<com.izforge.izpack.panels.JDKCheckPanel id="JDKCheckPanel"/>
+<com.izforge.izpack.panels.MavenRepoCheckPanel id="MavenRepoCheckPanel"/>
+<com.izforge.izpack.panels.TreePacksPanel id="TreePacksPanel">
+<pack index="0" name="JBoss Core" selected="true"/>
+<pack index="1" name="AppClient" selected="true"/>
+<pack index="2" name="Bin" selected="true"/>
+<pack index="3" name="Bundles" selected="true"/>
+<pack index="4" name="XMLs and XSDs" selected="true"/>
+<pack index="5" name="Domain" selected="true"/>
+<pack index="6" name="Domain Shell Scripts" selected="true"/>
+<pack index="7" name="Modules" selected="true"/>
+<pack index="8" name="Standalone" selected="true"/>
+<pack index="9" name="Standalone Shell Scripts" selected="true"/>
+<pack index="10" name="Welcome Content" selected="true"/>
+<pack index="11" name="Quickstarts" selected="false"/>
+<pack index="12" name="Icons" selected="true"/>
+</com.izforge.izpack.panels.TreePacksPanel>
+<com.izforge.izpack.panels.UserInputPanel id="UserInputPanel.2">
+<userInput>
+<entry key="portDecision" value="off"/>
+</userInput>
+</com.izforge.izpack.panels.UserInputPanel>
+<com.izforge.izpack.panels.UserInputPanel id="UserInputPanel.3"/>
+<com.izforge.izpack.panels.UserInputPanel id="UserInputPanel.4"/>
+<com.izforge.izpack.panels.UserInputPanel id="UserInputPanel.5"/>
+<com.izforge.izpack.panels.UserInputPanel id="UserInputPanel.6"/>
+<com.izforge.izpack.panels.UserInputPanel id="UserInputPanel.7"/>
+<com.izforge.izpack.panels.UserInputPanel id="UserInputPanel.8">
+<userInput>
+<entry key="serverStartup" value="none"/>
+</userInput>
+</com.izforge.izpack.panels.UserInputPanel>
+<com.izforge.izpack.panels.SummaryPanel id="SummaryPanel"/>
+<com.izforge.izpack.panels.InstallPanel id="InstallPanel"/>
+<com.izforge.izpack.panels.ProcessPanel id="ProcessPanel"/>
+<com.izforge.izpack.panels.ShortcutPanel id="ShortcutPanel"/>
+<com.izforge.izpack.panels.FinishPanel id="FinishPanel"/>
+</AutomatedInstallation>
