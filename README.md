@@ -23,6 +23,7 @@ daily-build
  * [jbpm-6-0-deploy-tomcat-7](#ccdd)
  * [jbpm-master-deploy-as7](#eeff)
  * [bpms-prod-eap-6.1.1](#gghh)
+* [Where are the scripts located](#kkll) 
 * [Resuming](#iijj)
 
 
@@ -121,6 +122,16 @@ In this account happens the same as in **_jbpm-6-0-deploy-as7_** but
 <a name="gghh"></a>
 ####bpms-prod-eap-6.1.1   
 In this account, the completed and finished [product](http://dev138.mw.lab.eng.bos.redhat.com/candidate/bpms-6.0.0-ER7/jboss-bpms-6.0.0-redhat-7-deployable-eap6.x.zip) is fetched from [here](http://dev138.mw.lab.eng.bos.redhat.com/candidate/bpms-6.0.0-ER7) and deployed on a EAP 6.1.1.
+
+<a name="kkll"></a>
+###Where are the scripts located
+There is a link to a github repository (now, March 2014 [here](https://github.com/mbiarnes/daily-build.git) ) where all scripts are located and stored.  
+The workflow is, that via cronjob the scripts are copied from /home/kiereleaseuser/daily-build/... to the different user-directories. There the scripts are executed via cronjobs.   
+The only scripts that are not in the github repository are:
+* the **_/resources_** directories (*zips or *jar that install the JBoss, Tomcat servers)
+* **_copyFromTmp.sh_** (script which copies all scripts from a /tmp directory)   
+
+These scripts (or the **/resources** directory) will be found in /home/**user**/scripts.
 
 <a name="iijj"></a>
 ###Resuming     
