@@ -145,7 +145,8 @@ In this account, the completed and finished [product](http://dev138.mw.lab.eng.b
 <a name="j"></a>
 ###Where are the scripts located
 There is a link to a github repository (now, March 2014 [here](https://github.com/mbiarnes/daily-build.git) ) where all scripts are located and stored.  
-The workflow is, that via cronjob the scripts are copied from /home/kiereleaseuser/daily-build/... to the different user-directories. There the scripts are executed via cronjobs.   
+The workflow is, that via cronjob the scripts are copied from /home/kiereleaseuser/daily-build/... to /tmp/kieScripts/... where they are fetched via cron from each user and where they finally are executed.   
+
 The only scripts that are not in the github repository are:
 * the **_/resources_** directories (*zips or *jar that install the JBoss, Tomcat servers)
 * **_copyFromTmp.sh_** (script which copies all scripts from a /tmp directory)   
