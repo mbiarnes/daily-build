@@ -68,11 +68,15 @@ rm -rf $ARTIFACT_DIR/docs
 rm -rf $ARTIFACT_DIR/logs
 rm $ARTIFACT_DIR/*
 mkdir $ARTIFACT_DIR/logs
+mkdir $ARTIFACT_DIR/logs/failedUnitTests
 mkdir $ARTIFACT_DIR/docs
 
 # copies all artifacts from /new to /master if build was successful
 cp $ARTIFACT_DIR/new/* $ARTIFACT_DIR
 cp -r $ARTIFACT_DIR/new/docs/* $ARTIFACT_DIR/docs
+
+cd $SCRIPTS
+./copyFailedUnitTests.sh
 
 cd $BUILD_LOG
 gzip -r build-master.log
@@ -83,6 +87,7 @@ touch copyToFilemgmt.txt
 echo copyToFilemgmt >> copyToFilemgmt.txt
 
 else
+
 
 cd $BUILD_LOG
 gzip -r build-master.log

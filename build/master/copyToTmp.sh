@@ -13,6 +13,7 @@ cp $SCRIPTS/clean-local-maven.sh $TARGET_DIR
 cp $SCRIPTS/clone-all.sh $TARGET_DIR
 cp $SCRIPTS/copy-artifacts.sh $TARGET_DIR
 cp $SCRIPTS/copyToFilemgmt.sh $TARGET_DIR
+cp $SCRIPTS/copyFailedUnitTests.sh $TARGET_DIR
 cp $SCRIPTS/daily_build.sh $TARGET_DIR
 cp $SCRIPTS/daily-build-tests.sh $TARGET_DIR
 cp $SCRIPTS/full-build-src.sh $TARGET_DIR
