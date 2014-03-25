@@ -2,7 +2,7 @@
 #
 
 export FILE_DIR=$HOME/GIT/droolsjbpm-build-bootstrap/script
-export FAILED=/var/jbpm-artifacts/master/logs/failedUnitTests
+export FAILED=/var/jbpm-artifacts/master/failedUnitTests
 
 cd $HOME
 rm full_URL.txt

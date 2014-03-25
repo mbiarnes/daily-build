@@ -68,7 +68,6 @@ rm -rf $ARTIFACT_DIR/docs
 rm -rf $ARTIFACT_DIR/logs
 rm $ARTIFACT_DIR/*
 mkdir $ARTIFACT_DIR/logs
-mkdir $ARTIFACT_DIR/logs/failedUnitTests
 mkdir $ARTIFACT_DIR/docs
 
 # copies all artifacts from /new to /master if build was successful
