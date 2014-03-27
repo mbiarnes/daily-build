@@ -21,10 +21,10 @@ mkdir $ARTIFACT_DIR/new/docs
 
 # copy all artifacts to $ARTIFACT_DIR/new
 
-#cp $GIT_DIR/dashboard-builder/builder/target/dashbuilder-*-jboss-as7.war $ARTIFACT_DIR/new
-#cp $GIT_DIR/dashboard-builder/builder/target/dashbuilder-*-tomcat-7.war $ARTIFACT_DIR/new
-cp $GIT_DIR/dashboard-builder/builder/target/dashbuilder-tomcat-7.war $ARTIFACT_DIR/new
-cp $GIT_DIR/dashboard-builder/builder/target/dashbuilder-jboss-as7.war $ARTIFACT_DIR/new
+cp $GIT_DIR/dashboard-builder/builder/target/dashbuilder-*-jboss-as7.war $ARTIFACT_DIR/new
+cp $GIT_DIR/dashboard-builder/builder/target/dashbuilder-*-tomcat-7.war $ARTIFACT_DIR/new
+#cp $GIT_DIR/dashboard-builder/builder/target/dashbuilder-tomcat-7.war $ARTIFACT_DIR/new
+#cp $GIT_DIR/dashboard-builder/builder/target/dashbuilder-jboss-as7.war $ARTIFACT_DIR/new
 cp $GIT_DIR/jbpm/jbpm-distribution/target/jbpm-*-bin.zip $ARTIFACT_DIR/new
 cp $GIT_DIR/droolsjbpm-tools/drools-eclipse/org.drools.updatesite/target/org.drools.updatesite-*.zip $ARTIFACT_DIR/new
 cp $GIT_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-eap-6_1.war $ARTIFACT_DIR/new
