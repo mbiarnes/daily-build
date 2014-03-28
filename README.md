@@ -1,14 +1,15 @@
-daily-build
+Daily Build
 ===========
-
-##daily-build scripts and environment
- 
+<br>
+##Daily-build scripts and environment
+<br> 
 ###This document describes the environment and it's scripts used for displaying the results 
-
+<br>
 ####server: `hp-dl380pg8-01.lab.eng.brq.redhat.com`
 **RAM**: 24565792 kB   
 **CPU**: Intel(R) Xeon(R) CPU E5-2620 0 @ 2.00GHz  (X 12 processors)   
-
+<br>
+<br>
 ###Table of contents
 
 * **Users**
@@ -27,8 +28,8 @@ daily-build
 
 <a name="a"></a>
 ###kiereleaseuser
-This user is for doing releases on this server. This account doesn't interfere in no way the daily builds.
-
+This user is for executing releases on this server. This account doesn't interfere in no way the daily builds.
+<br>
 <a name="b"></a>
 ###jbpm-6.0-build 
 On this account the 6.0.x branch is build twice a day (**_06:00 AM and 18:00 PM_**).  
@@ -54,8 +55,13 @@ SCRIPT: (**_/home/jbpm-6-0-build/scripts/copy-artifacts.sh_**)
 6. copies all binaries to filemgmt.jboss.org/drools/release/snapshots/6.0.x   
 SCRIPT: (**_/home/jbpm-6-0-build/scripts/copyToFilemgmt.sh_**)
 
-7. all scripts are executed in a "father"script via cronjob
+7. checks if there were failed unit tests, and if so, they are copied to **/var/jbpm-artifacts/master or 6.0.x/failedUnitTests** the failed unit test will be copied only on Saturaday/Sunday as the Unit Tests will be only executed on theses days   
+SCRIPT: (**_/home/jbpm-6-0/scripts/copyFailedUnitTests.sh _**)
+
+8. all scripts are executed in a "father"script via cronjob
 SCRIPT: (**_/home/jbpm-6-0-build/daily_build.sh_** and **_/home/jbpm-6-0-build/daily-build-tests.sh_** )
+
+<br>
 
 If the build(s) was(were) successful or not - in either case the binaries are copied to  _/var/jbpm-artifacts/6.0.x/new_ and are displayed on: [http://hp-dl380pg8-01.lab.eng.brq.redhat.com/jbpm-artifacts/6.0.x/new/](http://hp-dl380pg8-01.lab.eng.brq.redhat.com/jbpm-artifacts/6.0.x/new/). **ONLY**  if the build was successful the articafts were copied from  _/var/jbpm-artifacts/6.0.x/new_ to  _/var/jbpm-artifacts/6.0.x/_ and displayed [here](http://hp-dl380pg8-01.lab.eng.brq.redhat.com/jbpm-artifacts/6.0.x/).   
 [This link](http://hp-dl380pg8-01.lab.eng.brq.redhat.com/jbpm-artifacts/6.0.x/) shows the artifacts created  during the last successful build whereas the link to [.../new](http://hp-dl380pg8-01.lab.eng.brq.redhat.com/jbpm-artifacts/6.0.x/new/) shows the artifacts created during the last (successful or not successful) build. For this reason the content of [6.0.x](http://hp-dl380pg8-01.lab.eng.brq.redhat.com/jbpm-artifacts/6.0.x/) and [6.0.x/new](http://hp-dl380pg8-01.lab.eng.brq.redhat.com/jbpm-artifacts/6.0.x/new) doesn't have to be identical. Looking at the dates it is possible to see when was the last build (successful or not) and when was the last successful build.  
@@ -64,12 +70,12 @@ In either case a mail is sent automatically to several users to tell about the s
 
 Looking at the [web](http://hp-dl380pg8-01.lab.eng.brq.redhat.com/jbpm-artifacts/6.0.x/) a listing of links to several JBoss and Tomcat instances can be seen, running on the server with the kie-wb-*, jbpm-dashboard-* artifacts deployed, as well as a listing of all binaries copied at the last successful build and the directories **/docs**, **/logs** and **/new/**.  
 While **/new** contains all generated artifacts, docs and logs of the last build, the directory **/docs** contains the generated documents during the last successful build hence the directory **/logs** contains the logs of the last successful build. 
-
+<br>
 <a name="c"></a>
 ###jbpm-master-build  
 On this account the **master** branch is build twice a day  (**_03:00 AM and 15:00 PM_**).  The whole environment and its scripts are identical with **jbpm-6.0-build**. The only difference is that the **master** branch serves for building.   
 [to master artifacts](http://hp-dl380pg8-01.lab.eng.brq.redhat.com/jbpm-artifacts/master/)   
-
+<br>
 <a name="d"></a>
 ###jbpm-6.0-deploy-as7  
 This account is for deploying **_kie-wb-*-jboss-as7.war_** and **_jbpm-dashboard-*-jboss-as7.war_** on a JBoss AS 7.1.1. The artifacts generated in the last successful build of **_jbpm-6.0.-build_** are deployed on a server instance JBoss AS 7.1.1   
@@ -106,15 +112,16 @@ SCRIPT: (**_/home/jbpm-6.0-deploy-as7/scripts/dailyServerInstall.sh_**)
 Twice a day the script **_dailyServerInstall.sh_** is launched via cronjob, and all enumerated scripts are executed. To check if every script worked properly and the server was started and the artifacts deployed this [page](http://hp-dl380pg8-01.lab.eng.brq.redhat.com/jbpm-artifacts/) can be visited and the web servers can be accessed with admin/admin, katy/katy and root/root.
 
 On Saturdays and Sundays all WEB servers are stopped given that users **_jbpm-6-0-build_** and **_jbpm-master-build_** execute a full build with unit tests. If not stopped, a lot of tests fail because of "already occupied ports".   
-
+<br>
 <a name="e"></a>
 ###jbpm-6.0-deploy-eap-6-1
 In this account happens the same as in **_jbpm-6-0-deploy-as7_** but
    
 * the JBoss server is a **_JBoss EAP 6.1.1_**   
 * the artifacts are **_kie-wb-*-eap-6_1.war_** and **_jbpm-dashboard-*-jboss_as7.war_**
-* it can be accessed by: [6.0.x on EAP 6.1.1](http://hp-dl380pg8-01.lab.eng.brq.redhat.com:8100/kie-wb/)
+* it can be accessed by: [6.0.x on EAP 6.1.1](http://hp-dl380pg8-01.lab.eng.brq.redhat.com:8100/kie-wb/)   
 
+<br>
 <a name="f"></a>
 ###jbpm-6.0-deploy-eap-modulesmas
 In this account happens the same as in **_jbpm-6-0-deploy-eap-6-1_** but
@@ -123,6 +130,7 @@ In this account happens the same as in **_jbpm-6-0-deploy-eap-6-1_** but
 * the artifacts are **_eap-modules-distributions-*-org.kie.kie-wb-webapp.war_** and **_eap-modules-distributions-*-org.jbpm.dashboard.jbpm-dashboard.war_**
 * it can be accessed by: [eap modules of 6.0.x on EAP 6.1.1](http://hp-dl380pg8-01.lab.eng.brq.redhat.com:8140/kie-wb/)
 
+<br>
 <a name="g"></a>
 ###jbpm-6-0-deploy-tomcat-7
 In this account happens the same as in **_jbpm-6-0-deploy-as7_** but
@@ -131,6 +139,7 @@ In this account happens the same as in **_jbpm-6-0-deploy-as7_** but
 * the artifacts are **_kie-wb-*-tomcat7.war _** and **_ jbpm-dashbuilder-*-tomcat-7.war_**
 * it can be accessed by: [6.0.x on Tomcat 7](http://hp-dl380pg8-01.lab.eng.brq.redhat.com:8800/kie-wb/)
 
+<br<
 <a name="h"></a>
 ###jbpm-master-deploy-as7   
 In this account happens the same as in **_jbpm-6-0-deploy-as7_** but   
@@ -138,10 +147,12 @@ In this account happens the same as in **_jbpm-6-0-deploy-as7_** but
 * the artifacts are **_kie-wb-*-jboss-as7.war_** and **_jbpm-dashboard-*-jboss_as7.war_** but from **master** branch
 * it can be accesed by: [master on AS7](http://hp-dl380pg8-01.lab.eng.brq.redhat.com:8210/kie-wb)
 
+<br>
 <a name="i"></a>
 ###bpms-prod-eap-6.1.1   
 In this account, the completed and finished [product](http://dev138.mw.lab.eng.bos.redhat.com/candidate/bpms-6.0.0-ER7/jboss-bpms-6.0.0-redhat-7-deployable-eap6.x.zip) is fetched from [here](http://dev138.mw.lab.eng.bos.redhat.com/candidate/bpms-6.0.0-ER7) and deployed on a EAP 6.1.1.
 
+<br>
 <a name="j"></a>
 ###Where are the scripts located
 There is a link to a github repository (now, March 2014 [here](https://github.com/mbiarnes/daily-build.git) ) where all scripts are located and stored.  
@@ -153,6 +164,7 @@ The only scripts that are not in the github repository are:
 
 These scripts (or the **/resources** directory) will be found in /home/**user**/scripts.
 
+<br>
 <a name="k"></a>
 ###Resuming     
 All web server can be accessed by this [page](http://hp-dl380pg8-01.lab.eng.brq.redhat.com/jbpm-artifacts/) and all created  master and 6.0.x artifacts could be downloaded from here, following the links.   
