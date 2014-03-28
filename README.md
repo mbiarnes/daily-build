@@ -56,7 +56,7 @@ SCRIPT: (**_/home/jbpm-6-0-build/scripts/copy-artifacts.sh_**)
 SCRIPT: (**_/home/jbpm-6-0-build/scripts/copyToFilemgmt.sh_**)
 
 7. checks if there were failed unit tests, and if so, they are copied to **/var/jbpm-artifacts/master or 6.0.x/failedUnitTests** the failed unit test will be copied only on Saturaday/Sunday as the Unit Tests will be only executed on theses days   
-SCRIPT: (**_/home/jbpm-6-0/scripts/copyFailedUnitTests.sh _**)
+SCRIPT: (**_/home/jbpm-6-0/scripts/copyFailedUnitTests.sh_**)
 
 8. all scripts are executed in a "father"script via cronjob
 SCRIPT: (**_/home/jbpm-6-0-build/daily_build.sh_** and **_/home/jbpm-6-0-build/daily-build-tests.sh_** )
