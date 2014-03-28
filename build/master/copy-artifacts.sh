@@ -56,6 +56,7 @@ mkdir $ARTIFACT_DIR/new/docs/optaplanner-docs
 cp -r $GIT_DIR/optaplanner/optaplanner-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/new/docs/optaplanner-docs
 mkdir $ARTIFACT_DIR/new/docs/optaplanner-javadoc
 cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/docs_jboss_org/*/optaplanner-javadoc/* $ARTIFACT_DIR/new/docs/optaplanner-javadoc
+mkdir $ARTIFACTS_DIR/new/docs/kie-api-javadoc
 cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/docs_jboss_org/*/kie-api-javadoc/* $ARTIFACT_DIR/new/docs/kie-api-javadoc
 
 # checks if files are in $ARTIFACT_DIR/new and sends mails
