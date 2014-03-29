@@ -3,7 +3,7 @@
 
 FILE_DIR=$HOME/GIT/droolsjbpm-build-bootstrap/script
 FAILED=/var/jbpm-artifacts/6.0.x/failedUnitTests
-CDD=$(date +"%m.%d.%Y")
+CDD=$(date +"%d.%m.%Y-%H.%M")
 DATE_DIR=$FAILED/$CDD
 
 cd $FAILED
