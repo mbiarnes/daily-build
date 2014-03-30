@@ -29,7 +29,7 @@ FILE_TO_READ=$HOME/URL.txt
 
 while read line; do
   if [ -n "$line" ]; then
-    find $line  -name \*.txt -size +390c -exec cp {} $DATE_DIR \;
+    find $line  -name \*.txt -size +470c -exec cp {} $DATE_DIR \;
   fi
 done < $FILE_TO_READ
 
