@@ -5,12 +5,12 @@
 #                      Copies all artifacts                         #
 #                                                                   #  
 #####################################################################
-
-# variable defining
-export GIT_DIR=$HOME/GIT/
-export BUILD_LOG=$GIT_DIR/droolsjbpm-build-bootstrap/script/
-export SCRIPTS=$HOME/scripts/
-export ARTIFACT_DIR=/var/jbpm-artifacts/master/
+#
+# VARIABLE DEFINITION
+export GIT_DIR=$HOME/GIT
+export BUILD_LOG=$GIT_DIR/droolsjbpm-build-bootstrap/script
+export SCRIPTS=$HOME/scripts
+export ARTIFACT_DIR=/var/jbpm-artifacts/master
 
 
  #cleanup of $ARTIFACT_DIR/new where all built artifacts will be copied to
@@ -82,12 +82,11 @@ cd $BUILD_LOG
 gzip -r build-master.log
 mv $GIT_DIR/droolsjbpm-build-bootstrap/script/build-master* $ARTIFACT_DIR/logs
 
-cd $HOME/scripts
+cd $SCRIPTS
 touch copyToFilemgmt.txt
 echo copyToFilemgmt >> copyToFilemgmt.txt
 
 else
-
 
 cd $BUILD_LOG
 gzip -r build-master.log

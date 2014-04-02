@@ -11,7 +11,6 @@ export GIT_DIR=$HOME/GIT/
 export BUILD_LOG=$GIT_DIR/droolsjbpm-build-bootstrap/script/
 export SCRIPTS=$HOME/scripts/
 export ARTIFACT_DIR=/var/jbpm-artifacts/6.0.x/
-export FILE=$SCRIPTS/copyToFilemgmt.txt/
 
 # cleanup of $ARTIFACT_DIR/new where all built artifacts will be copied to
 rm -rf $ARTIFACT_DIR/new
@@ -75,9 +74,9 @@ cd $SCRIPTS
 
 cd $BUILD_LOG
 gzip -r build-6-0.log
-mv $HOME/GIT/droolsjbpm-build-bootstrap/script/build-6-0* $ARTIFACT_DIR/logs
+mv $GIT_DIR/droolsjbpm-build-bootstrap/script/build-6-0* $ARTIFACT_DIR/logs
 
-cd $SCRIPTS/
+cd $SCRIPTS
 touch copyToFilemgmt.txt
 echo copyToFilemgmt >> copyToFilemgmt.txt
 
@@ -86,7 +85,7 @@ else
 cd $BUILD_LOG
 gzip -r build-6-0.log
 echo "Build NOT successful, see attached file" | mail -s "[JBPM 6.0 BUILD] BUILD FAILURE" -a build-6-0.log.gz  mbiarnes@redhat.com pzapataf@redhat.com etirelli@redhat.com kverlaen@redhat.com
-mv $HOME/GIT/droolsjbpm-build-bootstrap/script/build-6-0* $ARTIFACT_DIR/logs
+mv $GIT_DIR/droolsjbpm-build-bootstrap/script/build-6-0* $ARTIFACT_DIR/logs
 
 fi
 
