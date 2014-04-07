@@ -4,10 +4,10 @@
 FILE_DIR=$HOME/GIT/droolsjbpm-build-bootstrap/script
 FAILED=/var/jbpm-artifacts/6.0.x/failedUnitTests
 CDD=$(date +"%d.%m.%Y-%H.%M")
-DOW=$(date+"%a")
+DOW=$(date +"%a")
 DATE_DIR=$FAILED/$CDD
 
-if ["$DOW" = Sat] || ["$DOW" = Sun]; then
+if [ "$DOW" = Sat ] || [ "$DOW" = Sun ] ; then
 
    cd $FAILED
    mkdir $DATE_DIR

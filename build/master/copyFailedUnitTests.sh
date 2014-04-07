@@ -7,7 +7,7 @@ CDD=$(date +"%d.%m.%Y-%H:%M")
 DOW=$(date +"%a")
 DATE_DIR=$FAILED/$CDD
 
-if ["$DOW" = Sat] || ["$DOW" = Sun]; then
+if [ "$DOW" = Sat ] || [ "$DOW" = Sun ] ; then
 
    cd $FAILED
 
