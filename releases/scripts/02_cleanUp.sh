@@ -6,6 +6,10 @@
 #                                                                 #
 ###################################################################
 
+echo "Which is the directory of the repositories: (for example droolsjbpm or sync)"
+read USR_DIR
+echo ""
+
 cd $HOME/droolsjbpm
 
 rm testResult.txt
