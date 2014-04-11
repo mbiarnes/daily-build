@@ -20,17 +20,21 @@ mkdir $ARTIFACT_DIR/new/docs
 # copy all artifacts to $ARTIFACT_DIR/new
 cp $HOME/GIT/dashboard-builder/builder/target/dashbuilder-*-jboss-as7.war $ARTIFACT_DIR/new
 cp $HOME/GIT/dashboard-builder/builder/target/dashbuilder-*-tomcat-7.war $ARTIFACT_DIR/new
+cp $HOME/GIT/dashboard-builder/builder/target/dashbuilder-*-was-8.war $ARTIFACT_DIR/new
 cp $HOME/GIT/jbpm/jbpm-distribution/target/jbpm-*-bin.zip $ARTIFACT_DIR/new
 cp $HOME/GIT/droolsjbpm-tools/drools-eclipse/org.drools.updatesite/target/org.drools.updatesite-*.zip $ARTIFACT_DIR/new
 cp $HOME/GIT/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-eap-6_1.war $ARTIFACT_DIR/new
 cp $HOME/GIT/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-jboss-as7.war $ARTIFACT_DIR/new
 cp $HOME/GIT/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-tomcat7.war $ARTIFACT_DIR/new
+cp $HOME/GIT/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-was8.war $ARTIFACT_DIR/new
 cp $HOME/GIT/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-eap-6_1.war $ARTIFACT_DIR/new
 cp $HOME/GIT/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-jboss-as7.0.war $ARTIFACT_DIR/new
 cp $HOME/GIT/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-tomcat7.0.war $ARTIFACT_DIR/new
+cp $HOME/GIT/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-was8.war $ARTIFACT_DIR/new
 cp $HOME/GIT/optaplanner/optaplanner-distribution/target/optaplanner-distribution-*.zip $ARTIFACT_DIR/new
 cp $HOME/GIT/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-jboss-as7.war $ARTIFACT_DIR/new
 cp $HOME/GIT/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-tomcat-7.war $ARTIFACT_DIR/new
+cp $HOME/GIT/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-was-8.war $ARTIFACT_DIR/new
 cp $HOME/GIT/kie-wb-distributions/kie-eap-integration/kie-eap-integration-distributions/kie-eap-integration-bpms/target/eap-modules-distributions-*-bpms-layer.zip $ARTIFACT_DIR/new
 cp $HOME/GIT/kie-wb-distributions/kie-eap-integration/kie-eap-integration-distributions/kie-eap-integration-bpms/target/eap-modules-distributions-*-org.kie.kie-wb-webapp.war $ARTIFACT_DIR/new
 cp $HOME/GIT/kie-wb-distributions/kie-eap-integration/kie-eap-integration-distributions/kie-eap-integration-bpms/target/eap-modules-distributions-*-org.jbpm.dashboard.jbpm-dashboard.war $ARTIFACT_DIR/new

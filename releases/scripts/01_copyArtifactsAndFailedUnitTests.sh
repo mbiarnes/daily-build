@@ -6,21 +6,24 @@
 #                                                                 #
 ###################################################################
 
-REPO_DIR=$HOME/droolsjbpm
 JBPM_ARTIFACTS=/var/jbpm-artifacts
 
 echo -n "The version of the release is: "
 read releaseVersion
 echo " "
-echo "Should the /var/jbpm-artifacts/<directory> be master or 6.0.x? "
+echo "Should the /var/jbpm-artifacts/<directory> directory for the artifacts of this release be master or 6.0.x? "
 read branch
 echo ""
-echo "Which directory of /var/jbpm-artifacts/ should be deleted?"
+echo "Which directory of /var/jbpm-artifacts/"$branch"/ should be deleted?"
 read oldDir
 echo ""
-echo "The version of the release is:" $releaseVersion "and the branch: " $branch
+echo "Which is the directory of the repositories: (for example droolsjbpm or sync)"
+read USR_DIR
 echo ""
-echo " The old directory to delete is:" $JBPM_ARTIFACTS/$branch/$oldDir
+echo "The version of the release will be:" $releaseVersion
+echo "The artififacts will be copied to the "$branch" branch (http://hp-dl380pg8-01.lab.eng.brq.redhat.com/jbpm-artifacts/)"
+echo "The repository is located in /home/kiereleaseuser/"$USR_DIR
+echo "The old directory to delete is:" $JBPM_ARTIFACTS/$branch/$oldDir
 echo ""
 echo -n "Is this ok? (Hit control-c if is not): "
 read ok
@@ -28,28 +31,45 @@ read ok
 rm -rf $JBPM_ARTIFACTS/$branch/$oldDir
 mkdir $JBPM_ARTIFACTS/$branch/$releaseVersion
 
+REPO_DIR=$HOME/$USR_DIR
 ARTIFACT_DIR=$JBPM_ARTIFACTS/$branch/$releaseVersion
 
 
 cp $REPO_DIR/dashboard-builder/builder/target/dashbuilder-*-jboss-as7.war $ARTIFACT_DIR
 cp $REPO_DIR/dashboard-builder/builder/target/dashbuilder-*-tomcat-7.war $ARTIFACT_DIR
+cp $REPO_DIR/dashboard-builder/builder/target/dashbuilder-*-was-8.war $ARTIFACT_DIR
 cp $REPO_DIR/jbpm/jbpm-distribution/target/jbpm-*-bin.zip $ARTIFACT_DIR
 cp $REPO_DIR/droolsjbpm-tools/drools-eclipse/org.drools.updatesite/target/org.drools.updatesite-*.zip $ARTIFACT_DIR
 cp $REPO_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-eap-6_1.war $ARTIFACT_DIR
 cp $REPO_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-jboss-as7.war $ARTIFACT_DIR
 cp $REPO_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-tomcat7.war $ARTIFACT_DIR
+cp $REPO_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-was8.war $ARTIFACT_DIR
+cp $REPO_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-was8.war $ARTIFACT_DIR
 cp $REPO_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-eap-6_1.war $ARTIFACT_DIR
 cp $REPO_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-jboss-as7.0.war $ARTIFACT_DIR
 cp $REPO_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-tomcat7.0.war $ARTIFACT_DIR
 cp $REPO_DIR/optaplanner/optaplanner-distribution/target/optaplanner-distribution-*.zip $ARTIFACT_DIR
 cp $REPO_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-jboss-as7.war $ARTIFACT_DIR
 cp $REPO_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-tomcat-7.war $ARTIFACT_DIR
-cp $REPO_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-layer/target/kie-eap-distributions-bpms-layer-*.zip $ARTIFACT_DIR
-cp $REPO_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp/target/kie-wb-distribution-wars-*-bpms-webapp.war $ARTIFACT_DIR
-cp $REPO_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp/target/jbpm-dashboard-distributions-*-bpms-webapp.war $ARTIFACT_DIR
-cp $REPO_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-brms-layer/target/kie-eap-distributions-brms-layer-*.zip $ARTIFACT_DIR
-cp $REPO_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-brms-webapp/target/kie-drools-wb-distribution-wars-*-brms-webapp.war $ARTIFACT_DIR
+cp $REPO_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-was-8.war $ARTIFACT_DIR
 
+if [ "$branch" == "master" ]; then
+  
+  cp $REPO_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-layer/target/kie-eap-distributions-bpms-layer-*.zip $ARTIFACT_DIR
+  cp $REPO_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp/target/kie-wb-distribution-wars-*-bpms-webapp.war $ARTIFACT_DIR
+  cp $REPO_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp/target/jbpm-dashboard-distributions-*-bpms-webapp.war $ARTIFACT_DIR
+  cp $REPO_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-brms-layer/target/kie-eap-distributions-brms-layer-*.zip $ARTIFACT_DIR
+  cp $REPO_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-brms-webapp/target/kie-drools-wb-distribution-wars-*-brms-webapp.war $ARTIFACT_DIR
+
+elif [ "$branch" == "6.0.x" ]; then
+
+  cp $REPO_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-integration-distributions/kie-eap-integration-bpms/target/eap-modules-distributions-*-bpms-layer.zip $ARTIFACT_DIR
+  cp $REPO_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-integration-distributions/kie-eap-integration-bpms/target/eap-modules-distributions-*-org.kie.kie-wb-webapp.war $ARTIFACT_DIR
+  cp $REPO_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-integration-distributions/kie-eap-integration-bpms/target/eap-modules-distributions-*-org.jbpm.dashboard.jbpm-dashboard.war $ARTIFACT_DIR
+  cp $REPO_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-integration-distributions/kie-eap-integration-brms/target/eap-modules-distributions-*-brms-layer.zip $ARTIFACT_DIR
+  cp $REPO_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-integration-distributions/kie-eap-integration-brms/target/eap-modules-distributions-*-org.kie.kie-drools-wb-webapp.war $ARTIFACT_DIR
+
+fi
 
 # copy documentation to $ARTIFACT_DIR/doc
 mkdir $ARTIFACT_DIR/docs
