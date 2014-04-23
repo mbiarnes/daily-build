@@ -95,18 +95,14 @@ cp -r $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/targe
 #                                                                 #
 ###################################################################
 
-FILE_DIR=$HOME/droolsjbpm/
-#RELEASE_HOME=$HOME/Release/
+FILE_DIR=$HOME/$USR_DIR
 
 
 cd $FILE_DIR
 
 
-#mkdir $RELEASE_HOME/$releaseVersion
-#mkdir $RELEASE_HOME/$releaseVersion/failedUnitTests
 mkdir $ARTIFACT_DIR/failedUnitTests
 
-#FAILED=$RELEASE_HOME/$releaseVersion/failedUnitTests
 FAILED=$ARTIFACT_DIR/failedUnitTests
 
 
