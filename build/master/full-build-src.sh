@@ -13,4 +13,4 @@ cd $GIT_DIR/droolsjbpm-build-bootstrap/script
 ./mvn-all.sh clean deploy -Dfull -DskipTests > build-master.log 2>&1
 
 # removes all created /tmp/ files by the user
-find /tmp -maxdepth 1 -user `whoami` -type f -exec rm -f {} \;
+find /tmp -maxdepth 1 -user `whoami` -exec rm -rf {} \;
