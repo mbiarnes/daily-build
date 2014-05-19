@@ -12,5 +12,5 @@ export MAVEN_OPTS="-Xmx2024m -Xms1024m -XX:MaxPermSize=500m"
 cd $GIT_DIR/droolsjbpm-build-bootstrap/script
 ./mvn-all.sh clean install -Dfull -DskipTests > build-6-0.log 2>&1
 
-# removes all created /tmo/ files by the user
-find /tmp -maxdepth 1 -user `whoami` -type f -exec rm -f {} \;
+# removes all created /tmp/ files by the user
+find /tmp -maxdepth 1 -user `whoami` -exec rm -rf {} \;
