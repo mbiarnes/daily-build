@@ -119,9 +119,7 @@ done < $FILE_TO_READ
 FILE_TO_READ=$FILE_DIR/URL.txt
 
 while read line; do
-  if [ -n "$line" ]; then
-    REPO=$(echo "$line" | sed 's/.*droolsjbpm\///' | sed 's/\//\./g')
-    mkdir $FAILED/"$REPO"
-    find $line  -name \*.txt -size +465c -exec cp {} $FAILED/$REPO \;
-  fi
+   if [ -n "$line" ]; then
+      find $line  -name \*.txt -size +470c -exec cp {} $FAILED \;
+   fi
 done < $FILE_TO_READ
