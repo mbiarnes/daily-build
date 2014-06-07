@@ -9,10 +9,8 @@ export PATH=$PATH:/usr/local/maven/bin
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 export MAVEN_OPTS="-Xmx2024m -Xms1024m -XX:MaxPermSize=500m"
 
-cd $GIT_DIR/uberfire
-mvn clean install -Dfull -DskipTests >> build-master.log 2>&1
 cd $GIT_DIR/droolsjbpm-build-bootstrap/script
-./mvn-all.sh clean install -Dfull -DskipTests > build-master.log 2>&1
+./mvn-all.sh clean install -Dfull -DskipTests >> build-6-1.log 2>&1
 
 # removes all created /tmp/ files by the user
 find /tmp -maxdepth 1 -user `whoami` -exec rm -rf {} \;
