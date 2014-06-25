@@ -21,4 +21,5 @@ rm -rf $SCRIPTS/.index
 rm -rf $SCRIPTS/.security
 
 java -jar $RESOURCES/jboss-eap-6.1.1-installer.jar $PERMANENT/install-eap6.1.1.xml
+# unzip $RESOURCES/jboss-eap.zip -d $HOME
 

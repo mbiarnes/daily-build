@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # Variable definition 
-export DEFAULT_DIR=/var/jbpm-artifacts/6.0.x/
+export DEFAULT_DIR=/var/jbpm-artifacts/6.1.x/
 export JBOSS_HOME=$HOME/jboss-eap-6.1
 export PERMANENT=$HOME/scripts/config
 
