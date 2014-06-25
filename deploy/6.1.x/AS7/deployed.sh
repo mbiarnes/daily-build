@@ -10,8 +10,8 @@ grep -w "Failed to start service jboss.deployment.unit." $File > log.txt
 if [ $? -eq 0 ]
 then
     # not deployed
-    echo "6.0.x: kie-wb NOT DEPLOYED on AS7"  | mail -s "Deployment on AS7" -a server.log mbiarnes@redhat.com pzapataf@redhat.com 
+    echo "6.1.x: kie-wb NOT DEPLOYED on AS7"  | mail -s "Deployment on AS7" -a server.log mbiarnes@redhat.com 
 else
     # deployed
-    echo "6.0.x: kie-wb DEPLOYED on AS7"  | mail -s "Deployment on AS7" mbiarnes@redhat.com 
+    echo "6.1.x: kie-wb DEPLOYED on AS7"  | mail -s "Deployment on AS7" mbiarnes@redhat.com 
 fi

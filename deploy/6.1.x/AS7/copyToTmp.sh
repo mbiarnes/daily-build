@@ -3,8 +3,8 @@
 # copies all scripts to the $TARGET_DIR
 
 
-TARGET_DIR=/tmp/kieScripts/deploy/6.0.x/AS7
-SCRIPTS=/home/kiereleaseuser/daily-build/deploy/6.0.x/AS7
+TARGET_DIR=/tmp/kieScripts/deploy/6.1.x/AS7
+SCRIPTS=/home/kiereleaseuser/daily-build/deploy/6.1.x/AS7
 
 rm -rf $TARGET_DIR
 mkdir $TARGET_DIR
