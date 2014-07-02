@@ -5,7 +5,7 @@ File=$LOG_DIR/server.log
 
 cd $LOG_DIR
 
-grep -w "Failed to start service jboss.deployment.unit." $File > log.txt
+grep -w 'Failed to start service jboss.deployment.unit\|started (with errors)' $File > log.txt
 
 if [ $? -eq 0 ]
 then

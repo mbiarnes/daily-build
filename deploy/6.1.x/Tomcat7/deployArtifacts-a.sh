@@ -14,7 +14,6 @@ cp $DEFAULT_DIR/kie-wb-*-tomcat7.war $TOMCAT_HOME/webapps/kie-wb.war
 zip -d $TOMCAT_HOME/webapps/kie-wb.war WEB-INF/web.xml
 zip -d $TOMCAT_HOME/webapps/kie-wb.war WEB-INF/beans.xml
 zip -d $TOMCAT_HOME/webapps/kie-wb.war WEB-INF/web.xml WEB-INF/classes/META-INF/services/org.uberfire.security.auth.AuthenticationSource
-#zip -d $TOMCAT_HOME/webapps/kie-wb.war WEB-INF/web.xml WEB-INF/classes/META-INF/services/org.uberfire.security.auth.AuthenticationSource-TOMCAT-JEE-SECURITY
 /usr/java/default/bin/jar -uf $TOMCAT_HOME/webapps/kie-wb.war WEB-INF/web.xml
 /usr/java/default/bin/jar -uf $TOMCAT_HOME/webapps/kie-wb.war WEB-INF/beans.xml
 /usr/java/default/bin/jar -uf $TOMCAT_HOME/webapps/kie-wb.war WEB-INF/classes/META-INF/services/org.uberfire.security.auth.AuthenticationSource.ORIGIN

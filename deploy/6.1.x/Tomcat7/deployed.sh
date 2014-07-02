@@ -5,7 +5,7 @@ File=$LOG_DIR/catalina.out
 
 cd $LOG_DIR
 
-grep -w "Error deploying web application archive" $File > log.txt
+grep -w 'Error deploying web application archive\|startup failed due to previous errors' $File > log.txt
 
 if [ $? -eq 0 ]
 then

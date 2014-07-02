@@ -5,13 +5,13 @@ File=$LOG_DIR/server.log
 
 cd $LOG_DIR
 
-grep -w "Failed to start service jboss.deployment.unit." $File > log.txt
+grep -w 'Failed to start service jboss.deployment.unit\|started (with errors)' $File > log.txt
 
 if [ $? -eq 0 ]
 then
     # not deployed
-    echo "6.1.x: kie-wb NOT DEPLOYED on EAP 6.3"  | mail -s "Deployment on EAP 6.3" -a server.log mbiarnes@redhat.com
+    echo "6.1.x: kie-wb without modules NOT DEPLOYED on EAP 6.3"  | mail -s "Deployment on EAP 6.3" -a server.log mbiarnes@redhat.com
 else
     # deployed
-    echo "6.1.x: kie-wb DEPLOYED on EAP 6.3"  | mail -s "Deployment on EAP 6.3" mbiarnes@redhat.com
+    echo "6.1.x: kie-wb without modules  DEPLOYED on EAP 6.3"  | mail -s "Deployment on EAP 6.3" mbiarnes@redhat.com
 fi
