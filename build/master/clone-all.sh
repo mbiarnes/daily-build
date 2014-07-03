@@ -24,5 +24,6 @@ git clone https://github.com/droolsjbpm/droolsjbpm-build-distribution.git
 git clone https://github.com/droolsjbpm/droolsjbpm-tools.git
 git clone https://github.com/droolsjbpm/drools.git
 git clone https://github.com/droolsjbpm/kie-wb-common.git
+git clone https://github.com/droolsjbpm/kie-uberfire-extensions.git
 git clone https://github.com/droolsjbpm/drools-wb.git
 git clone https://github.com/uberfire/uberfire.git
