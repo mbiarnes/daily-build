@@ -14,6 +14,9 @@ cp $SCRIPTS/dailyServerInstall.sh $TARGET_DIR
 cp $SCRIPTS/deployArtifacts-a.sh $TARGET_DIR
 cp $SCRIPTS/deployArtifacts-b.sh $TARGET_DIR
 cp $SCRIPTS/deployArtifacts-c.sh $TARGET_DIR
+cp $SCRIPTS/deployReleaseArtifacts-a.sh $TARGET_DIR
+cp $SCRIPTS/deployReleaseArtifacts-b.sh $TARGET_DIR
+cp $SCRIPTS/deployReleaseArtifacts-c.sh $TARGET_DIR
 cp $SCRIPTS/deployed.sh $TARGET_DIR
 cp $SCRIPTS/logs.sh $TARGET_DIR
 cp $SCRIPTS/reinstall-eap-6.3-mod.sh $TARGET_DIR

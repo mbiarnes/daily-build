@@ -21,15 +21,20 @@
     <filter-class>org.uberfire.security.server.UberFireSecurityFilter</filter-class>
     <init-param>
       <param-name>org.uberfire.cookie.id</param-name>
-      <param-value>kie.ide</param-value>
+      <param-value>kie.ide.console</param-value>
     </init-param>
-    <!-- TOMCAT-JEE-SECURITY -->
-    
     <init-param>
       <param-name>org.uberfire.auth.scheme</param-name>
       <param-value>org.uberfire.security.server.auth.JACCAuthenticationScheme</param-value>
     </init-param>
-    
+    <init-param>
+      <param-name>org.uberfire.auth.rememberme</param-name>
+      <param-value>disabled</param-value>
+    </init-param>
+    <init-param>
+      <param-name>org.uberfire.auth.force.url</param-name>
+      <param-value>/org.kie.workbench.KIEWebapp/KIEWebapp.html</param-value>
+    </init-param>
   </filter>
 
   <filter-mapping>
@@ -83,6 +88,11 @@
     <param-value>org.jboss.resteasy.cdi.CdiInjectorFactory</param-value>
   </context-param>
 
+  <context-param>
+    <param-name>resteasy.document.expand.entity.references</param-name>
+    <param-value>false</param-value>
+  </context-param>
+
   <servlet>
     <servlet-name>Resteasy</servlet-name>
     <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
@@ -106,21 +116,6 @@
     <url-pattern>/org.kie.workbench.KIEWebapp/KIEWebapp.html</url-pattern>
   </servlet-mapping>
 
-  <servlet>
-    <servlet-name>UberFireImageServlet</servlet-name>
-    <servlet-class>org.uberfire.server.UberfireImageServlet</servlet-class>
-    <init-param>
-      <param-name>org.uberfire.images.paths</param-name>
-      <param-value>/org.kie.workbench.KIEWebapp</param-value>
-    </init-param>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
-
-  <servlet-mapping>
-    <servlet-name>UberFireImageServlet</servlet-name>
-    <url-pattern>/org.kie.workbench.KIEWebapp/uberFireImages/*</url-pattern>
-  </servlet-mapping>
-
   <!-- drools-wb servlets -->
   <servlet>
     <servlet-name>DTableXLSFileServlet</servlet-name>
@@ -141,20 +136,29 @@
   </servlet-mapping>
 
   <servlet>
-    <servlet-name>M2RepoFileServlet</servlet-name>
-    <servlet-class>org.guvnor.m2repo.backend.server.FileServlet</servlet-class>
+    <servlet-name>UberfireFileUploadServlet</servlet-name>
+    <servlet-class>org.uberfire.server.FileUploadServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>M2RepoFileServlet</servlet-name>
-    <url-pattern>/org.kie.workbench.KIEWebapp/m2repo/file</url-pattern>
+    <servlet-name>UberfireFileUploadServlet</servlet-name>
+    <url-pattern>/org.kie.workbench.KIEWebapp/defaulteditor/upload/*</url-pattern>
   </servlet-mapping>
 
   <servlet>
-    <servlet-name>FileDownloadServlet</servlet-name>
-    <servlet-class>org.guvnor.m2repo.backend.server.FileDownloadServlet</servlet-class>
+    <servlet-name>UberfireFileDownloadServlet</servlet-name>
+    <servlet-class>org.uberfire.server.FileDownloadServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>FileDownloadServlet</servlet-name>
+    <servlet-name>UberfireFileDownloadServlet</servlet-name>
+    <url-pattern>/org.kie.workbench.KIEWebapp/defaulteditor/download/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>M2Servlet</servlet-name>
+    <servlet-class>org.guvnor.m2repo.backend.server.M2Servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>M2Servlet</servlet-name>
     <url-pattern>/maven2/*</url-pattern>
   </servlet-mapping>
 
@@ -173,7 +177,6 @@ profile in pom.xml to use that. -->
     <servlet-name>ErraiServlet</servlet-name>
     <url-pattern>*.erraiBus</url-pattern>
   </servlet-mapping>
-
 
   <resource-env-ref>
     <description>Object factory for the CDI Bean Manager</description>
@@ -530,12 +533,11 @@ See http://www.w3.org/TR/SVG/intro.html#MIMEType. -->
     <res-auth>Container</res-auth>
   </resource-ref>
 
-  <!-- TOMCAT-JEE-SECURITY -->
-  
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>console</web-resource-name>
       <url-pattern>/org.kie.workbench.KIEWebapp/*</url-pattern>
+      <url-pattern>*.erraiBus</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>admin</role-name>
@@ -546,11 +548,25 @@ See http://www.w3.org/TR/SVG/intro.html#MIMEType. -->
     </auth-constraint>
   </security-constraint>
 
+    <security-constraint>
+        <web-resource-collection>
+          <web-resource-name>formModeler</web-resource-name>
+          <url-pattern>/formModeler/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+          <role-name>admin</role-name>
+          <role-name>analyst</role-name>
+          <role-name>developer</role-name>
+          <role-name>user</role-name>
+          <role-name>manager</role-name>
+        </auth-constraint>
+    </security-constraint>
+
   <login-config>
     <auth-method>FORM</auth-method>
     <form-login-config>
       <form-login-page>/login.jsp</form-login-page>
-      <form-error-page>/login_failed.jsp</form-error-page>
+      <form-error-page>/login.jsp?message=Login failed: Invalid UserName or Password</form-error-page>
     </form-login-config>
   </login-config>
 
@@ -589,7 +605,7 @@ See http://www.w3.org/TR/SVG/intro.html#MIMEType. -->
 
   <security-role>
     <description>Manager/Viewer-only User - Viewer of the system that is interested in statistics
-      around the  business processes and their performance, business indicators, and other
+      around the business processes and their performance, business indicators, and other
       reporting of the system and people who interact with the system.
     </description>
     <role-name>manager</role-name>
@@ -599,6 +615,30 @@ See http://www.w3.org/TR/SVG/intro.html#MIMEType. -->
     <error-code>403</error-code>
     <location>/not_authorized.jsp</location>
   </error-page>
-  
-</web-app>
+    
+  <context-param>
+    <param-name>resteasy.document.expand.entity.references</param-name>
+    <param-value>false</param-value>
+  </context-param>
 
+  <filter>
+    <filter-name>Dynamic JAXBContext Filter</filter-name>
+    <filter-class>org.kie.remote.services.rest.jaxb.DynamicJaxbContextFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>Dynamic JAXBContext Filter</filter-name>
+    <url-pattern>/rest/*</url-pattern>
+  </filter-mapping>
+ 
+  <!-- web services -->
+  <servlet>
+    <servlet-name>CommandWebService</servlet-name>
+    <servlet-class>org.kie.remote.services.ws.command.CommandWebServiceImpl</servlet-class>
+  </servlet>
+    
+  <servlet-mapping>
+    <servlet-name>CommandWebService</servlet-name>
+    <url-pattern>/ws/CommandService</url-pattern>
+  </servlet-mapping>
+   
+</web-app>
