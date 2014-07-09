@@ -53,3 +53,5 @@ else
 
 fi
 
+# remove /target for saving disk space
+sh $HOME/GIT/droolsjbpm-build-bootstrap/script/mvn-all.sh clean
