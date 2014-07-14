@@ -44,6 +44,8 @@ else
     scp kie-wb-*-jboss-as7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.1.x/kie-wb-$SFVER-jboss-as7.war
     scp kie-wb-*-tomcat7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.1.x/kie-wb-$SFVER-tomcat7.war
     scp kie-wb-*-was8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.1.x/kie-wb-$SFVER-was8.war
+    scp kie-wb-*-wildfly.war.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.1.x/kie-wb-$SFVER-wildfly.war
+    scp kie-drools-wb-*-wildfly.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.1.x/kie-drools-wb-$SFVER-wildfly.war
     scp optaplanner-distribution-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.1.x/optaplanner-distribution-$SFVER.zip
     scp org.drools.updatesite-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.1.x/org.drools.updatesite-$SFVER.zip
 

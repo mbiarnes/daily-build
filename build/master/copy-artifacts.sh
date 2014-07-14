@@ -38,7 +38,8 @@ cp $GIT_DIR/optaplanner/optaplanner-distribution/target/optaplanner-distribution
 cp $GIT_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-jboss-as7.war $ARTIFACT_DIR/new
 cp $GIT_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-tomcat-7.war $ARTIFACT_DIR/new
 cp $GIT_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-was-8.war $ARTIFACT_DIR/new
-
+cp $GIT_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-wildfly.war $ARTIFACT_DIR/new
+cp $GIT_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-wildfly.war $ARTIFACT_DIR/new
 cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-layer/target/kie-eap-distributions-bpms-layer-*.zip $ARTIFACT_DIR/new
 cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp/target/kie-wb-distribution-wars-*-bpms-webapp.war $ARTIFACT_DIR/new
 cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp/target/jbpm-dashboard-distributions-*-bpms-webapp.war $ARTIFACT_DIR/new
