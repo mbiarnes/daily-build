@@ -30,7 +30,7 @@ else
     scp kie-wb-distribution-wars-*-bpms-webapp.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-wb-distribution-wars-$SFVER-bpms-webapp.war
     scp jbpm-dashboard-distributions-*-bpms-webapp.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/jbpm-dashboard-distributions-$SFVER-bpms-webapp.war
     scp kie-drools-wb-distribution-wars-*-brms-webapp.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-drools-wb-distribution-wars-$SFVER-brms-webapp.war
-    scp kie-wb-*-wildfly8.war.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-wb-$SFVER-wildfly8.war
+    scp kie-wb-*-wildfly8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-wb-$SFVER-wildfly8.war
     scp kie-drools-wb-*-wildfly8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-drools-wb-$SFVER-wildfly8.war
     scp jbpm-*-bin.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/jbpm-$SFVER-bin.zip
     scp jbpm-dashbuilder-*-jboss-as7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/jbpm-dashbuilder-$SFVER-jboss-as7.war
