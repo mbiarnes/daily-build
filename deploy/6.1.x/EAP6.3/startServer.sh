@@ -1,13 +1,13 @@
 #!/bin/sh
 #
 # Variable definition 
-DEFAULT_DIR=$HOME
-JBOSS_HOME=$HOME/jboss-eap-6.3
+export DEFAULT_DIR=$HOME
+export JBOSS_HOME=$HOME/jboss-eap-6.3
 
 
 $JBOSS_HOME/bin/standalone.sh --server-config=standalone-full.xml&
 
-sleep 180
+sleep 80
 
 cd $HOME
 date > /var/www/theme/jbpm-6-0-deploy-eap-6-1/date.txt
