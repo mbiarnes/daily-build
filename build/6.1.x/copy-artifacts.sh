@@ -63,7 +63,7 @@ cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target
 
 # checks if files are in $ARTIFACT_DIR/new/ and sends mail
 cd $ARTIFACT_DIR/new
-if [ -e 'kie-drools-wb-'*'-eap-6_1.war' ] || [ -e 'eap-modules-distributions-'*'-org.kie.kie-wb-webapp.war' ] ; then
+if [ -e 'kie-drools-wb-'*'-eap-6_1.war' ] && [ -e 'eap-modules-distributions-'*'-org.kie.kie-wb-webapp.war' ] ; then
 echo "Build successful"  | mail -s "[JBPM 6.1 BUILD] BUILD SUCCESS" mbiarnes@redhat.com pzapataf@redhat.com etirelli@redhat.com kverlaen@redhat.com
 
 # cleanup $ARTIFACT_DIR/
