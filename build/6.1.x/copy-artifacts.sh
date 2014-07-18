@@ -63,8 +63,8 @@ cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target
 
 # checks if files are in $ARTIFACT_DIR/new/ and sends mail
 cd $ARTIFACT_DIR/new
-if [ -e 'kie-drools-wb-'*'-eap-6_1.war' ] && [ -e 'eap-modules-distributions-'*'-org.kie.kie-wb-webapp.war' ] ; then
-echo "Build successful"  | mail -s "[JBPM 6.1 BUILD] BUILD SUCCESS" mbiarnes@redhat.com pzapataf@redhat.com etirelli@redhat.com kverlaen@redhat.com
+if [ -e 'kie-drools-wb-'*'-eap-6_1.war' ] && [ -e 'kie-wb-distribution-wars-'*'-bpms-webapp.war' ] ; then
+echo "Build successful"  | mail -s "[JBPM 6.1 BUILD] BUILD SUCCESS" mbiarnes@redhat.com  etirelli@redhat.com kverlaen@redhat.com
 
 # cleanup $ARTIFACT_DIR/
 rm -rf $ARTIFACT_DIR/docs
@@ -92,7 +92,7 @@ else
 
 cd $BUILD_LOG
 gzip -r build-6-1.log
-echo "Build NOT successful, see attached file" | mail -s "[JBPM 6.1 BUILD] BUILD FAILURE" -a build-6-1.log.gz  mbiarnes@redhat.com pzapataf@redhat.com etirelli@redhat.com kverlaen@redhat.com
+echo "Build NOT successful, see attached file" | mail -s "[JBPM 6.1 BUILD] BUILD FAILURE" -a build-6-1.log.gz  mbiarnes@redhat.com etirelli@redhat.com kverlaen@redhat.com
 mv $GIT_DIR/droolsjbpm-build-bootstrap/script/build-6-1* $ARTIFACT_DIR/logs
 
 fi
