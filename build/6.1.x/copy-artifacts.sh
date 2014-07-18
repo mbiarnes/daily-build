@@ -88,9 +88,11 @@ cd $SCRIPTS
 touch copyToFilemgmt.txt
 echo copyToFilemgmt >> copyToFilemgmt.txt
 
+export SKINNY_DIR=$GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-brms-webapp/target
+
 cd $SKINNY_DIR
-  if [ ! -f 'kie-eap-distributions-bpms-webapp-'*'-kie-wb.war' ] && [ ! -f 'kie-eap-distributions-bpms-webapp-'*'-jbpm-dashbuilder.war' ] ; then
-    echo "kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp didn't build"  | mail -s "no skinny wars" mbiarnes@redhat.com
+  if [ ! -f 'kie-drools-wb-distribution-wars-'*'-brms-webapp.war' ]  ; then
+    echo "kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-brms-webapp didn't build"  | mail -s "no skinny wars" mbiarnes@redhat.com
   fi
 
 else
