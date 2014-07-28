@@ -95,13 +95,45 @@ export SKINNY_DIR=$HOME/GIT/kie-wb-distributions/kie-eap-integration/kie-eap-dis
 cd $SKINNY_DIR
 if [ ! -f 'kie-eap-distributions-bpms-webapp-'*'-kie-wb.war' ] && [ ! -f 'kie-eap-distributions-bpms-webapp-'*'-jbpm-dashbuilder.war' ] ; then
 echo "kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp didn't build"  | mail -s "no skinny wars" mbiarnes@redhat.com
-fi
+
+
+  # cleanup $ARTIFACT_DIR/
+  rm -rf $ARTIFACT_DIR/docs
+  rm -rf $ARTIFACT_DIR/logs
+  rm $ARTIFACT_DIR/*
+  mkdir $ARTIFACT_DIR/logs
+  mkdir $ARTIFACT_DIR/docs
+
+  # copies all artifacts from /new to /master if build was successful
+  cp $ARTIFACT_DIR/new/* $ARTIFACT_DIR
+  cp -r $ARTIFACT_DIR/new/docs/* $ARTIFACT_DIR/docs
+
+  cd $SCRIPTS
+  ./copyFailedUnitTests.sh
+
+  cd $BUILD_LOG
+  gzip -r build-master.log
+  mv $GIT_DIR/droolsjbpm-build-bootstrap/script/build-master* $ARTIFACT_DIR/logs
+
+  cd $SCRIPTS
+  touch copyToFilemgmt.txt
+  echo copyToFilemgmt >> copyToFilemgmt.txt
+
+  export SKINNY_DIR=$HOME/GIT/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp/target
+
+
+    cd $SKINNY_DIR
+
+    if [ ! -f 'kie-eap-distributions-bpms-webapp-'*'-kie-wb.war' ] && [ ! -f 'kie-eap-distributions-bpms-webapp-'*'-jbpm-dashbuilder.war' ] ; then
+      echo "kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp didn't build" | mail -s "no skinny wars" mbiarnes@redhat.com
+    fi
+
 
 else
 
-cd $BUILD_LOG
-gzip -r build-master.log
-echo "Build NOT successful, see attached file" | mail -s "[JBPM master BUILD] BUILD FAILURE" -a build-master.log.gz  mbiarnes@redhat.com etirelli@redhat.com kverlaen@redhat.com
-mv $GIT_DIR/droolsjbpm-build-bootstrap/script/build-master* $ARTIFACT_DIR/logs
+  cd $BUILD_LOG
+  gzip -r build-master.log
+  echo "Build NOT successful, see attached file" | mail -s "[JBPM master BUILD] BUILD FAILURE" -a build-master.log.gz  mbiarnes@redhat.com etirelli@redhat.com kverlaen@redhat.com
+  mv $GIT_DIR/droolsjbpm-build-bootstrap/script/build-master* $ARTIFACT_DIR/logs
 
 fi
