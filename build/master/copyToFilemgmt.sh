@@ -25,11 +25,6 @@ else
     scp dashbuilder-*-jboss-as7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/dashbuilder-$SFVER-jboss-as7.war
     scp dashbuilder-*-tomcat-7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/dashbuilder-$SFVER-tomcat-7.war
     scp dashbuilder-*-was-8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/dashbuilder-$SFVER-was-8.war
-    scp kie-eap-distributions-bpms-layer-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-eap-distributions-bpms-layer-$SFVER.zip
-    scp kie-eap-distributions-brms-layer-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-eap-distributions-brms-layer-$SFVER.zip
-    scp kie-wb-distribution-wars-*-bpms-webapp.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-wb-distribution-wars-$SFVER-bpms-webapp.war
-    scp jbpm-dashboard-distributions-*-bpms-webapp.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/jbpm-dashboard-distributions-$SFVER-bpms-webapp.war
-    scp kie-drools-wb-distribution-wars-*-brms-webapp.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-drools-wb-distribution-wars-$SFVER-brms-webapp.war
     scp kie-wb-*-wildfly8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-wb-$SFVER-wildfly8.war
     scp kie-drools-wb-*-wildfly8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-drools-wb-$SFVER-wildfly8.war
     scp jbpm-*-bin.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/jbpm-$SFVER-bin.zip
@@ -47,7 +42,13 @@ else
 
     scp optaplanner-distribution-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/optaplanner-distribution-$SFVER.zip
     scp org.drools.updatesite-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/org.drools.updatesite-$SFVER.zip
-    
+
+    scp kie-eap-distributions-bpms-layer-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-eap-distributions-bpms-layer-$SFVER.zip
+    scp kie-eap-distributions-bpms-webapp-*-jbpm-dashbuilder.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-eap-distributions-bpms-webapp-$SFVER-jbpm-dashbuilder.war
+    scp kie-eap-distributions-bpms-webapp-*-kie-wb.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-eap-distributions-bpms-webapp-$SFVER-kie-wb.war
+    scp kie-eap-distributions-brms-layer-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-eap-distributions-brms-layer-$SFVER.zip
+    scp kie-eap-distributions-brms-webapp-*-SNAPSHOT-kie-drools-wb.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-eap-distributions-brms-webapp-$SFVER-kie-drools-wb.war   
+ 
     cd $SCRIPTS
     rm copyToFilemgmt.txt
 
