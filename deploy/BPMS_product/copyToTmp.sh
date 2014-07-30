@@ -7,7 +7,7 @@ TARGET_DIR=/tmp/kieScripts/deploy/BPMS_product
 SCRIPTS=/home/kiereleaseuser/daily-build/deploy/BPMS_product
 
 rm -rf $TARGET_DIR
-mkdir $TARGET_DIR
+mkdir -p $TARGET_DIR
 
 cp -r $SCRIPTS/config $TARGET_DIR
 cp $SCRIPTS/dailyServerInstall.sh $TARGET_DIR

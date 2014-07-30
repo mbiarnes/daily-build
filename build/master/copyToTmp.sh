@@ -7,7 +7,7 @@ TARGET_DIR=/tmp/kieScripts/master/
 SCRIPTS=/home/kiereleaseuser/daily-build/build/master
 
 rm -rf $TARGET_DIR
-mkdir $TARGET_DIR
+mkdir -p $TARGET_DIR
 
 cp $SCRIPTS/clean-local-maven.sh $TARGET_DIR
 cp $SCRIPTS/clone-all.sh $TARGET_DIR

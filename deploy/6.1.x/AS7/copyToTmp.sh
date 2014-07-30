@@ -7,7 +7,7 @@ TARGET_DIR=/tmp/kieScripts/deploy/6.1.x/AS7
 SCRIPTS=/home/kiereleaseuser/daily-build/deploy/6.1.x/AS7
 
 rm -rf $TARGET_DIR
-mkdir $TARGET_DIR
+mkdir -p $TARGET_DIR
 
 cp -r $SCRIPTS/config $TARGET_DIR
 cp $SCRIPTS/dailyServerInstall.sh $TARGET_DIR

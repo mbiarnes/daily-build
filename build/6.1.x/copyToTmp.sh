@@ -7,7 +7,7 @@ TARGET_DIR=/tmp/kieScripts/jbpm-6-1-build/
 SCRIPTS=/home/kiereleaseuser/daily-build/build/6.1.x
 
 rm -rf $TARGET_DIR
-mkdir $TARGET_DIR
+mkdir -p $TARGET_DIR
 
 cp $SCRIPTS/clean-local-maven.sh $TARGET_DIR
 cp $SCRIPTS/clone-all.sh $TARGET_DIR
