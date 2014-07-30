@@ -39,7 +39,7 @@
   <role rolename="analyst"/>
   <role rolename="root"/>
   <user username="root" password="root" roles="root,admin,ADMIN,kie-user"/>
-  <user username="admin" password="admin" roles="admin,kie-user"/>
+  <user username="admin" password="admin" roles="admin,kie-user,analyst"/>
   <user username="analyst" password="analyst" roles="analyst"/>
   <user username="katy" password="katy" roles="kie-user, analyst"/>
   <user username="michael" password="michael" roles="admin, ADMIN, kie-user, analyst"/>
