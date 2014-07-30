@@ -64,7 +64,7 @@ cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target
 
 # checks if files are in $ARTIFACT_DIR/new and sends mails
 cd $ARTIFACT_DIR/new
-if [ -e 'kie-drools-wb-'*'-eap-6_1.war' ] && [ -e 'kie-drools-wb-distribution-wars-'*'-brms-webapp.war' ] ; then
+if [ -e 'kie-drools-wb-'*'-wildfly8.war' ] && [ -e 'kie-eap-distributions-brms-webapp-'*'-kie-drools-wb.war' ] ; then
 echo "Build successful"  | mail -s "[JBPM master BUILD] BUILD SUCCESS" mbiarnes@redhat.com etirelli@redhat.com kverlaen@redhat.com
 
 # cleanup $ARTIFACT_DIR/
@@ -91,43 +91,10 @@ echo copyToFilemgmt >> copyToFilemgmt.txt
 
 export SKINNY_DIR=$HOME/GIT/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp/target
 
-
 cd $SKINNY_DIR
-if [ ! -f 'kie-eap-distributions-bpms-webapp-'*'-kie-wb.war' ] && [ ! -f 'kie-eap-distributions-bpms-webapp-'*'-jbpm-dashbuilder.war' ] ; then
-echo "kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp didn't build"  | mail -s "no skinny wars" mbiarnes@redhat.com
-
-
-  # cleanup $ARTIFACT_DIR/
-  rm -rf $ARTIFACT_DIR/docs
-  rm -rf $ARTIFACT_DIR/logs
-  rm $ARTIFACT_DIR/*
-  mkdir $ARTIFACT_DIR/logs
-  mkdir $ARTIFACT_DIR/docs
-
-  # copies all artifacts from /new to /master if build was successful
-  cp $ARTIFACT_DIR/new/* $ARTIFACT_DIR
-  cp -r $ARTIFACT_DIR/new/docs/* $ARTIFACT_DIR/docs
-
-  cd $SCRIPTS
-  ./copyFailedUnitTests.sh
-
-  cd $BUILD_LOG
-  gzip -r build-master.log
-  mv $GIT_DIR/droolsjbpm-build-bootstrap/script/build-master* $ARTIFACT_DIR/logs
-
-  cd $SCRIPTS
-  touch copyToFilemgmt.txt
-  echo copyToFilemgmt >> copyToFilemgmt.txt
-
-  export SKINNY_DIR=$HOME/GIT/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp/target
-
-
-    cd $SKINNY_DIR
-
-    if [ ! -f 'kie-eap-distributions-bpms-webapp-'*'-kie-wb.war' ] && [ ! -f 'kie-eap-distributions-bpms-webapp-'*'-jbpm-dashbuilder.war' ] ; then
-      echo "kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp didn't build" | mail -s "no skinny wars" mbiarnes@redhat.com
-    fi
-
+   if [ ! -f 'kie-eap-distributions-bpms-webapp-'*'-kie-wb.war' ] && [ ! -f 'kie-eap-distributions-bpms-webapp-'*'-jbpm-dashbuilder.war' ] ; then
+     echo "kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp didn't build"  | mail -s "no skinny wars" mbiarnes@redhat.com
+   fi
 
 else
 
