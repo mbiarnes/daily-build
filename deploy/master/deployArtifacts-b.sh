@@ -2,7 +2,7 @@
 #
 # Variable definition 
 DEFAULT_DIR=/var/jbpm-artifacts/master/
-JBOSS_HOME=$HOME/jboss-as-7.1.1.Final
+JBOSS_HOME=$HOME/jboss-eap-6.3
 
 sleep 30
 

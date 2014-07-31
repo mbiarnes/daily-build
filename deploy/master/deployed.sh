@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOG_DIR=/home/jbpm-master-deploy-as7/jboss-as-7.1.1.Final/standalone/log
+LOG_DIR=/home/jbpm-master-depjboss-eap-6.3/standalone/log
 File=$LOG_DIR/server.log
 
 cd $LOG_DIR
