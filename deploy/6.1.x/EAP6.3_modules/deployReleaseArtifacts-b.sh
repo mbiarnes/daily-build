@@ -4,16 +4,24 @@
 echo "Which is the directory for the release artifacts?"
 echo ""
 read RELARTDIR
+echo ""
+echo "Which is the branch of artifacts: master or 6.1.x?"
+echo ""
+read BRANCH
 
-export DEFAULT_DIR=/var/jbpm-artifacts/6.1.x/$RELARTDIR
+export DEFAULT_DIR=/var/jbpm-artifacts/$BRANCH/$RELARTDIR
 export JBOSS_HOME=$HOME/jboss-eap-6.3
 export TEMP_DIR=WEB-INF
 export DEPLOY_DIR=$JBOSS_HOME/standalone/deployments
-export ARTIFACT=kie-wb-distribution-wars-*-bpms-webapp.war
 export SCRIPTS=$HOME/scripts/
 
-pkill-9 java
+if [ $BRANCH==master ] ; then
+       export ARTIFACT=kie-eap-distributions-bpms-webapp-*-kie-wb.war
+else
+       export ARTIFACT=kie-wb-distribution-wars-*-bpms-webapp.war
+fi
 
+pkill-9 java
 killall -9 /usr/java/default/bin/java
 
 # Copy deployments at EAP

@@ -2,17 +2,23 @@
 #
 # Variable definition 
 
-
 echo "Which is the directory for the release artifacts?"
 echo ""
 read RELARTDIR
+echo ""
+echo "Which is the branch of artifacts: master or 6.1.x?"
+echo ""
+read BRANCH
 
-DEFAULT_DIR=/var/jbpm-artifacts/6.1.x/$RELARTDIR
-JBOSS_HOME=$HOME/jboss-eap-6.3
+export DEFAULT_DIR=/var/jbpm-artifacts/$BRANCH/$RELARTDIR
+export JBOSS_HOME=$HOME/jboss-eap-6.3
 
 # Copy deployments at EAP
-cp $DEFAULT_DIR/kie-drools-wb-*-jboss-as7.0.war $JBOSS_HOME/standalone/deployments/kie-drools-wb.war
-
+if [ $BRANCH==master ] ; then]
+    cp $DEFAULT_DIR/kie-drools-wb-*-jboss-as7.war $JBOSS_HOME/standalone/deployments/kie-drools-wb.war
+else
+    cp $DEFAULT_DIR/kie-drools-wb-*-jboss-as7.0.war $JBOSS_HOME/standalone/deployments/kie-drools-wb.war
+fi
 $JBOSS_HOME/bin/standalone.sh --server-config=standalone-full.xml&
 
 sleep 60
