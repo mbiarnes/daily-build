@@ -38,6 +38,8 @@ ARTIFACT_DIR=$JBPM_ARTIFACTS/$branch/$releaseVersion
 cp $REPO_DIR/dashboard-builder/builder/target/dashbuilder-*-jboss-as7.war $ARTIFACT_DIR
 cp $REPO_DIR/dashboard-builder/builder/target/dashbuilder-*-tomcat-7.war $ARTIFACT_DIR
 cp $REPO_DIR/dashboard-builder/builder/target/dashbuilder-*-was-8.war $ARTIFACT_DIR
+cp $REPO_DIR/dashboard-builder/builder/target/dashbuilder-*-wildfly-8.war $ARTIFACT_DIR
+cp $REPO_DIR/dashboard-builder/builder/target/dashbuilder-*-eap-6_1.war $ARTIFACT_DIR
 cp $REPO_DIR/jbpm/jbpm-distribution/target/jbpm-*-bin.zip $ARTIFACT_DIR
 cp $REPO_DIR/droolsjbpm-tools/drools-eclipse/org.drools.updatesite/target/org.drools.updatesite-*.zip $ARTIFACT_DIR
 cp $REPO_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-eap-6_1.war $ARTIFACT_DIR
@@ -52,6 +54,8 @@ cp $REPO_DIR/optaplanner/optaplanner-distribution/target/optaplanner-distributio
 cp $REPO_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-jboss-as7.war $ARTIFACT_DIR
 cp $REPO_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-tomcat-7.war $ARTIFACT_DIR
 cp $REPO_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-was-8.war $ARTIFACT_DIR
+cp $REPO_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-wildfly-8.war $ARTIFACT_DIR
+cp $REPO_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-eap-6_1.war $ARTIFACT_DIR
 
 if [ $branch == master ] ; then
   cp $REPO_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-wildfly8.war $ARTIFACT_DIR
