@@ -28,7 +28,7 @@ else
     scp dashbuilder-*-tomcat-7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.1.x/dashbuilder-$SFVER-tomcat-7.war
     scp dashbuilder-*-was-8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.1.x/dashbuilder-$SFVER-was-8.war
     scp dashbuilder-*-eap-6_1.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.1.x/dashbuilder-$SFVER-eap-6_1.war
-    scp dashbuilder-*-wildfly.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.1.x/dashbuilder-$SFVER-wildfly-8.war
+    scp dashbuilder-*-wildfly-8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.1.x/dashbuilder-$SFVER-wildfly-8.war
     scp kie-eap-distributions-bpms-layer-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.1.x/kie-eap-distributions-bpms-layer-$SFVER.zip
     scp kie-eap-distributions-brms-layer-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.1.x/kie-eap-distributions-brms-layer-$SFVER.zip
     scp kie-wb-distribution-wars-*-bpms-webapp.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.1.x/kie-wb-distribution-wars-$SFVER-bpms-webapp.war
@@ -44,6 +44,7 @@ else
     scp kie-drools-wb-*-jboss-as7.0.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.1.x/kie-drools-wb-$SFVER-jboss-as7.0.war
     scp kie-drools-wb-*-tomcat7.0.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.1.x/kie-drools-wb-$SFVER-tomcat7.0.war
     scp kie-drools-wb-*-was8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.1.x/kie-drools-wb-$SFVER-was8.0.war
+    scp kie-drools-wb-*-wildfly.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.1.x/kie-drools-wb-$SFVER-wildfly.war
     scp kie-wb-*-eap-6_1.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.1.x/kie-wb-$SFVER-eap-6_1.war
     scp kie-wb-*-jboss-as7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.1.x/kie-wb-$SFVER-jboss-as7.war
     scp kie-wb-*-tomcat7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.1.x/kie-wb-$SFVER-tomcat7.war
