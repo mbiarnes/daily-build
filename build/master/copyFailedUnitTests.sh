@@ -11,7 +11,7 @@ if [ "$DOW" = Sat ] || [ "$DOW" = Sun ] ; then
 
    cd $FAILED
 
-   mkdir $DATE_DIR
+   mkdir -p $DATE_DIR
 
    cd $HOME
    rm full_URL.txt
