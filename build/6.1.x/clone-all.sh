@@ -10,7 +10,6 @@ cd $HOME/GIT
 
 git clone https://github.com/droolsjbpm/droolsjbpm-build-bootstrap.git
 git clone https://github.com/droolsjbpm/jbpm-console-ng.git
-git clone https://github.com/uberfire/uberfire.git
 git clone https://github.com/droolsjbpm/guvnor.git
 git clone https://github.com/droolsjbpm/optaplanner.git
 git clone https://github.com/droolsjbpm/jbpm.git
