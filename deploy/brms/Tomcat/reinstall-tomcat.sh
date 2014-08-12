@@ -9,7 +9,7 @@ killall -9 /usr/java/default/bin/java
 
 rm -rf $HOME/apache-tomcat-7.0.42
 rm $HOME/jbpm.*
-rm -f /var/www/theme/jbpm-6-0-deploy-tomcat-7/date.txt
+rm -f /var/www/theme/jbpm-deploy-brms-tomcat/date.txt
 rm $HOME/jBossServer*
 rm $HOME/tomcatServer*
 rm $HOME/installTomcat*
@@ -18,11 +18,11 @@ rm -rf $SCRIPTS/.index
 rm -rf $SCRIPTS/.security
 rm -rf $SCRIPTS/repositories
 
-cp $HOME/scripts/resources/apache-tomcat-7.0.42.tar.gz $HOME
+cp $HOME/scripts/resources/apache-tomcat.tar.gz $HOME
 cd $HOME
-gunzip apache-tomcat-7.0.42.tar.gz
-tar -xvf apache-tomcat-7.0.42.tar
-rm apache-tomcat-7.0.42.tar
+gunzip apache-tomcat.tar.gz
+tar -xvf apache-tomcat.tar
+rm apache-tomcat.tar
 
 cp $PERMANENT/lib/* $TOMCAT_HOME/lib
 cp $PERMANENT/btm-config.properties $TOMCAT_HOME/conf

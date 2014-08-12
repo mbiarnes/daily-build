@@ -8,9 +8,9 @@ export CONFIG=$HOME/scripts/config
 cd $CONFIG
 
 # Copy deployments at tomcat7/webapps
-cp $DEFAULT_DIR/kie-wb-*-tomcat7.war $TOMCAT_HOME/webapps/kie-wb.war
+cp $DEFAULT_DIR/kie-drools-wb-*-tomcat7.0.war $TOMCAT_HOME/webapps/kie-drools-wb.war
 
-chmod 755 $TOMCAT_HOME/webapps/kie-wb.war
+chmod 755 $TOMCAT_HOME/webapps/kie-drools-wb.war
 
 $TOMCAT_HOME/bin/startup.sh&
 

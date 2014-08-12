@@ -9,7 +9,7 @@ $TOMCAT_HOME/bin/startup.sh&
 sleep 180
 
 cd $HOME
-date > /var/www/theme/jbpm-6-0-deploy-tomcat-7/date.txt
+date > /var/www/theme/jbpm-deploy-brms-tomcat/date.txt
 mv install.log installTomcat.log
 cp $TOMCAT_HOME/logs/catalina.out .
 mv catalina.out tomcatServer.log

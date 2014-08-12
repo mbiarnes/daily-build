@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOG_DIR=/home/jbpm-6-0-deploy-tomcat-7/apache-tomcat-7.0.42/logs
+LOG_DIR=$HOME/apache-tomcat-7.0.42/logs
 File=$LOG_DIR/catalina.out
 
 cd $LOG_DIR
@@ -10,8 +10,8 @@ grep -w 'Error deploying web application archive\|startup failed due to previous
 if [ $? -eq 0 ]
 then
     # not deployed
-    echo "6.1.x: kie-wb NOT DEPLOYED on Tomcat7"  | mail -s "Deployment on Tomcat7" -a catalina.out mbiarnes@redhat.com
+    echo "6.1.x: kie-drools-wb NOT DEPLOYED on Tomcat7"  | mail -s "Deployment on Tomcat7" -a catalina.out mbiarnes@redhat.com
 else
     # deployed
-    echo "6.1.x: kie-wb DEPLOYED on Tomcat7"  | mail -s "Deployment on Tomcat7" mbiarnes@redhat.com 
+    echo "6.1.x: kie-drools-wb DEPLOYED on Tomcat7"  | mail -s "Deployment on Tomcat7" mbiarnes@redhat.com 
 fi
