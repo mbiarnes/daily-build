@@ -15,6 +15,7 @@ rm $HOME/bpms-prod*.*
 rm $HOME/installProd*
 rm $HOME/jBoss*
 rm $SCRIPTS/jboss-bpms-*.zip
+rm /var/www/theme/bpms-prod-eap-6.1.1/date.txt
 rm -rf $SCRIPTS/repositories
 rm -rf $SCRIPTS/.niogit
 rm -rf $SCRIPTS/.index
