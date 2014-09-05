@@ -7,3 +7,4 @@ rm -rf $HOME/.m2/repository/org/jbpm
 rm -rf $HOME/.m2/repository/org/optaplanner
 rm -rf $HOME/.m2/repository/org/jboss
 rm -rf $HOME/.m2/repository/org/guvnor
+rm -rf $HOME/.m2/repository/org/uberfire
