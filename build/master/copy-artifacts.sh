@@ -69,7 +69,7 @@ cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target
 # checks if files are in $ARTIFACT_DIR/new and sends mails
 cd $ARTIFACT_DIR/new
 if [ -e 'kie-drools-wb-'*'-wildfly8.war' ] && [ -e 'kie-eap-distributions-brms-webapp-'*'-kie-drools-wb.war' ] ; then
-echo "Build successful"  | mail -s "[JBPM master BUILD] BUILD SUCCESS" mbiarnes@redhat.com etirelli@redhat.com kverlaen@redhat.com
+echo "Build successful"  | mail -s "[JBPM master BUILD] BUILD SUCCESS" mbiarnes@redhat.com etirelli@redhat.com kverlaen@redhat.com mrietvel@redhat.com
 
 # cleanup $ARTIFACT_DIR/
 rm -rf $ARTIFACT_DIR/docs
@@ -104,7 +104,7 @@ else
 
   cd $BUILD_LOG
   gzip -r build-master.log
-  echo "Build NOT successful, see attached file" | mail -s "[JBPM master BUILD] BUILD FAILURE" -a build-master.log.gz  mbiarnes@redhat.com etirelli@redhat.com kverlaen@redhat.com
+  echo "Build NOT successful, see attached file" | mail -s "[JBPM master BUILD] BUILD FAILURE" -a build-master.log.gz  mbiarnes@redhat.com etirelli@redhat.com kverlaen@redhat.com mrietvel@redhat.com
   mv $GIT_DIR/droolsjbpm-build-bootstrap/script/build-master* $ARTIFACT_DIR/logs
 
 fi
