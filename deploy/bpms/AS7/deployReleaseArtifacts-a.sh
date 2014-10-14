@@ -3,13 +3,13 @@
 # Variable definition 
 
 
-echo "Which is the directory for the release artifacts?"
-echo ""
-read RELARTDIR
-echo ""
 echo "Which is the branch of artifacts: master or 6.2.x?"
 echo ""
 read BRANCH
+echo ""
+echo "Which is the directory for the release artifacts?"
+echo ""
+read RELARTDIR
 
 DEFAULT_DIR=/var/jbpm-artifacts/$BRANCH/$RELARTDIR
 JBOSS_HOME=$HOME/jboss-eap-6.3
