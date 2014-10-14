@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # Variable definition 
-DEFAULT_DIR=/var/jbpm-artifacts/6.1.x/
+DEFAULT_DIR=/var/jbpm-artifacts/6.2.x/
 JBOSS_HOME=$HOME/jboss-eap-6.3
 
 sleep 80

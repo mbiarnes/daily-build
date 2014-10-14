@@ -35,11 +35,11 @@ else
     scp jbpm-dashbuilder-*-was-8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/jbpm-dashbuilder-$SFVER-was-8.war
     scp jbpm-dashbuilder-*-wildfly-8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/jbpm-dashbuilder-$SFVER-wildfly-8.war
     scp jbpm-dashbuilder-*-eap-6_1.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/jbpm-dashbuilder-$SFVER-eap-6_1.war
-    scp kie-drools-wb-*-eap-6_1.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-drools-wb-$SFVER-eap-6_1.war
+    scp kie-drools-wb-*-eap6_3.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-drools-wb-$SFVER-eap6_3.war
     scp kie-drools-wb-*-jboss-as7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-drools-wb-$SFVER-jboss-as7.war
     scp kie-drools-wb-*-tomcat7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-drools-wb-$SFVER-tomcat7.war
     scp kie-drools-wb-*-was8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-drools-wb-$SFVER-was8.war
-    scp kie-wb-*-eap-6_1.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-wb-$SFVER-eap-6_1.war
+    scp kie-wb-*-eap6_3.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-wb-$SFVER-eap6_3.war
     scp kie-wb-*-jboss-as7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-wb-$SFVER-jboss-as7.war
     scp kie-wb-*-tomcat7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-wb-$SFVER-tomcat7.war
     scp kie-wb-*-was8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-wb-$SFVER-was8.war

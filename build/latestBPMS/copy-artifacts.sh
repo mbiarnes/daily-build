@@ -7,14 +7,12 @@
 #####################################################################
 #
 # VARIABLE DEFINITION
-export GIT_DIR=$HOME/GIT
-export BUILD_LOG=$GIT_DIR/droolsjbpm-build-bootstrap/script
-export SCRIPTS=$HOME/scripts
-export ARTIFACT_DIR=/var/jbpm-artifacts/master
+export GIT_DIR=$HOME/GIT/
+export BUILD_LOG=$GIT_DIR/droolsjbpm-build-bootstrap/script/
+export SCRIPTS=$HOME/scripts/
+export ARTIFACT_DIR=/var/jbpm-artifacts/6.2.x/
 
-
- #cleanup of $ARTIFACT_DIR/new where all built artifacts will be copied to
-
+# cleanup of $ARTIFACT_DIR/new where all built artifacts will be copied to
 rm -rf $ARTIFACT_DIR/new
 mkdir $ARTIFACT_DIR/new
 mkdir $ARTIFACT_DIR/new/docs
@@ -33,8 +31,8 @@ cp $GIT_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*
 cp $GIT_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-tomcat7.war $ARTIFACT_DIR/new
 cp $GIT_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-was8.war $ARTIFACT_DIR/new
 cp $GIT_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-eap6_3.war $ARTIFACT_DIR/new
-cp $GIT_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-jboss-as7.war $ARTIFACT_DIR/new
-cp $GIT_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-tomcat7.war $ARTIFACT_DIR/new
+cp $GIT_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-jboss-as7.0.war $ARTIFACT_DIR/new
+cp $GIT_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-tomcat7.0.war $ARTIFACT_DIR/new
 cp $GIT_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-was8.war $ARTIFACT_DIR/new
 cp $GIT_DIR/optaplanner/optaplanner-distribution/target/optaplanner-distribution-*.zip $ARTIFACT_DIR/new
 cp $GIT_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-jboss-as7.war $ARTIFACT_DIR/new
@@ -42,13 +40,14 @@ cp $GIT_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-
 cp $GIT_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-was-8.war $ARTIFACT_DIR/new
 cp $GIT_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-wildfly-8.war $ARTIFACT_DIR/new
 cp $GIT_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-eap-6_1.war $ARTIFACT_DIR/new
-cp $GIT_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-wildfly8.war $ARTIFACT_DIR/new
-cp $GIT_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-wildfly8.war $ARTIFACT_DIR/new
+cp $GIT_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-wildfly.war $ARTIFACT_DIR/new
+cp $GIT_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-wildfly.war $ARTIFACT_DIR/new
+
 cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-layer/target/kie-eap-distributions-bpms-layer-*.zip $ARTIFACT_DIR/new
-cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp/target/kie-eap-distributions-bpms-webapp-*-jbpm-dashbuilder.war $ARTIFACT_DIR/new
-cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp/target/kie-eap-distributions-bpms-webapp-*-kie-wb.war $ARTIFACT_DIR/new
+cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp/target/kie-wb-distribution-wars-*-bpms-webapp.war $ARTIFACT_DIR/new
+cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp/target/jbpm-dashboard-distributions-*-bpms-webapp.war $ARTIFACT_DIR/new
 cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-brms-layer/target/kie-eap-distributions-brms-layer-*.zip $ARTIFACT_DIR/new
-cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-brms-webapp/target/kie-eap-distributions-brms-webapp-*-kie-drools-wb.war $ARTIFACT_DIR/new
+cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-brms-webapp/target/kie-drools-wb-distribution-wars-*-brms-webapp.war $ARTIFACT_DIR/new
 
 
 
@@ -66,10 +65,10 @@ cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target
 mkdir $ARTIFACTS_DIR/new/docs/kie-api-javadoc
 cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/docs_jboss_org/*/kie-api-javadoc/* $ARTIFACT_DIR/new/docs/kie-api-javadoc
 
-# checks if files are in $ARTIFACT_DIR/new and sends mails
+# checks if files are in $ARTIFACT_DIR/new/ and sends mail
 cd $ARTIFACT_DIR/new
-if [ -e 'kie-drools-wb-'*'-wildfly8.war' ] && [ -e 'kie-eap-distributions-brms-webapp-'*'-kie-drools-wb.war' ] ; then
-echo "Build successful"  | mail -s "[JBPM master BUILD] BUILD SUCCESS" mbiarnes@redhat.com etirelli@redhat.com kverlaen@redhat.com mrietvel@redhat.com
+if [ -e 'kie-drools-wb-'*'-eap6_3.war' ] && [ -e 'kie-wb-distribution-wars-'*'-bpms-webapp.war' ] ; then
+echo "Build successful"  | mail -s "[JBPM 6.2 BUILD] BUILD SUCCESS" mbiarnes@redhat.com  etirelli@redhat.com kverlaen@redhat.com
 
 # cleanup $ARTIFACT_DIR/
 rm -rf $ARTIFACT_DIR/docs
@@ -78,7 +77,7 @@ rm $ARTIFACT_DIR/*
 mkdir $ARTIFACT_DIR/logs
 mkdir $ARTIFACT_DIR/docs
 
-# copies all artifacts from /new to /master if build was successful
+# copies all artifacts from /new to /6.2.x if build was successful
 cp $ARTIFACT_DIR/new/* $ARTIFACT_DIR
 cp -r $ARTIFACT_DIR/new/docs/* $ARTIFACT_DIR/docs
 
@@ -86,25 +85,26 @@ cd $SCRIPTS
 ./copyFailedUnitTests.sh
 
 cd $BUILD_LOG
-gzip -r build-master.log
-mv $GIT_DIR/droolsjbpm-build-bootstrap/script/build-master* $ARTIFACT_DIR/logs
+gzip -r build-6-2.log
+mv $GIT_DIR/droolsjbpm-build-bootstrap/script/build-6-2* $ARTIFACT_DIR/logs
 
 cd $SCRIPTS
 touch copyToFilemgmt.txt
 echo copyToFilemgmt >> copyToFilemgmt.txt
 
-export SKINNY_DIR=$HOME/GIT/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp/target
+export SKINNY_DIR=$GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-brms-webapp/target
 
 cd $SKINNY_DIR
-   if [ ! -f 'kie-eap-distributions-bpms-webapp-'*'-kie-wb.war' ] && [ ! -f 'kie-eap-distributions-bpms-webapp-'*'-jbpm-dashbuilder.war' ] ; then
-     echo "kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp didn't build"  | mail -s "no skinny wars" mbiarnes@redhat.com
-   fi
+  if [ ! -f 'kie-drools-wb-distribution-wars-'*'-brms-webapp.war' ]  ; then
+    echo "kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-brms-webapp didn't build"  | mail -s "no skinny wars" mbiarnes@redhat.com
+  fi
 
 else
 
-  cd $BUILD_LOG
-  gzip -r build-master.log
-  echo "Build NOT successful, see attached file" | mail -s "[JBPM master BUILD] BUILD FAILURE" -a build-master.log.gz  mbiarnes@redhat.com etirelli@redhat.com kverlaen@redhat.com mrietvel@redhat.com
-  mv $GIT_DIR/droolsjbpm-build-bootstrap/script/build-master* $ARTIFACT_DIR/logs
+cd $BUILD_LOG
+gzip -r build-6-2.log
+echo "Build NOT successful, see attached file" | mail -s "[JBPM 6.2 BUILD] BUILD FAILURE" -a build-6-2.log.gz  mbiarnes@redhat.com etirelli@redhat.com kverlaen@redhat.com
+mv $GIT_DIR/droolsjbpm-build-bootstrap/script/build-6-2* $ARTIFACT_DIR/logs
 
 fi
+
