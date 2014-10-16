@@ -8,4 +8,4 @@ rm -rf $HOME/.m2/repository/org/optaplanner
 rm -rf $HOME/.m2/repository/org/jboss
 rm -rf $HOME/.m2/repository/org/guvnor
 rm -rf $HOME/.m2/repository/org/uberfire
-rm -rf $HOME/.m2/repository/org/dashbuilder
+rm -rf $HOME/.m2/repository/org/dashbuilder*
