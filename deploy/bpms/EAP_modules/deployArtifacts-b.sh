@@ -1,12 +1,12 @@
 #!/bin/sh
 #
 # Variable definition 
-export DEFAULT_DIR=/var/jbpm-artifacts/6.1.x/
+export DEFAULT_DIR=/var/jbpm-artifacts/6.2.x
 export JBOSS_HOME=$HOME/jboss-eap-6.3
 export TEMP_DIR=WEB-INF
 export DEPLOY_DIR=$JBOSS_HOME/standalone/deployments
-export ARTIFACT=kie-wb-distribution-wars-*-bpms-webapp.war
-export SCRIPTS=$HOME/scripts/
+export ARTIFACT=kie-eap-distributions-bpms-webapp-*-kie-wb.war
+export SCRIPTS=$HOME/scripts
 
 pkill-9 java
 

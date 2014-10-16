@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # Variable definition 
-export DEFAULT_DIR=/var/jbpm-artifacts/6.1.x
+export DEFAULT_DIR=/var/jbpm-artifacts/6.2.x
 export TOMCAT_HOME=$HOME/apache-tomcat-7.0.42
 export CONFIG=$HOME/scripts/config
 

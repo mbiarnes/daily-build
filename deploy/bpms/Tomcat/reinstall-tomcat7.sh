@@ -1,6 +1,8 @@
 #!/bin/bash
-PERMANENT=$HOME/scripts/config
-SCRIPTS=$HOME/scripts/
+#
+
+export PERMANENT=$HOME/scripts/config
+export SCRIPTS=$HOME/scripts/
 export TOMCAT_HOME=$HOME/apache-tomcat-7.0.42
 
 pkill -9 java
@@ -18,11 +20,12 @@ rm -rf $SCRIPTS/.index
 rm -rf $SCRIPTS/.security
 rm -rf $SCRIPTS/repositories
 
-cp $HOME/scripts/resources/apache-tomcat-7.0.42.tar.gz $HOME
+cp $HOME/scripts/resources/apache-tomcat.tar.gz $HOME
 cd $HOME
-gunzip apache-tomcat-7.0.42.tar.gz
-tar -xvf apache-tomcat-7.0.42.tar
-rm apache-tomcat-7.0.42.tar
+gunzip apache-tomcat.tar.gz
+tar -xvf apache-tomcat.tar
+rm apache-tomcat.tar
+
 
 cp $PERMANENT/lib/* $TOMCAT_HOME/lib
 cp $PERMANENT/btm-config.properties $TOMCAT_HOME/conf

@@ -1,16 +1,21 @@
 #!/bin/sh
 #
 # Variable definition 
+echo "Which is the branch of artifacts: master or 6.2.x?"
+echo ""
+read BRANCH
+echo ""
 echo "Which is the directory for the release artifacts?"
 echo ""
 read RELARTDIR
 
-export DEFAULT_DIR=/var/jbpm-artifacts/6.1.x/$RELARTDIR
+
+export DEFAULT_DIR=/var/jbpm-artifacts/$BRANCH/$RELARTDIR
 export JBOSS_HOME=$HOME/jboss-eap-6.3
 export TEMP_DIR=WEB-INF
 export DEPLOY_DIR=$JBOSS_HOME/standalone/deployments
-export ARTIFACT=kie-wb-distribution-wars-*-bpms-webapp.war
-export SCRIPTS=$HOME/scripts/
+export ARTIFACT=kie-eap-distributions-bpms-webapp-*-kie-wb.war
+export SCRIPTS=$HOME/scripts
 
 pkill-9 java
 
@@ -42,4 +47,5 @@ rm $TEMP_DIR/01_jboss-web.xml
 rm -rf $TEMP_DIR
 
 cd $SCRIPTS
+
 $JBOSS_HOME/bin/standalone.sh --server-config=standalone-full.xml&

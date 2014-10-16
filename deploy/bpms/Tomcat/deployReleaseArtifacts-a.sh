@@ -1,12 +1,17 @@
 #!/bin/sh
 #
 # Variable definition 
+
+echo "Which is the branch of artifacts: master or 6.2.x?"
+echo ""
+read BRANCH
+echo ""
 echo "Which is the directory for the release artifacts?"
 echo ""
 read RELARTDIR
 
-export DEFAULT_DIR=/var/jbpm-artifacts/6.1.x/$RELARTDIR
 
+export DEFAULT_DIR=/var/jbpm-artifacts/$BRANCH/$RELARTDIR
 export TOMCAT_HOME=$HOME/apache-tomcat-7.0.42
 export CONFIG=$HOME/scripts/config
 

@@ -18,5 +18,5 @@ kilall -9 /usr/java/default/bin/java
 sleep 10
 
 # Copy deployments at EAP
-cp $DEFAULT_DIR/jbpm-dashbuilder-*-eap-6_1.war $JBOSS_HOME/standalone/deployments
+cp $DEFAULT_DIR/jbpm-dashbuilder-*-eap-6_3.war $JBOSS_HOME/standalone/deployments
 

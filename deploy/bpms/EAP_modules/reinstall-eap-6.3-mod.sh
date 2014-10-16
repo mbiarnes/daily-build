@@ -14,7 +14,7 @@ rm $HOME/installEAP*
 rm $HOME/jBoss*
 rm /var/www/theme/jbpm-6-0-deploy-eap-modulesmas/date.txt
 rm -rf $SCRIPTS/.niogit
-rm -rf $SCRIPTS/repository
+rm -rf $SCRIPTS/repositories
 rm -rf $SCRIPTS/.index
 rm -rf $SCRIPTS/.security
 

@@ -3,8 +3,8 @@
 # copies all scripts to the $TARGET_DIR
 
 
-TARGET_DIR=/tmp/kieScripts/deploy/6.1.x/Tomcat7
-SCRIPTS=/home/kiereleaseuser/daily-build/deploy/6.1.x/Tomcat7
+TARGET_DIR=/tmp/kieScripts/deploy/6.2.x/Tomcat7
+SCRIPTS=/home/kiereleaseuser/daily-build/deploy/bpms/Tomcat
 
 rm -rf $TARGET_DIR
 mkdir -p $TARGET_DIR
