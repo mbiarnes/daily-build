@@ -87,10 +87,12 @@ rm -rf $ARTIFACT_DIR/logs
 rm $ARTIFACT_DIR/*
 mkdir $ARTIFACT_DIR/logs
 mkdir $ARTIFACT_DIR/docs
+mkdir $ARTIFACT_DIR/examples
 
 # copies all artifacts from /new to /6.2.x if build was successful
 cp $ARTIFACT_DIR/new/* $ARTIFACT_DIR/
 cp -r $ARTIFACT_DIR/new/docs/* $ARTIFACT_DIR/docs
+cp -r $ARTIFACT_DIR/new/examples/* $ARTIFACT_DIR/examples
 
 cd $SCRIPTS
 ./copyFailedUnitTests.sh
