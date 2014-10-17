@@ -58,9 +58,12 @@ cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-e
 cp $GIT_DIR/optaplanner/optaplanner-distribution/target/optaplanner-distribution-*.zip $ARTIFACT_DIR/new
 # JBPM
 cp $GIT_DIR/jbpm/jbpm-distribution/target/jbpm-*-bin.zip $ARTIFACT_DIR/new
-#org.drools.updatesite
+# org.drools.updatesite
 cp $GIT_DIR/droolsjbpm-tools/drools-eclipse/org.drools.updatesite/target/org.drools.updatesite-*.zip $ARTIFACT_DIR/new
-
+# drools examples
+mkdir $ARTIFACT_DIR/new/examples
+cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/download_jboss_org/ $ARTIFACT_DIR/new/examples
+rm -rf $ARTIFACT_DIR/new/examples/download_jboss_org/latest
 
 # copy documentation to $ARTIFACT_DIR/new/docs
 mkdir $ARTIFACT_DIR/new/docs/drools-docs
