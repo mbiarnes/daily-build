@@ -19,7 +19,7 @@ rm -rf $SCRIPTS/.niogit
 rm -rf $SCRIPTS/.index
 rm -rf $SCRIPTS/.security
 
-unzip $RESOURCES/jboss-as-dist-7.4.0.Final-redhat-19.zip -d $HOME
+unzip $RESOURCES/jboss-AS.zip -d $HOME
 
 cp $PERMANENT/*.properties $JBOSS_HOME/standalone/configuration
 cp $PERMANENT/standalone-full.xml $JBOSS_HOME/standalone/configuration

@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # Variable definition 
-DEFAULT_DIR=/var/jbpm-artifacts/master/
+DEFAULT_DIR=/var/jbpm-artifacts/master
 JBOSS_HOME=$HOME/jboss-eap-6.3
 
 # Copy deployments at EAP
