@@ -6,7 +6,7 @@ export DEFAULT_DIR=/var/jbpm-artifacts/6.1.x
 export JBOSS_HOME=$HOME/jboss-eap-6.3
 
 # Copy deployments at EAP
-cp $DEFAULT_DIR/kie-drools-wb-*-jboss-as7.0.war $JBOSS_HOME/standalone/deployments/kie-drools-wb.war
+cp $DEFAULT_DIR/kie-drools-wb-*-jboss-as7.war $JBOSS_HOME/standalone/deployments/kie-drools-wb.war
 
 $JBOSS_HOME/bin/standalone.sh --server-config=standalone-full.xml&
 

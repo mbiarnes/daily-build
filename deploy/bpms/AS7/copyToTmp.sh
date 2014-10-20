@@ -15,6 +15,8 @@ cp $SCRIPTS/deployArtifacts-a.sh $TARGET_DIR
 cp $SCRIPTS/deployArtifacts-b.sh $TARGET_DIR
 cp $SCRIPTS/deployReleaseArtifacts-a.sh $TARGET_DIR
 cp $SCRIPTS/deployReleaseArtifacts-b.sh $TARGET_DIR
+cp $SCRIPTS/deployMasterArtifacts-a.sh $TARGET_DIR
+cp $SCRIPTS/deployMasterArtifacts-b.sh $TARGET_DIR
 cp $SCRIPTS/deployed.sh $TARGET_DIR
 cp $SCRIPTS/logs.sh $TARGET_DIR
 cp $SCRIPTS/reinstall-as7.sh $TARGET_DIR
