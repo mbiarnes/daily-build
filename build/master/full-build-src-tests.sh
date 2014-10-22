@@ -2,8 +2,8 @@
 #
 # Variable definition 
 
-export GIT_DIR=$HOME/GIT/
-export DBB=/var/
+export GIT_DIR=$HOME/GIT
+export DBB=/var
 export M2_HOME=/usr/local/maven
 export JAVA_HOME=/usr/java/default
 export PATH=$PATH:/usr/local/maven/bin
