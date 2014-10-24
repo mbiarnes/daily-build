@@ -64,7 +64,8 @@ cp $GIT_DIR/droolsjbpm-tools/drools-eclipse/org.drools.updatesite/target/org.dro
 mkdir $ARTIFACT_DIR/new/examples
 cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/download_jboss_org/ $ARTIFACT_DIR/new/examples
 rm -rf $ARTIFACT_DIR/new/examples/download_jboss_org/latest
-
+# kie-server-services-*.war
+cp $GIT_DIR/droolsjbpm-integration/kie-server/kie-server-services/target/kie-server-services-*.war $ARTIFACT_DIR/new
 # copy documentation to $ARTIFACT_DIR/new/docs
 mkdir $ARTIFACT_DIR/new/docs/drools-docs
 cp -r $GIT_DIR/droolsjbpm-knowledge/kie-docs/drools-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/new/docs/drools-docs

@@ -45,9 +45,9 @@ else
     scp kie-wb-*-weblogic12.war.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-wb-$SFVER-weblogic12.war
 # BRMS
     scp kie-drools-wb-*-eap6_3.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-drools-wb-$SFVER-eap6_3.war
-    scp kie-drools-wb-*-jboss-as7.0.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-drools-wb-$SFVER-jboss-as7.0.war
-    scp kie-drools-wb-*-tomcat7.0.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-drools-wb-$SFVER-tomcat7.0.war
-    scp kie-drools-wb-*-was8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-drools-wb-$SFVER-was8.0.war
+    scp kie-drools-wb-*-jboss-as7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-drools-wb-$SFVER-jboss-as7.war
+    scp kie-drools-wb-*-tomcat7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-drools-wb-$SFVER-tomcat7.war
+    scp kie-drools-wb-*-was8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-drools-wb-$SFVER-was8.war
     scp kie-drools-wb-*-wildfly8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-drools-wb-$SFVER-wildfly8.war
     scp kie-drools-wb-*-weblogic12.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-drools-wb-$SFVER-weblogic12.war
 # BPMS + modules   
@@ -61,6 +61,8 @@ else
     scp jbpm-*-bin.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/jbpm-$SFVER-bin.zip
 # OPTAPLANNER
     scp optaplanner-distribution-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/optaplanner-distribution-$SFVER.zip
+# kie-server-services-*.war
+   scp kie-server-services-*.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-server-services-$SFVER.war
 # org.drools.updatesite
     scp org.drools.updatesite-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/org.drools.updatesite-$SFVER.zip
     cd $SCRIPTS
