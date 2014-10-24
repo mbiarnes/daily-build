@@ -56,7 +56,7 @@ cp $REPO_DIR/optaplanner/optaplanner-distribution/target/optaplanner-distributio
 # BRMS
 cp $REPO_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-wildfly8.war $ARTIFACT_DIR
 cp $REPO_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-was8.war $ARTIFACT_DIR
-cp $REPO_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-weblogic121212121212121212121212.war $ARTIFACT_DIR
+cp $REPO_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-weblogic12.war $ARTIFACT_DIR
 cp $REPO_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-eap6_3.war $ARTIFACT_DIR
 cp $REPO_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-jboss-as7.war $ARTIFACT_DIR
 cp $REPO_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-tomcat7.war $ARTIFACT_DIR
@@ -91,7 +91,10 @@ mkdir $ARTIFACT_DIR/docs/optaplanner-javadoc
 cp -r $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/docs_jboss_org/*/optaplanner-javadoc/* $ARTIFACT_DIR/docs/optaplanner-javadoc
 mkdir $ARTIFACT_DIR/docs/kie-api-javadoc
 cp -r $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/docs_jboss_org/*/kie-api-javadoc/* $ARTIFACT_DIR/docs/kie-api-javadoc
-
+mkdir $ARTIFACT_DIR/examples
+cp -r $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/download_jboss_org/*/optaplanner-distribution-*.zip $ARTIFACT_DIR/examples
+cp -r $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/download_jboss_org/*/droolsjbpm-integration-distribution-*.zip $ARTIFACT_DIR/examples
+cp -r $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/download_jboss_org/*/drools-distribution-*.zip $ARTIFACT_DIR/examples
 
 ###################################################################
 #                                                                 #
