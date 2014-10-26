@@ -40,4 +40,4 @@ if [ "$DOW" = Sat ] || [ "$DOW" = Sun ] ; then
 
 fi
 
-cd $HOME/script
+cd $HOME/scripts
