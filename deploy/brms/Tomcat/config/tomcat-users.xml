@@ -38,9 +38,17 @@
   <role rolename="kie-user"/>
   <role rolename="analyst"/>
   <role rolename="root"/>
+  <role rolename="kiemgmt"/>
+  <role rolename="developer"/>
+  <role rolename="user"/>
+  <role rolename="manager"/>
   <user username="root" password="root" roles="root,admin,ADMIN,kie-user"/>
   <user username="admin" password="admin" roles="admin,kie-user,analyst"/>
   <user username="analyst" password="analyst" roles="analyst"/>
   <user username="katy" password="katy" roles="kie-user, analyst"/>
   <user username="michael" password="michael" roles="admin, ADMIN, kie-user, analyst"/>
+  <user username="kie-admin" password="kie-admin" roles="admin,kiemgmt"/>
+  <user username="kie-analyst" password="kie-analyst" roles="analyst,kiemgmt"/>
+  <user username="kie-user" password="kie-user" roles="kiemgmt,user"/>
+  <user username="kie-manager" password="kie-manager" roles="manager,kiemgmt"/>
 </tomcat-users>
