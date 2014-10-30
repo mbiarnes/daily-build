@@ -41,8 +41,8 @@ else
     scp kie-wb-*-jboss-as7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-wb-$SFVER-jboss-as7.war
     scp kie-wb-*-tomcat7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-wb-$SFVER-tomcat7.war
     scp kie-wb-*-was8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-wb-$SFVER-was8.war
-    scp kie-wb-*-wildfly8.war.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-wb-$SFVER-wildfly8.war
-    scp kie-wb-*-weblogic12.war.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-wb-$SFVER-weblogic12.war
+    scp kie-wb-*-wildfly8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-wb-$SFVER-wildfly8.war
+    scp kie-wb-*-weblogic12.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-wb-$SFVER-weblogic12.war
 # BRMS
     scp kie-drools-wb-*-eap6_3.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-drools-wb-$SFVER-eap6_3.war
     scp kie-drools-wb-*-jboss-as7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-drools-wb-$SFVER-jboss-as7.war
