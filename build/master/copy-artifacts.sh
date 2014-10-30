@@ -96,7 +96,7 @@ mkdir $ARTIFACT_DIR/examples
 # copies all artifacts from /new to /master if build was successful
 cp $ARTIFACT_DIR/new/* $ARTIFACT_DIR
 cp -r $ARTIFACT_DIR/new/docs/* $ARTIFACT_DIR/docs
-co -r $ARTIFACT_DIR/new/examples/* $ARTIFACT_DIR/examples
+cp -r $ARTIFACT_DIR/new/examples/* $ARTIFACT_DIR/examples
 cd $SCRIPTS
 ./copyFailedUnitTests.sh
 
