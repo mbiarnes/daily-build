@@ -25,12 +25,14 @@ cp $GIT_DIR/dashboard-builder/builder/target/dashbuilder-*-tomcat-7.war $ARTIFAC
 cp $GIT_DIR/dashboard-builder/builder/target/dashbuilder-*-was-8.war $ARTIFACT_DIR/new
 cp $GIT_DIR/dashboard-builder/builder/target/dashbuilder-*-eap-6_3.war $ARTIFACT_DIR/new
 cp $GIT_DIR/dashboard-builder/builder/target/dashbuilder-*-wildfly-8.war $ARTIFACT_DIR/new
+cp $GIT_DIR/dashboard-builder/builder/target/dashbuilder-*-weblogic-12c.war $ARTIFACT_DIR/new
 # jbpm-dashboard
 cp $GIT_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-jboss-as7.war $ARTIFACT_DIR/new
 cp $GIT_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-tomcat-7.war $ARTIFACT_DIR/new
 cp $GIT_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-was-8.war $ARTIFACT_DIR/new
 cp $GIT_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-wildfly-8.war $ARTIFACT_DIR/new
 cp $GIT_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-eap-6_3.war $ARTIFACT_DIR/new
+cp $GIT_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-weblogic-12c.war $ARTIFACT_DIR/new
 # BPMS
 cp $GIT_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-eap6_3.war $ARTIFACT_DIR/new
 cp $GIT_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-jboss-as7.war $ARTIFACT_DIR/new
