@@ -26,18 +26,18 @@ else
 
 # dashbuilder
     scp dashbuilder-*-jboss-as7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/dashbuilder-$SFVER-jboss-as7.war
-    scp dashbuilder-*-tomcat-7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/dashbuilder-$SFVER-tomcat-7.war
-    scp dashbuilder-*-was-8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/dashbuilder-$SFVER-was-8.war
-    scp dashbuilder-*-eap-6_3.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/dashbuilder-$SFVER-eap-6_3.war
-    scp dashbuilder-*-wildfly-8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/dashbuilder-$SFVER-wildfly-8.war
-    scp dashbuilder-*-weblogic-12c.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/dashbuilder-$SFVER-weblogic-12c.war
+    scp dashbuilder-*-tomcat7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/dashbuilder-$SFVER-tomcat7.war
+    scp dashbuilder-*-was8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/dashbuilder-$SFVER-was8.war
+    scp dashbuilder-*-eap6_3.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/dashbuilder-$SFVER-eap6_3.war
+    scp dashbuilder-*-wildfly8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/dashbuilder-$SFVER-wildfly8.war
+    scp dashbuilder-*-weblogic12.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/dashbuilder-$SFVER-weblogic12.war
 # jbpm-dashboard
     scp jbpm-dashbuilder-*-jboss-as7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/jbpm-dashbuilder-$SFVER-jboss-as7.war
-    scp jbpm-dashbuilder-*-tomcat-7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/jbpm-dashbuilder-$SFVER-tomcat-7.war
-    scp jbpm-dashbuilder-*-was-8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/jbpm-dashbuilder-$SFVER-was-8.war
-    scp jbpm-dashbuilder-*-eap-6_3.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/jbpm-dashbuilder-$SFVER-eap-6_3.war
-    scp jbpm-dashbuilder-*-wildfly-8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/jbpm-dashbuilder-$SFVER-wildfly-8.war
-    scp jbpm-dashbuilder-*-weblogic-12c.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/jbpm-dashbuilder-$SFVER-weblogic-12c.war
+    scp jbpm-dashbuilder-*-tomcat7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/jbpm-dashbuilder-$SFVER-tomcat7.war
+    scp jbpm-dashbuilder-*-was8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/jbpm-dashbuilder-$SFVER-was8.war
+    scp jbpm-dashbuilder-*-eap6_3.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/jbpm-dashbuilder-$SFVER-eap6_3.war
+    scp jbpm-dashbuilder-*-wildfly8.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/jbpm-dashbuilder-$SFVER-wildfly8.war
+    scp jbpm-dashbuilder-*-weblogic12.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/jbpm-dashbuilder-$SFVER-weblogic12.war
 # BPMS
     scp kie-wb-*-eap6_3.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-wb-$SFVER-eap6_3.war
     scp kie-wb-*-jboss-as7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-wb-$SFVER-jboss-as7.war
