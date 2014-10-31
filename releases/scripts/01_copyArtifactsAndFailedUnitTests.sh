@@ -40,6 +40,7 @@ cp $REPO_DIR/dashboard-builder/builder/target/dashbuilder-*-tomcat-7.war $ARTIFA
 cp $REPO_DIR/dashboard-builder/builder/target/dashbuilder-*-was-8.war $ARTIFACT_DIR
 cp $REPO_DIR/dashboard-builder/builder/target/dashbuilder-*-wildfly-8.war $ARTIFACT_DIR
 cp $REPO_DIR/dashboard-builder/builder/target/dashbuilder-*-eap-6_3.war $ARTIFACT_DIR
+cp $REPO_DIR/dashboard-builder/builder/target/dashbuilder-*-weblogic-12c.war $ARTIFACT_DIR
 
 # jbpm-dashboard
 cp $REPO_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-jboss-as7.war $ARTIFACT_DIR
@@ -47,6 +48,7 @@ cp $REPO_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder
 cp $REPO_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-was-8.war $ARTIFACT_DIR
 cp $REPO_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-wildfly-8.war $ARTIFACT_DIR
 cp $REPO_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-eap-6_3.war $ARTIFACT_DIR
+cp $REPO_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-weblogic-12c.war $ARTIFACT_DIR
 
 # JBPM & droolsjbpm-tools & Optaplanner
 cp $REPO_DIR/jbpm/jbpm-distribution/target/jbpm-*-bin.zip $ARTIFACT_DIR
