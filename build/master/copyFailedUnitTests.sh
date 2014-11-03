@@ -32,7 +32,8 @@ if [ "$DOW" = Sat ] || [ "$DOW" = Sun ] ; then
 
    while read line; do
      if [ -n "$line" ]; then
-       find $line  -name \*.txt -size +470c -exec cp {} $DATE_DIR \;
+      # find $line  -name \*.txt -size +470c -exec cp {} $DATE_DIR \;
+      cp $(find $line  -name "*.txt" -exec grep -L "Failures: 0, Errors: 0" {} \;) $DATE_DIR
      fi
    done < $FILE_TO_READ
 
