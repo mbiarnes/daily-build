@@ -63,8 +63,8 @@ else
     scp jbpm-*-bin.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/jbpm-$SFVER-bin.zip
 # OPTAPLANNER
     scp optaplanner-distribution-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/optaplanner-distribution-$SFVER.zip
-# kie-server-services-*.war
-   scp kie-server-services-*.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-server-services-$SFVER.war
+# kie-server-services-*.jar
+   scp kie-server-services-*.jar drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-server-services-$SFVER.jar
 # org.drools.updatesite
     scp org.drools.updatesite-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/org.drools.updatesite-$SFVER.zip
     cd $SCRIPTS
