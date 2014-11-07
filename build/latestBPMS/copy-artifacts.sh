@@ -98,6 +98,9 @@ cp $ARTIFACT_DIR/new/* $ARTIFACT_DIR/
 cp -r $ARTIFACT_DIR/new/docs/* $ARTIFACT_DIR/docs
 cp -r $ARTIFACT_DIR/new/examples/* $ARTIFACT_DIR/examples
 
+# remove /new
+rm -rf $ARTIFACT_DIR/new
+
 cd $SCRIPTS
 ./copyFailedUnitTests.sh
 
