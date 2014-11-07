@@ -78,6 +78,14 @@ cp $REPO_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-
 cp $REPO_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-brms-layer/target/kie-eap-distributions-brms-layer-*.zip $ARTIFACT_DIR
 cp $REPO_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-brms-webapp/target/kie-eap-distributions-brms-webapp-*-kie-drools-wb.war $ARTIFACT_DIR  
 
+# drools examples
+mkdir $ARTIFACT_DIR/examples
+cp -r $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/download_jboss_org/ $ARTIFACT_DIR/examples
+rm -rf $ARTIFACT_DIR/examples/download_jboss_org/latest
+
+# kie-server-services-*.jar
+cp $REPO_DIR/droolsjbpm-integration/kie-server/kie-server-services/target/kie-server-services-*.jar $ARTIFACT_DIR
+
 # copy documentation to $ARTIFACT_DIR/doc
 mkdir $ARTIFACT_DIR/docs
 
