@@ -8,12 +8,14 @@
 
 JBPM_ARTIFACTS=/var/jbpm-artifacts
 
-echo "the version of the release is: "
-read releaseVersion
-echo " "
-echo "are the release artefacts of"
-echo "1) master branch (default)"
-echo "2) 6.2.x branch"
+echo ""
+echo "DEFINITION OF SCRIPT VARIABLES"
+echo ""
+echo "Target path where the artefacts will be copied to"
+echo "1) /var/jbpm-artifacts/master (default)"
+echo "2) /var/jbpm-artifacts/6.2.x"
+echo ""
+echo "Select 1 or 2"
 read whichBranch
 branch=master
 echo " "
@@ -22,15 +24,21 @@ case "$whichBranch" in
      ;;
 esac
 echo ""
-echo "which directory of /var/jbpm-artifacts/"$branch"/ should be deleted?"
-echo "http://hp-dl380pg8-01.lab.eng.brq.redhat.com/jbpm-artifacts/"$branch"/???"
+echo "Name of directory where release artefacts will reside"
+echo "i.e. 6.2.0.CR2"
+read releaseVersion
+echo " "
+echo "Directory of /var/jbpm-artifacts/"$branch"/ to be deleted"
+echo "(if there is no directory ignore this step by pressing enter)"
 read oldDir
 echo ""
-echo "Which is the directory of the repositories to copy:"
+echo "Source of created artefacts "
 echo "1) master (default)"
 echo "2) 6.1.x"
 echo "3) 6.2.x"
 echo "4) sync"
+echo ""
+echo "Select 1,2,3 or 4"
 read USR_DIR
 dir=droolsjbpm/master
 case "$USR_DIR" in
@@ -42,15 +50,25 @@ case "$USR_DIR" in
   ;;
 esac
 echo ""
-echo "The version of the release will be:" $releaseVersion
-echo "The artififacts will be copied to the "$branch" branch (http://hp-dl380pg8-01.lab.eng.brq.redhat.com/jbpm-artifacts/)"
-echo "The repository is located in /home/kiereleaseuser/"$dir
-echo "The old directory to delete is:" $JBPM_ARTIFACTS/$branch/$oldDir
+echo "The target path will be: "$JBPM_ARTIFACTS/$branch
+if [ -z "$oldDir" ]; then
+   echo "There is no directory to delete!"
+else
+   echo "The old directory to delete is: " $JBPM_ARTIFACTS/$branch/$oldDir
+fi
+echo "The artefacts will be copied to : "$JBPM_ARTIFACTS/$branch/$releaseVersion
+echo "The sources are located in: " $HOME/$dir
 echo ""
 echo -n "Is this ok? (Hit control-c if is not): "
 read ok
 
-rm -rf $JBPM_ARTIFACTS/$branch/$oldDir
+# removes the old directory onbly if it is available
+if [ -z "$oldDir" ]; then
+  :
+else
+  rm -rf $JBPM_ARTIFACTS/$branch/$oldDir
+fi
+
 mkdir $JBPM_ARTIFACTS/$branch/$releaseVersion
 
 REPO_DIR=$HOME/$dir
@@ -107,6 +125,12 @@ rm -rf $ARTIFACT_DIR/examples/download_jboss_org/latest
 
 # kie-server-services-*.jar
 cp $REPO_DIR/droolsjbpm-integration/kie-server/kie-server-services/target/kie-server-services-*.jar $ARTIFACT_DIR
+rm $ARTIFACT_DIR/kie-server-services-*-javadoc.jar
+rm $ARTIFACT_DIR/kie-server-services-*-sources.jar
+rm $ARTIFACT_DIR/kie-server-services-*-tests.jar
+
+#kie-server*.war
+cp $REPO_DIR/droolsjbpm-integration/kie-server/kie-server-distribution-wars/target/*.war $ARTIFACT_DIR
 
 # copy documentation to $ARTIFACT_DIR/doc
 mkdir $ARTIFACT_DIR/docs
