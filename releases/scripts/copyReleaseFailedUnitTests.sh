@@ -64,11 +64,11 @@ DATE_DIR=$FAILED/$CDD
    # Read file in lines
    while read line; do
      if [ -n "$line" ]; then
-       echo "$line" | cut -f4 -d ' ' >> URL.txt
+       echo "$line" | cut -f4 -d ' ' >> URL.log
      fi
    done < $FILE_TO_READ
 
-   FILE_TO_READ=$FILE_DIR/URL.txt
+   FILE_TO_READ=$FILE_DIR/URL.log
 
    while read line; do
      if [ -n "$line" ]; then
