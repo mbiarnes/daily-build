@@ -47,6 +47,8 @@ cp $GIT_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/t
 cp $GIT_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-was8.war $ARTIFACT_DIR/new
 cp $GIT_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-weblogic12.war $ARTIFACT_DIR/new
 cp $GIT_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-wildfly8.war $ARTIFACT_DIR/new
+#kie-server*.war
+cp $GIT_DIR/droolsjbpm-integration/kie-server/kie-server-distribution-wars/target/*.war $ARTIFACT_DIR/new
 # BRMS + modules
 cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp/target/kie-eap-distributions-bpms-webapp-*-kie-wb.war $ARTIFACT_DIR/new
 cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp/target/kie-eap-distributions-bpms-webapp-*-jbpm-dashbuilder.war $ARTIFACT_DIR/new

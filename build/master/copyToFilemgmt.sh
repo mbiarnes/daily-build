@@ -57,6 +57,10 @@ else
 # BRMS - module    
     scp kie-eap-distributions-brms-layer-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-eap-distributions-brms-layer-$SFVER.zip
     scp kie-eap-distributions-brms-webapp-*-kie-drools-wb.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-eap-distributions-brms-webapp-$SFVER-kie-drools-wb.war
+# KIE-SERVER
+   scp kie-server-*-webc.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-server-$SFVER-webc.war
+   scp kie-server-*-ee7.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-server-$SFVER-ee7.war
+   scp kie-server-*-ee6.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-server-$SFVER-ee6.war
 # JBPM
     scp jbpm-*-bin.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/jbpm-$SFVER-bin.zip
 # OPTAPLANNER
