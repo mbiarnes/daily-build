@@ -70,6 +70,8 @@ cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target
 rm -rf $ARTIFACT_DIR/new/examples/download_jboss_org/latest
 # kie-server-services-*.jar
 cp $GIT_DIR/droolsjbpm-integration/kie-server/kie-server-services/target/kie-server-services-*.jar $ARTIFACT_DIR/new
+rm $ARTIFACT_DIR/new/kie-server-services-*tests.jar
+rm $ARTIFACT_DIR/new/kie-server-services-*sources.jar
 # copy documentation to $ARTIFACT_DIR/new/docs
 mkdir $ARTIFACT_DIR/new/docs/drools-docs
 cp -r $GIT_DIR/droolsjbpm-knowledge/kie-docs/drools-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/new/docs/drools-docs

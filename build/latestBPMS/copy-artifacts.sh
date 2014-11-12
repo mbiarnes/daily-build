@@ -60,6 +60,8 @@ cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-e
 cp $GIT_DIR/optaplanner/optaplanner-distribution/target/optaplanner-distribution-*.zip $ARTIFACT_DIR/new
 # kie-server-services-*.jar
 cp $GIT_DIR/droolsjbpm-integration/kie-server/kie-server-services/target/kie-server-services-*.jar $ARTIFACT_DIR/new
+rm $ARTIFACT_DIR/new/kie-server-services-*tests.jar
+rm $ARTIFACT_DIR/new/kie-server-services-*sources.jar
 # JBPM
 cp $GIT_DIR/jbpm/jbpm-distribution/target/jbpm-*-bin.zip $ARTIFACT_DIR/new
 #org.drools.updatesite
@@ -79,7 +81,7 @@ mkdir $ARTIFACT_DIR/new/docs/optaplanner-docs
 cp -r $GIT_DIR/optaplanner/optaplanner-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/new/docs/optaplanner-docs
 mkdir $ARTIFACT_DIR/new/docs/optaplanner-javadoc
 cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/docs_jboss_org/*/optaplanner-javadoc/* $ARTIFACT_DIR/new/docs/optaplanner-javadoc
-mkdir $ARTIFACTS_DIR/new/docs/kie-api-javadoc
+mkdir $ARTIFACT_DIR/new/docs/kie-api-javadoc
 cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/docs_jboss_org/*/kie-api-javadoc/* $ARTIFACT_DIR/new/docs/kie-api-javadoc
 
 # checks if files are in $ARTIFACT_DIR/new/ and sends mail
