@@ -3,7 +3,7 @@
 # copies all scripts to the $TARGET_DIR
 
 
-TARGET_DIR=/tmp/kieScripts/master/
+TARGET_DIR=/tmp/kieScripts/master
 SCRIPTS=/home/kiereleaseuser/daily-build/build/master
 
 rm -rf $TARGET_DIR
