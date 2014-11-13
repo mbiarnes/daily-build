@@ -12,7 +12,7 @@ echo ""
 read RELARTDIR
 
 DEFAULT_DIR=/var/jbpm-artifacts/$BRANCH/$RELARTDIR
-JBOSS_HOME=$HOME/jboss-eap-6.3
+JBOSS_HOME=$HOME/wildfly-8.0.0.Final
 
 sleep 80
 

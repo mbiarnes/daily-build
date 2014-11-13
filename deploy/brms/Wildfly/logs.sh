@@ -1,6 +1,5 @@
 #!/bin/bash
 
-export JBOSS_HOME=$HOME/wildfly-8.1.0.Final
-
+export JBOSS_HOME=$HOME/jboss-eap-6.3
 tail -f $JBOSS_HOME/standalone/log/server.log
 

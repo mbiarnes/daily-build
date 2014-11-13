@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOG_DIR=/home/jbpm-6-0-deploy-as7/jboss-eap-6.3/standalone/log
+LOG_DIR=/home/jbpm-6-0-deploy-as7/wildfly-8.0.0.Final/standalone/log
 File=$LOG_DIR/server.log
 
 cd $LOG_DIR

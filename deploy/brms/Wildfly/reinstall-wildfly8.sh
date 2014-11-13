@@ -1,18 +1,18 @@
 #!/bin/bash
-PERMANENT=$HOME/scripts/config
-RESOURCES=$HOME/scripts/resources
-SCRIPTS=$HOME/scripts
-export JBOSS_HOME=$HOME/wildfly-8.0.0.Final
+export PERMANENT=$HOME/scripts/config
+export RESOURCES=$HOME/scripts/resources
+export SCRIPTS=$HOME/scripts
+export JBOSS_HOME=$HOME/wildfly-8.1.0.Final
 
 pkill -9 java
-killall -9 /usr/java/default/bin/java
+killall -9 /usr/java/latest/bin/java
 
 
-rm -rf $HOME/wildfly-8.0.0.Final
-rm $HOME/wildfly-bpms*.*
+rm -rf $HOME/wildfly-8.1.0.Final
+rm $HOME/wildfly-brms*.*
 rm $HOME/installwildfly*
 rm $HOME/jBoss*
-rm /var/www/theme/jbpm-6-0-deploy-as7/date.txt
+rm /var/www/theme/jbpm-deploy-brms-as/date.txt
 rm -rf $SCRIPTS/repositories
 rm -rf $SCRIPTS/.niogit
 rm -rf $SCRIPTS/.index

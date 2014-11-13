@@ -2,14 +2,14 @@
 #
 # Variable definition 
 export JAVA_HOME=/usr/java/latest
-export DEFAULT_DIR=/var/jbpm-artifacts/master
+export DEFAULT_DIR=/var/jbpm-artifacts/6.2.x/
 export JBOSS_HOME=$HOME/wildfly-8.1.0.Final
+
+sleep 80
 
 pkill -9 java
 killall -9 /usr/java/latest/bin/java
 
-sleep 15 
-
-# Copy deployments at EAP
+# Copy deployments at AS7
 cp $DEFAULT_DIR/jbpm-dashbuilder-*-wildfly8.war $JBOSS_HOME/standalone/deployments/dashbuilder.war
 

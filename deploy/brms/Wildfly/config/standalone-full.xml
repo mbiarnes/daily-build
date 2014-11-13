@@ -31,8 +31,8 @@
     </extensions>
         <system-properties>
           <property name="org.kie.demo" value="true" />
-          <property name="org.uberfire.nio.git.daemon.port" value="9622" />
-          <property name="org.uberfire.nio.git.ssh.port" value="9532" />
+          <property name="org.uberfire.nio.git.daemon.port" value="9730" />
+          <property name="org.uberfire.nio.git.ssh.port" value="9731" />
         </system-properties>
     <management>
         <security-realms>
@@ -143,7 +143,7 @@
         <subsystem xmlns="urn:jboss:domain:datasources:2.0">
             <datasources>
                 <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" use-java-context="true">
-                    <connection-url>jdbc:h2:~/wildfly-master-bpms;DB_CLOSE_DELAY=-1</connection-url>
+                    <connection-url>jdbc:h2:~/wildfly-brms;DB_CLOSE_DELAY=-1</connection-url>
                     <driver>h2</driver>
                     <security>
                         <user-name>sa</user-name>
@@ -397,8 +397,8 @@
                 <security-domain name="other" cache-type="default">
                     <authentication>
                         <login-module code="UsersRoles" flag="required">
-                            <module-option name="usersProperties" value="${jboss.server.config.dir}/bpms-users.properties"/>
-                            <module-option name="rolesProperties" value="${jboss.server.config.dir}/bpms-roles.properties"/>
+                            <module-option name="usersProperties" value="${jboss.server.config.dir}/brms-users.properties"/>
+                            <module-option name="rolesProperties" value="${jboss.server.config.dir}/brms-roles.properties"/>
                         </login-module>
                     </authentication>
                 </security-domain>
@@ -472,7 +472,7 @@
             <inet-address value="${jboss.bind.address.unsecure:0.0.0.0}"/>
         </interface>
     </interfaces>
-    <socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:130}">
+    <socket-binding-group name="standard-sockets" default-interface="public" port-offset="${jboss.socket.binding.port-offset:230}">
         <socket-binding name="management-http" interface="management" port="${jboss.management.http.port:9990}"/>
         <socket-binding name="management-https" interface="management" port="${jboss.management.https.port:9993}"/>
         <socket-binding name="ajp" port="${jboss.ajp.port:8009}"/>
