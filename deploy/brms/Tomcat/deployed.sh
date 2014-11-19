@@ -10,8 +10,8 @@ grep -w 'Error deploying web application archive\|startup failed due to previous
 if [ $? -eq 0 ]
 then
     # not deployed
-    echo "6.1.x: kie-drools-wb NOT DEPLOYED on Tomcat7"  | mail -s "Deployment on Tomcat7" -a catalina.out mbiarnes@redhat.com
+    echo "6.2.x: kie-drools-wb NOT DEPLOYED on Tomcat7"  | mail -s "Deployment on Tomcat7" -a catalina.out mbiarnes@redhat.com
 else
     # deployed
-    echo "6.1.x: kie-drools-wb DEPLOYED on Tomcat7"  | mail -s "Deployment on Tomcat7" mbiarnes@redhat.com 
+    echo "6.2.x: kie-drools-wb DEPLOYED on Tomcat7"  | mail -s "Deployment on Tomcat7" mbiarnes@redhat.com 
 fi

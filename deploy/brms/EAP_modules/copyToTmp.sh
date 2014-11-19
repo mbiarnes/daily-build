@@ -3,8 +3,8 @@
 # copies all scripts to the $TARGET_DIR
 
 
-TARGET_DIR=/tmp/kieScripts/deploy/6.1.x/EAP6.3_modules
-SCRIPTS=/home/kiereleaseuser/daily-build/deploy/6.1.x/EAP6.3_modules
+TARGET_DIR=/tmp/kieScripts/deploy/6.2.x/EAP6.3_modules
+SCRIPTS=/home/kiereleaseuser/daily-build/deploy/brms/EAP6.3_modules
 
 rm -rf $TARGET_DIR
 mkdir -p $TARGET_DIR

@@ -6,7 +6,7 @@ echo "Which is the directory for the release artifacts?"
 echo ""
 read RELARTDIR
 echo ""
-echo "Which is the branch of artifacts: master or 6.1.x?"
+echo "Which is the branch of artifacts: master or 6.2.x?"
 echo ""
 read BRANCH
 

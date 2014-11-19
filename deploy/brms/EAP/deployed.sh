@@ -10,8 +10,8 @@ grep -w 'Failed to start service jboss.deployment.unit\|started (with errors)' $
 if [ $? -eq 0 ]
 then
     # not deployed
-    echo "6.1.x: kie-drools-wb without modules NOT DEPLOYED on EAP 6.3"  | mail -s "Deployment on EAP 6.3" -a server.log mbiarnes@redhat.com
+    echo "6.2.x: kie-drools-wb without modules NOT DEPLOYED on EAP 6.3"  | mail -s "Deployment on EAP 6.3" -a server.log mbiarnes@redhat.com
 else
     # deployed
-    echo "6.1.x: kie-drools-wb without modules  DEPLOYED on EAP 6.3"  | mail -s "Deployment on EAP 6.3" mbiarnes@redhat.com
+    echo "6.2.x: kie-drools-wb without modules  DEPLOYED on EAP 6.3"  | mail -s "Deployment on EAP 6.3" mbiarnes@redhat.com
 fi

@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # Variable definition 
-export DEFAULT_DIR=/var/jbpm-artifacts/6.1.x/
+export DEFAULT_DIR=/var/jbpm-artifacts/6.2.x/
 export JBOSS_HOME=$HOME/jboss-eap-6.3
 export TEMP_DIR=WEB-INF
 export DEPLOY_DIR=$JBOSS_HOME/standalone/deployments
