@@ -67,8 +67,8 @@ cp $GIT_DIR/jbpm/jbpm-distribution/target/jbpm-*-bin.zip $ARTIFACT_DIR/new
 #org.drools.updatesite
 cp $GIT_DIR/droolsjbpm-tools/drools-eclipse/org.drools.updatesite/target/org.drools.updatesite-*.zip $ARTIFACT_DIR/new
 mkdir $ARTIFACT_DIR/new/examples
-cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/download_jboss_org/ $ARTIFACT_DIR/new/examples
-rm -rf $ARTIFACT_DIR/new/examples/download_jboss_org/latest
+cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/downloads_htdocs/ $ARTIFACT_DIR/new/examples
+# rm -rf $ARTIFACT_DIR/new/examples/download_jboss_org/latest
 
 # copy documentation to $ARTIFACT_DIR/new/docs
 mkdir $ARTIFACT_DIR/new/docs/drools-docs
@@ -80,9 +80,9 @@ cp -r $GIT_DIR/droolsjbpm-knowledge/kie-docs/dashbuilder-docs/target/docbook/pub
 mkdir $ARTIFACT_DIR/new/docs/optaplanner-docs
 cp -r $GIT_DIR/optaplanner/optaplanner-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/new/docs/optaplanner-docs
 mkdir $ARTIFACT_DIR/new/docs/optaplanner-javadoc
-cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/docs_jboss_org/*/optaplanner-javadoc/* $ARTIFACT_DIR/new/docs/optaplanner-javadoc
+cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/docs_htdocs/optaplanner/release/*/optaplanner-javadoc/* $ARTIFACT_DIR/new/docs/optaplanner-javadoc
 mkdir $ARTIFACT_DIR/new/docs/kie-api-javadoc
-cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/docs_jboss_org/*/kie-api-javadoc/* $ARTIFACT_DIR/new/docs/kie-api-javadoc
+cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/docs_htdocs/drools/release/*/kie-api-javadoc/* $ARTIFACT_DIR/new/docs/kie-api-javadoc
 
 # checks if files are in $ARTIFACT_DIR/new/ and sends mail
 cd $ARTIFACT_DIR/new

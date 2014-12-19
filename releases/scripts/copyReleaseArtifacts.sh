@@ -11,7 +11,7 @@ JBPM_ARTIFACTS=/var/jbpm-artifacts
 echo ""
 echo "DEFINITION OF SCRIPT VARIABLES"
 echo ""
-echo "Target path where the artefacts will be copied to"
+echo "Target path where the artifacts will be copied to"
 echo "1) /var/jbpm-artifacts/master (default)"
 echo "2) /var/jbpm-artifacts/6.2.x"
 echo ""
@@ -24,7 +24,7 @@ case "$whichBranch" in
      ;;
 esac
 echo ""
-echo "Name of directory where release artefacts will reside"
+echo "Name of directory where release artifacts will reside in"
 echo "i.e. 6.2.0.CR2"
 read releaseVersion
 echo " "
@@ -32,7 +32,7 @@ echo "Directory of /var/jbpm-artifacts/"$branch"/ to be deleted"
 echo "(if there is no directory ignore this step by pressing enter)"
 read oldDir
 echo ""
-echo "Source of created artefacts "
+echo "Source of created artifacts "
 echo "1) master (default)"
 echo "2) 6.1.x"
 echo "3) 6.2.x"
@@ -56,13 +56,13 @@ if [ -z "$oldDir" ]; then
 else
    echo "The old directory to delete is: " $JBPM_ARTIFACTS/$branch/$oldDir
 fi
-echo "The artefacts will be copied to : "$JBPM_ARTIFACTS/$branch/$releaseVersion
+echo "The artifacts will be copied to : "$JBPM_ARTIFACTS/$branch/$releaseVersion
 echo "The sources are located in: " $HOME/$dir
 echo ""
 echo -n "Is this ok? (Hit control-c if is not): "
 read ok
 
-# removes the old directory onbly if it is available
+# removes the old directory only if it is available
 if [ -z "$oldDir" ]; then
   :
 else
