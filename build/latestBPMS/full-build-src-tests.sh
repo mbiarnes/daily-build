@@ -8,7 +8,7 @@ export M2_HOME=/usr/local/maven
 export JAVA_HOME=/usr/java/default
 export PATH=$PATH:/usr/local/maven/bin
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
-export MAVEN_OPTS="-Xmx2024m -Xms1024m -XX:MaxPermSize=500m"
+export MAVEN_OPTS="-Xms512m -Xmx3096m -XX:MaxPermSize=1024m -Dgwt-plugin.localWorkers='3' -XX:+UseConcMarkSweepGC -XX:-UseGCOverheadLimit"
 
 cd $GIT_DIR/droolsjbpm-build-bootstrap/script
 ./mvn-all.sh clean install -Dfull -Pintegration-tests -Dmaven.test.failure.ignore=true >> build-6-2.log 2>&1
