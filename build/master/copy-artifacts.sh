@@ -52,12 +52,12 @@ cp $GIT_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/t
 #kie-server*.war
 cp $GIT_DIR/droolsjbpm-integration/kie-server/kie-server-distribution-wars/target/*.war $ARTIFACT_DIR/new
 # BRMS + modules
-cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp/target/kie-eap-distributions-bpms-webapp-*-kie-wb.war $ARTIFACT_DIR/new
-cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp/target/kie-eap-distributions-bpms-webapp-*-jbpm-dashbuilder.war $ARTIFACT_DIR/new
-cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-layer/target/kie-eap-distributions-bpms-layer-*.zip $ARTIFACT_DIR/new
+#cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp/target/kie-eap-distributions-bpms-webapp-*-kie-wb.war $ARTIFACT_DIR/new
+#cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp/target/kie-eap-distributions-bpms-webapp-*-jbpm-dashbuilder.war $ARTIFACT_DIR/new
+#cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-layer/target/kie-eap-distributions-bpms-layer-*.zip $ARTIFACT_DIR/new
 # BPMS + modules
-cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-brms-webapp/target/kie-eap-distributions-brms-webapp-*-kie-drools-wb.war $ARTIFACT_DIR/new
-cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-brms-layer/target/kie-eap-distributions-brms-layer-*.zip $ARTIFACT_DIR/new
+#cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-brms-webapp/target/kie-eap-distributions-brms-webapp-*-kie-drools-wb.war $ARTIFACT_DIR/new
+#cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-brms-layer/target/kie-eap-distributions-brms-layer-*.zip $ARTIFACT_DIR/new
 # Optaplanner
 cp $GIT_DIR/optaplanner/optaplanner-distribution/target/optaplanner-distribution-*.zip $ARTIFACT_DIR/new
 # JBPM
@@ -88,7 +88,7 @@ cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target
 
 # checks if files are in $ARTIFACT_DIR/new and sends mails
 cd $ARTIFACT_DIR/new
-if [ -e 'kie-drools-wb-'*'-wildfly8.war' ] && [ -e 'kie-eap-distributions-brms-webapp-'*'-kie-drools-wb.war' ] ; then
+if [ -e 'kie-drools-wb-'*'-weblogic12.war' ]  ; then
 echo "Build successful"  | mail -s "[JBPM master BUILD] BUILD SUCCESS" mbiarnes@redhat.com etirelli@redhat.com kverlaen@redhat.com mrietvel@redhat.com
 
 # cleanup $ARTIFACT_DIR/
@@ -118,12 +118,12 @@ cd $SCRIPTS
 touch copyToFilemgmt.txt
 echo copyToFilemgmt >> copyToFilemgmt.txt
 
-export SKINNY_DIR=$HOME/GIT/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp/target
+#export SKINNY_DIR=$HOME/GIT/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp/target
 
-cd $SKINNY_DIR
-   if [ ! -f 'kie-eap-distributions-bpms-webapp-'*'-kie-wb.war' ] && [ ! -f 'kie-eap-distributions-bpms-webapp-'*'-jbpm-dashbuilder.war' ] ; then
-     echo "kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp didn't build"  | mail -s "no skinny wars" mbiarnes@redhat.com
-   fi
+#cd $SKINNY_DIR
+#   if [ ! -f 'kie-eap-distributions-bpms-webapp-'*'-kie-wb.war' ] && [ ! -f 'kie-eap-distributions-bpms-webapp-'*'-jbpm-dashbuilder.war' ] ; then
+#     echo "kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-eap-distributions-bpms-webapp didn't build"  | mail -s "no skinny wars" mbiarnes@redhat.com
+#   fi
 
 else
 
