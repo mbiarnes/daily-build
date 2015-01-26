@@ -10,5 +10,5 @@ pkill -9 java
 killall -9 /usr/java/default/bin/java
 
 # Copy deployments to EAP
-cp $DEFAULT_DIR/jbpm-dashbuilder-*-eap6_3.war $JBOSS_HOME/standalone/deployments
+cp $DEFAULT_DIR/jbpm-dashbuilder-*-eap6_4.war $JBOSS_HOME/standalone/deployments
 
