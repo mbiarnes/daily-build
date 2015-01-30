@@ -26,6 +26,7 @@ git clone https://github.com/droolsjbpm/kie-wb-common.git
 git clone https://github.com/droolsjbpm/drools-wb.git
 git clone https://github.com/droolsjbpm/jbpm-dashboard.git
 git clone https://github.com/droolsjbpm/kie-uberfire-extensions.git
+git clone https://github.com/jboss-integration/fuse-bxms-integ.git
 
 #
 # CHECKS OUT TO THE RIGHT 6.2.x BRANCHES
