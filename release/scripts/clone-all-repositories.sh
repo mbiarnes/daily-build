@@ -18,3 +18,4 @@ git clone git@github.com:droolsjbpm/kie-wb-common.git
 git clone git@github.com:droolsjbpm/kie-uberfire-extensions.git
 git clone git@github.com:droolsjbpm/drools-wb.git
 git clone git@github.com:droolsjbpm/jbpm-dashboard.git
+git clone git@github.com:jboss-integration/fuse-bxms-integ.git
