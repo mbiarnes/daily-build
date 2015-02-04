@@ -64,12 +64,10 @@ rm $ARTIFACT_DIR/new/kie-server-services-*tests.jar
 rm $ARTIFACT_DIR/new/kie-server-services-*sources.jar
 # JBPM
 cp $GIT_DIR/jbpm/jbpm-distribution/target/jbpm-*-bin.zip $ARTIFACT_DIR/new
-#org.drools.updatesite
-cp $GIT_DIR/droolsjbpm-tools/drools-eclipse/org.drools.updatesite/target/org.drools.updatesite-*.zip $ARTIFACT_DIR/new
+# drools examples
 mkdir $ARTIFACT_DIR/new/examples
-cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/downloads_htdocs/ $ARTIFACT_DIR/new/examples
-# rm -rf $ARTIFACT_DIR/new/examples/download_jboss_org/latest
-
+cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/downloads_htdocs/drools/release/*/*.zip $ARTIFACT_DIR/new/examples
+cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/downloads_htdocs/optaplanner/release/*/*.zip $ARTIFACT_DIR/new/examples
 # copy documentation to $ARTIFACT_DIR/new/docs
 mkdir $ARTIFACT_DIR/new/docs/drools-docs
 cp -r $GIT_DIR/droolsjbpm-knowledge/kie-docs/drools-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/new/docs/drools-docs
