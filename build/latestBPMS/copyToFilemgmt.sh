@@ -57,12 +57,12 @@ scp kie-drools-wb-*-wildfly8.war drools@filemgmt.jboss.org:/downloads_htdocs/dro
 scp kie-drools-wb-*-weblogic12.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-drools-wb-$SFVER-weblogic12.war
 
 # BPMS + modules   
-#scp kie-eap-distributions-bpms-layer-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-eap-distributions-bpms-layer-$SFVER.zip
+scp kie-eap-distributions-bpms-layer-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-eap-distributions-bpms-layer-$SFVER.zip
 #scp kie-eap-distributions-bpms-webapp-*-kie-wb.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-eap-distributions-bpms-webapp-$SFVER-kie-wb.war
 #scp kie-eap-distributions-bpms-webapp-*-jbpm-dashbuilder.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-eap-distributions-bpms-webapp-$SFVER-jbpm-dashbuilder.war
 
 # BRMS - module    
-#scp kie-eap-distributions-brms-layer-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-eap-distributions-brms-layer-$SFVER.zip
+scp kie-eap-distributions-brms-layer-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-eap-distributions-brms-layer-$SFVER.zip
 #scp kie-eap-distributions-brms-webapp-*-kie-drools-wb.war drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-eap-distributions-brms-webapp-$SFVER-kie-drools-wb.war
 
 # KIE-SERVER
@@ -75,6 +75,9 @@ scp jbpm-*-bin.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/sn
 
 # OPTAPLANNER
 scp optaplanner-distribution-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/optaplanner-distribution-$SFVER.zip
+
+# drools-wb-jcr2vfs-distribution-*.zip
+scp drools-wb-jcr2vfs-distribution-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/drools-wb-jcr2vfs-distribution-$SFVER.zip
 
 # kie-server-services-*.jar
 scp kie-server-services-*.jar drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-server-services-$SFVER.jar
