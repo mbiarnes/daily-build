@@ -18,3 +18,11 @@ cp $DEFAULT_DIR/kie-drools-wb-*-eap6_4.war $JBOSS_HOME/standalone/deployments/ki
 cd $HOME/scripts
 
 $JBOSS_HOME/bin/standalone.sh --server-config=standalone-full.xml&
+
+sleep 30
+
+cd $HOME
+date > /var/www/theme/jbpm-deploy-brms-eap/date.txt
+mv install.log installEAP.log
+cp $JBOSS_HOME/standalone/log/server.log .
+mv server.log jBossServer.log
