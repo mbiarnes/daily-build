@@ -1,7 +1,8 @@
 #!/bin/bash
-PERMANENT=$HOME/scripts/config
-SCRIPTS=$HOME/scripts/
+export PERMANENT=$HOME/scripts/config
+export SCRIPTS=$HOME/scripts/
 export TOMCAT_HOME=$HOME/apache-tomcat-7.0.42
+export ARTIFACTS_DIR=/var/jbpm-artifacts/6.2.x
 
 pkill -9 java
 killall -9 /usr/java/default/bin/java
@@ -30,5 +31,8 @@ cp $PERMANENT/resources.properties $TOMCAT_HOME/conf
 cp $PERMANENT/setenv.sh $TOMCAT_HOME/bin
 cp $PERMANENT/server.xml $TOMCAT_HOME/conf
 cp $PERMANENT/tomcat-users.xml $TOMCAT_HOME/conf
+
+#add kie-tomcat-intengration
+cp $ARTIFACTS_DIR/kie-tomcat-integration-*.jar $TOMCAT_HOME/lib
 
 
