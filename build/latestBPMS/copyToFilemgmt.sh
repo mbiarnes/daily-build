@@ -80,7 +80,10 @@ scp optaplanner-distribution-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/d
 scp drools-wb-jcr2vfs-distribution-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/drools-wb-jcr2vfs-distribution-$SFVER.zip
 
 # kie-server-services-*.jar
-scp kie-server-services-*.jar drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-server-services-$SFVER.jar
+scp kie-server-services-*.jar drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-server-services-$SFVER.jar
+
+# kie-tomcat-integration
+scp kie-tomcat-integration-*.jar drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/kie-tomcat-integration-$SFVER.jar
 
 # org.drools.updatesite
 scp org.drools.updatesite-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/6.2.x/org.drools.updatesite-$SFVER.zip
