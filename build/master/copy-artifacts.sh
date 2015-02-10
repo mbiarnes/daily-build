@@ -76,6 +76,9 @@ rm $ARTIFACT_DIR/new/kie-server-services-*tests.jar
 rm $ARTIFACT_DIR/new/kie-server-services-*sources.jar
 # kie-tomcat-integration
 cp $GIT_DIR/kie-wb-distributions/kie-tomcat-integration/target/kie-tomcat-integration-*.jar $ARTIFACT_DIR/new
+rm $ARTIFACT_DIR/new/kie-tomcat-integration-*tests.jar
+rm $ARTIFACT_DIR/new/kie-tomcat-integration-*sources.jar
+rm $ARTIFACT_DIR/new/kie-tomcat-integration-*javadoc.jar
 # copy documentation to $ARTIFACT_DIR/new/docs
 mkdir $ARTIFACT_DIR/new/docs/drools-docs
 cp -r $GIT_DIR/droolsjbpm-knowledge/kie-docs/drools-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/new/docs/drools-docs

@@ -153,6 +153,12 @@ scp $REPO_DIR/drools-wb/drools-wb-jcr2vfs-migration/drools-wb-jcr2vfs-distributi
 ssh $REMOTE_USER$REMOTE_SERVER "cd "$dir"/"$releaseV"; rm kie-server-services-*-javadoc.jar"
 ssh $REMOTE_USER$REMOTE_SERVER "cd "$dir"/"$releaseV"; rm kie-server-services-*-sources.jar"
 ssh $REMOTE_USER$REMOTE_SERVER "cd "$dir"/"$releaseV"; rm kie-server-services-*-tests.jar"
+ssh $REMOTE_USER$REMOTE_SERVER "cd "$dir"/"$releaseV"; rm kie-tomcat-integration-*-javadoc.jar"
+ssh $REMOTE_USER$REMOTE_SERVER "cd "$dir"/"$releaseV"; rm kie-tomcat-integration-*-sources.jar"
+ssh $REMOTE_USER$REMOTE_SERVER "cd "$dir"/"$releaseV"; rm kie-tomcat-integration-*-tests.jar"
+
+
+
 
 # copy documentation
 
