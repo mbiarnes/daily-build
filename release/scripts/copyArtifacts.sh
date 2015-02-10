@@ -128,7 +128,7 @@ scp $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/
 scp $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/downloads_htdocs/drools/release/*/drools-distribution-*.zip $ARTIFACT_DIR\ $dir/$releaseV/examples
 
 # kie-tomcat-integration
-scp $REPO_DIR/kie-wb-distributions/kie-tomcat-integration/kie-tomcat-integration-*.jar $ARTIFACT_DIR\ $dir/$releaseV
+scp $REPO_DIR/kie-wb-distributions/kie-tomcat-integration/target/kie-tomcat-integration-*.jar $ARTIFACT_DIR\ $dir/$releaseV
 
 # copy examples to $HOME/RELEASE/<release>/drools-uber-distribution
 
