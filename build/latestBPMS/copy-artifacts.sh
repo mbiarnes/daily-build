@@ -72,6 +72,8 @@ cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target
 cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/downloads_htdocs/optaplanner/release/*/*.zip $ARTIFACT_DIR/new/examples
 # kie-tomcat-integration
 cp $GIT_DIR/kie-wb-distributions/kie-tomcat-integration/target/kie-tomcat-integration-*.jar $ARTIFACT_DIR/new
+# org.drools.updatesite
+cp $GIT_DIR/droolsjbpm-tools/drools-eclipse/org.drools.updatesite/target/org.drools.updatesite-*.zip $ARTIFACT_DIR/new
 
 # copy documentation to $ARTIFACT_DIR/new/docs
 mkdir $ARTIFACT_DIR/new/docs/drools-docs
