@@ -142,6 +142,9 @@ cp $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/d
 # kie-server-services-*.jar
 scp $REPO_DIR/droolsjbpm-integration/kie-server/kie-server-services/target/kie-server-services-*.jar $ARTIFACT_DIR\ $dir/$releaseV
 
+#kie-server-distribution-*.zip
+scp $REPO_DIR/droolsjbpm-integration/kie-server/kie-server-distribution/target/kie-server-distribution-*.zip $ARTIFACT_DIR\ $dir/$releaseV
+
 #kie-server*.war
 scp $REPO_DIR/droolsjbpm-integration/kie-server/kie-server-distribution-wars/target/*.war $ARTIFACT_DIR\ $dir/$releaseV
 

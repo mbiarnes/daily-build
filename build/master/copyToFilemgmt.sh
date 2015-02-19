@@ -69,6 +69,8 @@ else
     scp drools-wb-jcr2vfs-distribution-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/drools-wb-jcr2vfs-distribution-$SFVER.zip 
 # kie-server-services-*.jar
 scp kie-server-services-*.jar drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-server-services-$SFVER.jar
+# kie-server-distribution-*.zip
+scp kie-server-distribution-*.zip drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-server-distribution-$SFVER.zip
 # kie-tomcat-integration
 scp kie-tomcat-integration-*.jar drools@filemgmt.jboss.org:/downloads_htdocs/drools/release/snapshot/master/kie-tomcat-integration-$SFVER.jar
 # org.drools.updatesite

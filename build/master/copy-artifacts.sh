@@ -74,6 +74,8 @@ cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target
 cp $GIT_DIR/droolsjbpm-integration/kie-server/kie-server-services/target/kie-server-services-*.jar $ARTIFACT_DIR/new
 rm $ARTIFACT_DIR/new/kie-server-services-*tests.jar
 rm $ARTIFACT_DIR/new/kie-server-services-*sources.jar
+# kie-server.distribution-*.zip
+cp $GIT_DIR/droolsjbpm-integration/kie-server/kie-server-distribution/target/kie-server-distribution-*.zip $ARTIFACT_DIR/new
 # kie-tomcat-integration
 cp $GIT_DIR/kie-wb-distributions/kie-tomcat-integration/target/kie-tomcat-integration-*.jar $ARTIFACT_DIR/new
 rm $ARTIFACT_DIR/new/kie-tomcat-integration-*tests.jar

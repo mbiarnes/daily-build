@@ -30,9 +30,10 @@ done
 
 DOCS=doc_htdocs
 BINARIES=downloads_htdocs
-FROM_DROOLS=$HOME/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/
-FROM_OPTAPLANNER=$HOME/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/
-FROM_KIE=$HOME/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution/target
+FROM_DROOLS=$HOME/droolsjbpm/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/
+FROM_OPTAPLANNER=$HOME/droolsjbpm/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/
+FROM_KIE=$HOME/droolsjbpm/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution/target
+FROM_KIE_SERVER=$HOME/droolsjbpm/droolsjbpm-integration/kie-server/kie-server-distribution/target
 TO_DROOLS=drools@filemgmt.jboss.org:
 TO_OPTAPLANNER=optaplanner@filemgmt.jboss.org:
 
@@ -57,6 +58,7 @@ scp -r $FROM_DROOLS/$BINARIES/drools/release/*/org.drools.updatesite $TO_DROOLS/
 scp $FROM_DROOLS/$BINARIES/drools/release/*/drools*.zip $TO_DROOLS/downloads_htdocs/drools/release/$releaseV
 scp $FROM_KIE/kie*.zip $TO_DROOLS/downloads_htdocs/drools/release/$releaseV
 scp $FROM_OPTAPLANNER/$BINARIES/optaplanner/release/$releaseV/optaplanner*.zip $TO_OPTAPLANNER/downloads_htdocs/optaplanner/release/$releaseV
+scp $FROM_KIE_SERVER/kie_server-distribution-*.zip $TO_DROOLS/download_htdocs/drools/release/$releaseV
 
 # clean up
 
