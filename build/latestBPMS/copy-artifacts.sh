@@ -62,10 +62,14 @@ cp $GIT_DIR/kie-wb-distributions/kie-eap-integration/kie-eap-distributions/kie-e
 cp $GIT_DIR/optaplanner/optaplanner-distribution/target/optaplanner-distribution-*.zip $ARTIFACT_DIR/new
 # drools-wb-jcr2vfs-distribution-*.zip
 cp $GIT_DIR/drools-wb/drools-wb-jcr2vfs-migration/drools-wb-jcr2vfs-distribution/target/drools-wb-jcr2vfs-distribution-*.zip $ARTIFACT_DIR/new
+# kie-server*.war
+cp $GIT_DIR/droolsjbpm-integration/kie-server-parent/kie-server/target/kie-server*.war $ARTIFACT_DIR/new
 # kie-server-services-*.jar
-cp $GIT_DIR/droolsjbpm-integration/kie-server/kie-server-services/target/kie-server-services-*.jar $ARTIFACT_DIR/new
+cp $GIT_DIR/droolsjbpm-integration/kie-server-parent/kie-server-services/target/kie-server-services-*.jar $ARTIFACT_DIR/new
 rm $ARTIFACT_DIR/new/kie-server-services-*tests.jar
 rm $ARTIFACT_DIR/new/kie-server-services-*sources.jar
+# kie-server.distribution-*.zip
+cp $GIT_DIR/droolsjbpm-integration/kie-server-parent/kie-server-distribution/target/kie-server-distribution-*.zip $ARTIFACT_DIR/new
 # JBPM
 cp $GIT_DIR/jbpm/jbpm-distribution/target/jbpm-*-bin.zip $ARTIFACT_DIR/new
 # drools examples

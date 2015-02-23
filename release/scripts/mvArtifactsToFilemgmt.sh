@@ -33,7 +33,7 @@ BINARIES=downloads_htdocs
 FROM_DROOLS=$HOME/droolsjbpm/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/
 FROM_OPTAPLANNER=$HOME/droolsjbpm/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/
 FROM_KIE=$HOME/droolsjbpm/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution/target
-FROM_KIE_SERVER=$HOME/droolsjbpm/droolsjbpm-integration/kie-server/kie-server-distribution/target
+FROM_KIE_SERVER=$HOME/droolsjbpm/droolsjbpm-integration/kie-server-parent/kie-server-distribution/target
 TO_DROOLS=drools@filemgmt.jboss.org:
 TO_OPTAPLANNER=optaplanner@filemgmt.jboss.org:
 

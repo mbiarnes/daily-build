@@ -140,13 +140,13 @@ cp $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/d
 cp $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/downloads_htdocs/optaplanner/release/*/optaplanner-distribution-*.zip $EXAMPLE_DIR
 
 # kie-server-services-*.jar
-scp $REPO_DIR/droolsjbpm-integration/kie-server/kie-server-services/target/kie-server-services-*.jar $ARTIFACT_DIR\ $dir/$releaseV
+scp $REPO_DIR/droolsjbpm-integration/kie-server-parent/kie-server-services/target/kie-server-services-*.jar $ARTIFACT_DIR\ $dir/$releaseV
 
 #kie-server-distribution-*.zip
-scp $REPO_DIR/droolsjbpm-integration/kie-server/kie-server-distribution/target/kie-server-distribution-*.zip $ARTIFACT_DIR\ $dir/$releaseV
+scp $REPO_DIR/droolsjbpm-integration/kie-server-parent/kie-server-distribution/target/kie-server-distribution-*.zip $ARTIFACT_DIR\ $dir/$releaseV
 
 #kie-server*.war
-scp $REPO_DIR/droolsjbpm-integration/kie-server/kie-server-distribution-wars/target/*.war $ARTIFACT_DIR\ $dir/$releaseV
+scp $REPO_DIR/droolsjbpm-integration/kie-server-parent/kie-server/target/kie-server*.war $ARTIFACT_DIR\ $dir/$releaseV
 
 # drools-wb-jcr2vfs-distribution-*.zip
 scp $REPO_DIR/drools-wb/drools-wb-jcr2vfs-migration/drools-wb-jcr2vfs-distribution/target/drools-wb-jcr2vfs-distribution-*.zip $ARTIFACT_DIR\ $dir/$releaseV
