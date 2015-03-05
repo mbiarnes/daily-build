@@ -54,7 +54,7 @@ scp -r $FROM_DROOLS/$DOCS/drools/release/*/drools-docs $TO_DROOLS/docs_htdocs/dr
 scp -r $FROM_DROOLS/$DOCS/drools/release/*/kie-api-javadoc $TO_DROOLS/docs_htdocs/drools/release/$releaseV
 scp -r $FROM_OPTAPLANNER/$DOCS/optaplanner/release/*/optaplanner-docs $TO_OPTAPLANNER/docs_htdocs/optaplanner/release/$releaseV
 scp -r $FROM_OPTAPLANNER/$DOCS/optaplanner/release/*/optaplanner-javadoc $TO_OPTAPLANNER/docs_htdocs/optaplanner/release/$releaseV
-scp -r $FROM_DROOLS/$BINARIES/drools/release/*/org.drools.updatesite $TO_DROOLS/download_htdocs/drools/release/$releaseV
+scp -r $FROM_DROOLS/$BINARIES/drools/release/*/org.drools.updatesite $TO_DROOLS/downloads_htdocs/drools/release/$releaseV
 scp $FROM_DROOLS/$BINARIES/drools/release/*/drools*.zip $TO_DROOLS/downloads_htdocs/drools/release/$releaseV
 scp $FROM_KIE/kie*.zip $TO_DROOLS/downloads_htdocs/drools/release/$releaseV
 scp $FROM_OPTAPLANNER/$BINARIES/optaplanner/release/$releaseV/optaplanner*.zip $TO_OPTAPLANNER/downloads_htdocs/optaplanner/release/$releaseV
