@@ -28,7 +28,7 @@ Please answer yes or no   " yn
     esac
 done
 
-DOCS=doc_htdocs
+DOCS=docs_htdocs
 BINARIES=downloads_htdocs
 FROM_DROOLS=$HOME/droolsjbpm/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/
 FROM_OPTAPLANNER=$HOME/droolsjbpm/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/
@@ -58,7 +58,7 @@ scp -r $FROM_DROOLS/$BINARIES/drools/release/*/org.drools.updatesite $TO_DROOLS/
 scp $FROM_DROOLS/$BINARIES/drools/release/*/drools*.zip $TO_DROOLS/downloads_htdocs/drools/release/$releaseV
 scp $FROM_KIE/kie*.zip $TO_DROOLS/downloads_htdocs/drools/release/$releaseV
 scp $FROM_OPTAPLANNER/$BINARIES/optaplanner/release/$releaseV/optaplanner*.zip $TO_OPTAPLANNER/downloads_htdocs/optaplanner/release/$releaseV
-scp $FROM_KIE_SERVER/kie_server-distribution-*.zip $TO_DROOLS/download_htdocs/drools/release/$releaseV
+scp $FROM_KIE_SERVER/kie-server-distribution-*.zip $TO_DROOLS/download_htdocs/drools/release/$releaseV
 
 # clean up
 
