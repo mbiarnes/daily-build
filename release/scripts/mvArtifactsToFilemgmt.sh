@@ -58,9 +58,8 @@ scp -r $FROM_DROOLS/$BINARIES/drools/release/*/org.drools.updatesite $TO_DROOLS/
 scp $FROM_DROOLS/$BINARIES/drools/release/*/drools*.zip $TO_DROOLS/downloads_htdocs/drools/release/$releaseV
 scp $FROM_KIE/kie*.zip $TO_DROOLS/downloads_htdocs/drools/release/$releaseV
 scp $FROM_OPTAPLANNER/$BINARIES/optaplanner/release/$releaseV/optaplanner*.zip $TO_OPTAPLANNER/downloads_htdocs/optaplanner/release/$releaseV
-scp $FROM_KIE_SERVER/kie-server-distribution-*.zip $TO_DROOLS/download_htdocs/drools/release/$releaseV
+scp $FROM_KIE_SERVER/kie-server-distribution-*.zip $TO_DROOLS/downloads_htdocs/drools/release/$releaseV
 
 # clean up
-
 rm upload
 
