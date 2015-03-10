@@ -11,7 +11,6 @@ export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 export MAVEN_OPTS="-Xms512m -Xmx3096m -XX:MaxPermSize=1024m -Dgwt-plugin.localWorkers='3' -XX:+UseConcMarkSweepGC -XX:-UseGCOverheadLimit"
 
 cd $GIT_DIR/droolsjbpm-build-bootstrap/script
-#./mvn-all.sh clean deploy -Dfull -Dmaven.test.failure.ignore=true >> build-master.log 2>&1
 ./mvn-all.sh clean install -Dfull  -Dmaven.test.failure.ignore=true >> build-master.log 2>&1
 
 # removes all created /tmp/ files by user
