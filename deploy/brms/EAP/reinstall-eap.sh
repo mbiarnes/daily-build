@@ -1,7 +1,7 @@
 #!/bin/bash
 PERMANENT=$HOME/scripts/config
 RESOURCES=$HOME/scripts/resources
-export JBOSS_HOME=$HOME/jboss-eap-6.3
+export JBOSS_HOME=$HOME/jboss-eap-6.4
 SCRIPTS=$HOME/scripts
 
 cd $SCRIPTS
@@ -10,7 +10,7 @@ pkill -9 java
 kilall -9 /usr/java/default/bin/java
 
 
-rm -rf $HOME/jboss-eap-6.3
+rm -rf $HOME/jboss-eap-6.4
 rm $HOME/eap-brms*.*
 rm $HOME/installEAP*
 rm $HOME/jBoss*
