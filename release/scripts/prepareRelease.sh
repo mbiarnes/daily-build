@@ -11,6 +11,7 @@ rm -rf $M2_DIR/guvnor
 rm -rf $M2_DIR/uberfire
 rm -rf $M2_DIR/optaplanner
 rm -rf $M2_DIR/dashbuilder
+rm -rf $M2_DIR/fuse-bxms*
 echo "all relevant repositories in "$M2_DIR" were removed" 
 
 # removes all temporary files from kiereleaseuser
