@@ -13,9 +13,13 @@ export SCRIPTS=$HOME/scripts
 export ARTIFACT_DIR=/var/jbpm-artifacts/6.2.x
 
 # cleanup of $ARTIFACT_DIR/new where all built artifacts will be copied to
-rm -rf $ARTIFACT_DIR/new
+if [ -d "$ARTIFACT_DIR"/new ]; then
+   rm -rf $ARTIFACT_DIR/new
+fi
+
 mkdir $ARTIFACT_DIR/new
 mkdir $ARTIFACT_DIR/new/docs
+mkdir $ARTIFACT_DIR/new/examples
 
 # copy all artifacts to $ARTIFACT_DIR/new
 
@@ -58,7 +62,6 @@ cp $GIT_DIR/droolsjbpm-integration/kie-server-parent/kie-server-distribution/tar
 # JBPM
 cp $GIT_DIR/jbpm/jbpm-distribution/target/jbpm-*-bin.zip $ARTIFACT_DIR/new
 # drools examples
-mkdir $ARTIFACT_DIR/new/examples
 cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/downloads_htdocs/drools/release/*/*.zip $ARTIFACT_DIR/new/examples
 cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/downloads_htdocs/optaplanner/release/*/*.zip $ARTIFACT_DIR/new/examples
 # kie-tomcat-integration
