@@ -95,6 +95,7 @@ echo "Build successful"  | mail -s "[JBPM master BUILD] BUILD SUCCESS" mbiarnes@
 # cleanup $ARTIFACT_DIR/
 rm -rf $ARTIFACT_DIR/docs
 rm -rf $ARTIFACT_DIR/logs
+rm -rf $ARTIFACT_DIR/examples
 rm $ARTIFACT_DIR/*
 mkdir $ARTIFACT_DIR/logs
 mkdir $ARTIFACT_DIR/docs
