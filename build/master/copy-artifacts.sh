@@ -75,11 +75,11 @@ rm $ARTIFACT_DIR/new/kie-tomcat-integration-*sources.jar
 rm $ARTIFACT_DIR/new/kie-tomcat-integration-*javadoc.jar
 # copy documentation to $ARTIFACT_DIR/new/docs
 mkdir $ARTIFACT_DIR/new/docs/drools-docs
-cp -r $GIT_DIR/droolsjbpm-knowledge/kie-docs/drools-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/new/docs/drools-docs
+cp -r $GIT_DIR/kie-wb-distributions/kie-docs/drools-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/new/docs/drools-docs
 mkdir $ARTIFACT_DIR/new/docs/jbpm-docs
-cp -r $GIT_DIR/droolsjbpm-knowledge/kie-docs/jbpm-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/new/docs/jbpm-docs
+cp -r $GIT_DIR/kie-wb-distributions/kie-docs/jbpm-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/new/docs/jbpm-docs
 mkdir $ARTIFACT_DIR/new/docs/dashbuilder-docs
-cp -r $GIT_DIR/droolsjbpm-knowledge/kie-docs/dashbuilder-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/new/docs/dashbuilder-docs
+cp -r $GIT_DIR/kie-wb-distributions/kie-docs/dashbuilder-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/new/docs/dashbuilder-docs
 mkdir $ARTIFACT_DIR/new/docs/optaplanner-docs
 cp -r $GIT_DIR/optaplanner/optaplanner-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/new/docs/optaplanner-docs
 mkdir $ARTIFACT_DIR/new/docs/optaplanner-javadoc
