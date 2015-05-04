@@ -3,11 +3,8 @@
 # Variable definition
  
 export GIT_DIR=$HOME/GIT
-export M2_HOME=/usr/local/maven
-export JAVA_HOME=/usr/java/default
-export PATH=$PATH:/usr/local/maven/bin
-export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
-export MAVEN_OPTS="-Xms512m -Xmx3096m -XX:MaxPermSize=1024m -Dgwt-plugin.localWorkers='3' -XX:+UseConcMarkSweepGC -XX:-UseGCOverheadLimit"
+
+source $HOME/.bashrc
 
 cd $GIT_DIR/droolsjbpm-build-bootstrap/script
 ./mvn-all.sh clean install -Dfull -DskipTests  > build-master.log 2>&1
