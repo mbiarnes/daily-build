@@ -122,6 +122,9 @@ echo copyToFilemgmt >> copyToFilemgmt.txt
 
 else
 
+  cd $SCRIPTS
+  ./copyFailedUnitTests.sh
+
   cd $BUILD_LOG
   gzip -r build-master.log
   echo "Build NOT successful, see attached file" | mail -s "[JBPM master BUILD] BUILD FAILURE" -a build-master.log.gz  mbiarnes@redhat.com etirelli@redhat.com kverlaen@redhat.com mrietvel@redhat.com

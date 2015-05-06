@@ -89,42 +89,45 @@ cp -r $GIT_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target
 # checks if files are in $ARTIFACT_DIR/new/ and sends mail
 cd $ARTIFACT_DIR/new
 if [ -e 'kie-drools-wb-'*'-weblogic12.war' ] ; then
-echo "Build successful"  | mail -s "[JBPM 6.2 BUILD] BUILD SUCCESS" mbiarnes@redhat.com  etirelli@redhat.com kverlaen@redhat.com
+  echo "Build successful"  | mail -s "[JBPM 6.2 BUILD] BUILD SUCCESS" mbiarnes@redhat.com  etirelli@redhat.com kverlaen@redhat.com
 
-# cleanup $ARTIFACT_DIR/
-rm -rf $ARTIFACT_DIR/docs
-rm -rf $ARTIFACT_DIR/logs
-rm -rf $ARTIFACT_DIR/examples
-rm $ARTIFACT_DIR/*
-mkdir $ARTIFACT_DIR/logs
-mkdir $ARTIFACT_DIR/docs
-mkdir $ARTIFACT_DIR/examples
+  # cleanup $ARTIFACT_DIR/
+  rm -rf $ARTIFACT_DIR/docs
+  rm -rf $ARTIFACT_DIR/logs
+  rm -rf $ARTIFACT_DIR/examples
+  rm $ARTIFACT_DIR/*
+  mkdir $ARTIFACT_DIR/logs
+  mkdir $ARTIFACT_DIR/docs
+  mkdir $ARTIFACT_DIR/examples
 
-# copies all artifacts from /new to /6.2.x if build was successful
-cp $ARTIFACT_DIR/new/* $ARTIFACT_DIR/
-cp -r $ARTIFACT_DIR/new/docs/* $ARTIFACT_DIR/docs
-cp -r $ARTIFACT_DIR/new/examples/* $ARTIFACT_DIR/examples
+  # copies all artifacts from /new to /6.2.x if build was successful
+  cp $ARTIFACT_DIR/new/* $ARTIFACT_DIR/
+  cp -r $ARTIFACT_DIR/new/docs/* $ARTIFACT_DIR/docs
+  cp -r $ARTIFACT_DIR/new/examples/* $ARTIFACT_DIR/examples
 
-# remove /new
-rm -rf $ARTIFACT_DIR/new
+  # remove /new
+  rm -rf $ARTIFACT_DIR/new
 
-cd $SCRIPTS
-./copyFailedUnitTests.sh
+  cd $SCRIPTS
+  ./copyFailedUnitTests.sh
 
-cd $BUILD_LOG
-gzip -r build-6-2.log
-mv $GIT_DIR/droolsjbpm-build-bootstrap/script/build-6-2* $ARTIFACT_DIR/logs
+  cd $BUILD_LOG
+  gzip -r build-6-2.log
+  mv $GIT_DIR/droolsjbpm-build-bootstrap/script/build-6-2* $ARTIFACT_DIR/logs
 
-cd $SCRIPTS
-touch copyToFilemgmt.txt
-echo copyToFilemgmt >> copyToFilemgmt.txt
+  cd $SCRIPTS
+  touch copyToFilemgmt.txt
+  echo copyToFilemgmt >> copyToFilemgmt.txt
 
 else
 
-cd $BUILD_LOG
-gzip -r build-6-2.log
-echo "Build NOT successful, see attached file" | mail -s "[JBPM 6.2 BUILD] BUILD FAILURE" -a build-6-2.log.gz  mbiarnes@redhat.com etirelli@redhat.com kverlaen@redhat.com
-mv $GIT_DIR/droolsjbpm-build-bootstrap/script/build-6-2* $ARTIFACT_DIR/logs
+  cd $SCRIPTS
+  ./copyFaileUnitTests.sh
+
+  cd $BUILD_LOG
+  gzip -r build-6-2.log
+  echo "Build NOT successful, see attached file" | mail -s "[JBPM 6.2 BUILD] BUILD FAILURE" -a build-6-2.log.gz  mbiarnes@redhat.com etirelli@redhat.com kverlaen@redhat.com
+  mv $GIT_DIR/droolsjbpm-build-bootstrap/script/build-6-2* $ARTIFACT_DIR/logs
 
 fi
 
