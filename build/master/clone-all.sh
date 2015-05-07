@@ -26,4 +26,4 @@ git clone https://github.com/droolsjbpm/drools.git
 git clone https://github.com/droolsjbpm/kie-wb-common.git
 git clone https://github.com/droolsjbpm/kie-uberfire-extensions.git
 git clone https://github.com/droolsjbpm/drools-wb.git
-git clone https://github.com/jboss-integration/fuse-bxms-integ.git
+git clone https://github.com/droolsjbpm/optaplanner-wb.git
