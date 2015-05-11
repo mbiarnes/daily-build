@@ -10,6 +10,9 @@ export PATH=$PATH:/usr/local/maven/bin
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 export MAVEN_OPTS="-Xms512m -Xmx3096m -XX:MaxPermSize=1024m -Dgwt-plugin.localWorkers='3' -XX:+UseConcMarkSweepGC -XX:-UseGCOverheadLimit"
 
+failedUnitTestsDir=/var/jbpm-artifacts/6.2.x/failedUnitTests
+rm -rf $failedUnitTestsDir/*
+
 cd $GIT_DIR/droolsjbpm-build-bootstrap/script
 ./mvn-all.sh clean install -Dfull -Pintegration-tests -Dmaven.test.failure.ignore=true >> build-6-2.log 2>&1
 
