@@ -38,16 +38,16 @@ cp $GIT_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-
 cp $GIT_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-eap6_4.war $ARTIFACT_DIR/new
 cp $GIT_DIR/jbpm-dashboard/jbpm-dashboard-distributions/target/jbpm-dashbuilder-*-weblogic12.war $ARTIFACT_DIR/new
 # BPMS
-cp $GIT_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-eap6_4.war $ARTIFACT_DIR/new
-cp $GIT_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-tomcat7.war $ARTIFACT_DIR/new
-cp $GIT_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-was8.war $ARTIFACT_DIR/new
-cp $GIT_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-weblogic12.war $ARTIFACT_DIR/new
+cp $GIT_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars-cdi1.0/target/kie-wb-*-eap6_4.war $ARTIFACT_DIR/new
+cp $GIT_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars-cdi1.0/target/kie-wb-*-tomcat7.war $ARTIFACT_DIR/new
+cp $GIT_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars-cdi1.0/target/kie-wb-*-was8.war $ARTIFACT_DIR/new
+cp $GIT_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars-cdi1.0/target/kie-wb-*-weblogic12.war $ARTIFACT_DIR/new
 cp $GIT_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-wildfly8.war $ARTIFACT_DIR/new
 # BRMS
-cp $GIT_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-eap6_4.war $ARTIFACT_DIR/new
-cp $GIT_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-tomcat7.war $ARTIFACT_DIR/new
-cp $GIT_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-was8.war $ARTIFACT_DIR/new
-cp $GIT_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-weblogic12.war $ARTIFACT_DIR/new
+cp $GIT_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars-cdi1.0/target/kie-drools-wb-*-eap6_4.war $ARTIFACT_DIR/new
+cp $GIT_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars-cdi1.0/target/kie-drools-wb-*-tomcat7.war $ARTIFACT_DIR/new
+cp $GIT_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars-cdi1.0/target/kie-drools-wb-*-was8.war $ARTIFACT_DIR/new
+cp $GIT_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars-cdi1.0/target/kie-drools-wb-*-weblogic12.war $ARTIFACT_DIR/new
 cp $GIT_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-wildfly8.war $ARTIFACT_DIR/new
 # drools-wb-jcr2vfs-distribution-*.zip
 cp $GIT_DIR/drools-wb/drools-wb-jcr2vfs-migration/drools-wb-jcr2vfs-distribution/target/drools-wb-jcr2vfs-distribution-*.zip $ARTIFACT_DIR/new
