@@ -31,6 +31,7 @@ git clone https://github.com/jboss-integration/fuse-bxms-integ.git
 #
 # CHECKS OUT TO THE RIGHT 6.2.x BRANCHES
 #
+cd $HOME/GIT/droolsjbpm-build-bootstrap
+git checkout 6.2.x
 
-./droolsjbpm-build-bootstrap/script/git-all.sh checkout 6.2.x
-
+./script/git-all.sh checkout 6.2.x
