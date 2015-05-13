@@ -8,11 +8,14 @@ cd $HOME/scripts
 # 02. clean the .m2
 ./clean-local-maven.sh
 
-# 03. build all repositories
+# 03. build third party reps
+./build-third-party.sh
+
+# 04. build all repositories
 ./full-build-src.sh
 
-# 04. copy all artifacts and send mail
+# 05. copy all artifacts and send mail
 ./copy-artifacts.sh 
 
-# 05. copy all artifacts to filemgmt
+# 06. copy all artifacts to filemgmt
 ./copyToFilemgmt.sh

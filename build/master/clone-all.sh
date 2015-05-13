@@ -27,3 +27,6 @@ git clone https://github.com/droolsjbpm/kie-wb-common.git
 git clone https://github.com/droolsjbpm/kie-uberfire-extensions.git
 git clone https://github.com/droolsjbpm/drools-wb.git
 git clone https://github.com/droolsjbpm/optaplanner-wb.git
+git clone https://github.com/uberfire/uberfire.git
+git clone https://github.com/uberfire/uberfire-extensions.git
+git clone https://github.com/dashbuilder/dashbuilder.git
