@@ -11,7 +11,4 @@ sleep 30
 
 cd $HOME
 date > /var/www/theme/jbpm-master-deploy-as7/date.txt
-mv install.log installwildfly.log
-cp $JBOSS_HOME/standalone/log/server.log .
-mv server.log jBossServer.log
 

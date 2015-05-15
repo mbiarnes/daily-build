@@ -10,10 +10,7 @@ killall -9 /usr/java/latest/bin/java
 
 rm -rf $HOME/wildfly-8.1.0.Final
 rm $HOME/wildfly-brms*.*
-rm $HOME/installwildfly*
-rm $HOME/jBoss*
 rm /var/www/theme/jbpm-deploy-brms-as/date.txt
-rm -rf $SCRIPTS/repositories
 rm -rf $SCRIPTS/.niogit
 rm -rf $SCRIPTS/.index
 rm -rf $SCRIPTS/.security

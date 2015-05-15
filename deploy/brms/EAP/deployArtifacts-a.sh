@@ -13,6 +13,3 @@ sleep 80
 
 cd $HOME
 date > /var/www/theme/jbpm-deploy-brms-eap/date.txt
-mv install.log installEAP.log
-cp $JBOSS_HOME/standalone/log/server.log .
-mv server.log jBossServer.log

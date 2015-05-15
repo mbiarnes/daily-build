@@ -12,10 +12,7 @@ kilall -9 /usr/java/default/bin/java
 
 rm -rf $HOME/jboss-eap-6.4
 rm $HOME/eap-bpms*.*
-rm $HOME/installEAP*
-rm $HOME/jBoss*
 rm /var/www/theme/jbpm-6-0-deploy-eap-6-1/date.txt
-rm -rf $SCRIPTS/repositories
 rm -rf $SCRIPTS/.niogit
 rm -rf $SCRIPTS/.index
 rm -rf $SCRIPTS/.security

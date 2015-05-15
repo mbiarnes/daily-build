@@ -13,11 +13,8 @@ rm -rf $HOME/jboss-eap-6.3
 rm -rf $HOME/Uninstaller
 rm $SCRIPTS/$OLDZIP
 rm $HOME/bpms-prod*.*
-rm $HOME/installProd*
-rm $HOME/jBoss*
 rm $SCRIPTS/jboss-bpms-*.zip
 rm /var/www/theme/bpms-prod-eap-6.1.1/date.txt
-rm -rf $SCRIPTS/repositories
 rm -rf $SCRIPTS/.niogit
 rm -rf $SCRIPTS/.index
 rm -rf $SCRIPTS/.security

@@ -11,10 +11,7 @@ sleep 10
 
 rm -rf $HOME/wildfly-8.1.0.Final
 rm $HOME/wildfly-*.*
-rm $HOME/installwildfly*
-rm $HOME/jBoss*
 rm -f /var/www/theme/jbpm-master-deploy-as7/date.txt
-rm -rf $SCRIPTS/repositories
 rm -rf $SCRIPTS/.niogit
 rm -rf $SCRIPTS/.index
 rm -rf $SCRIPTS/.security
