@@ -12,9 +12,7 @@ cp $DEFAULT_DIR/kie-drools-wb-*-tomcat7.war $TOMCAT_HOME/webapps/kie-drools-wb.w
 
 chmod 755 $TOMCAT_HOME/webapps/kie-drools-wb.war
 
-$TOMCAT_HOME/bin/startup.sh&
+./$TOMCAT_HOME/bin/startup.sh &
 
 sleep 30
 
-cd $HOME
-date > /var/www/theme/jbpm-deploy-brms-tomcat/date.txt

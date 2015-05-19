@@ -7,7 +7,7 @@ SCRIPTS=$HOME/scripts
 cd $SCRIPTS
 
 pkill -9 java
-kilall -9 /usr/java/default/bin/java
+killall -9 /usr/java/default/bin/java
 
 
 rm -rf $HOME/jboss-eap-6.4

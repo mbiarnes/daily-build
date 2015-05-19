@@ -10,10 +10,10 @@ echo ""
 read RELARTDIR
 
 DEFAULT_DIR=/var/jbpm-artifacts/$BRANCH/$RELARTDIR
-JBOSS_HOME=$HOME/jboss-eap-6.3
+JBOSS_HOME=$HOME/jboss-eap-6.4
 
 pkill -9 java
-kilall -9 /usr/java/default/bin/java
+killall -9 /usr/java/default/bin/java
 
 sleep 10
 
