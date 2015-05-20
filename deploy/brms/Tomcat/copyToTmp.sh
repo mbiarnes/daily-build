@@ -19,4 +19,5 @@ cp $SCRIPTS/reinstall-tomcat.sh $TARGET_DIR
 cp $SCRIPTS/startServer.sh $TARGET_DIR
 cp $SCRIPTS/stopServer.sh $TARGET_DIR
 cp $SCRIPTS/triggerJenkins.sh $TARGET_DIR
+cp $SCRIPTS/finalScript.sh $TARGET_DIR
 

@@ -7,5 +7,7 @@ sleep 15
 sleep 15
 ./deployArtifacts-a.sh
 sleep 15 
+./finalScript.sh
+sleep 15
 ./deployed.sh
 sleep 15

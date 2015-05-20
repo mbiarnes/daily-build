@@ -9,3 +9,5 @@ sleep 15
 ./deployArtifacts.sh
 sleep 15
 ./startServer.sh
+sleep 15
+./finalScript.sh
