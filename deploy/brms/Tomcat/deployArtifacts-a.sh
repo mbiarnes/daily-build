@@ -12,7 +12,6 @@ cp $DEFAULT_DIR/kie-drools-wb-*-tomcat7.war $TOMCAT_HOME/webapps/kie-drools-wb.w
 
 chmod 755 $TOMCAT_HOME/webapps/kie-drools-wb.war
 
-sh $TOMCAT_HOME/bin/startup.sh &
+nohup sh $TOMCAT_HOME/bin/startup.sh &
 
-sleep 30
-
+exit $?

@@ -12,6 +12,7 @@ mkdir -p $TARGET_DIR
 cp -r $SCRIPTS/config $TARGET_DIR
 cp $SCRIPTS/dailyServerInstall.sh $TARGET_DIR
 cp $SCRIPTS/deployArtifacts.sh $TARGET_DIR
+cp $SCRIPTS/deployed.sh $TARGET_DIR
 cp $SCRIPTS/logs.sh $TARGET_DIR
 cp $SCRIPTS/reinstall-eap.sh $TARGET_DIR
 cp $SCRIPTS/startServer.sh $TARGET_DIR

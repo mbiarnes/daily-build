@@ -3,10 +3,6 @@
 # Variable definition 
 export JBOSS_HOME=$HOME/jboss-eap-6.3
 
-$JBOSS_HOME/bin/standalone.sh --server-config=standalone-full.xml &
+nohup $JBOSS_HOME/bin/standalone.sh --server-config=standalone-full.xml &
 
-sleep 80 
-
-cd $HOME
-date > /var/www/theme/bpms-prod-eap-6.1.1/date.txt
-
+exit $?
