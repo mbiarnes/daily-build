@@ -12,7 +12,7 @@ cp $DEFAULT_DIR/kie-drools-wb-*-tomcat7.war $TOMCAT_HOME/webapps/kie-drools-wb.w
 
 chmod 755 $TOMCAT_HOME/webapps/kie-drools-wb.war
 
-sh $TOMCAT_HOME/bin/startup.sh &
+sh $TOMCAT_HOME/bin/startup.sh &> BRMS_tomcat.log
 
 sleep 30
 
