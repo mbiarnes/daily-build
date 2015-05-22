@@ -1,17 +1,18 @@
 #!/bin/bash
 
-LOG_DIR=/home/jbpm-6-0-deploy-eap-6-1/jboss-eap-6.4/standalone/log
-File=$LOG_DIR/server.log
+FILE1=$HOME/scripts/logfile1.log
+FILE2=$HOME/scripts/logfile2.log
 
-cd $LOG_DIR
+cat $FILE1 $FILE > FILE3.txt
 
-grep -w 'Failed to start service jboss.deployment.unit\|started (with errors)' $File > log.txt
+grep -w 'Failed to start service jboss.deployment.unit\|started (with errors)' FILE3.txt > log.txt
 
 if [ $? -eq 0 ]
 then
     # not deployed
-    echo "6.2.x: kie-wb without modules NOT DEPLOYED on EAP 6.4"  | mail -s "Deployment on EAP 6.4" -a server.log mbiarnes@redhat.com
+    echo "6.2.x: kie-wb without modules NOT DEPLOYED on EAP 6.4"  | mail -s "Deployment on EAP 6.4" -a FILE3.txt  mbiarnes@redhat.com
 else
     # deployed
-    echo "6.2.x: kie-wb without modules  DEPLOYED on EAP 6.4"  | mail -s "Deployment on EAP 6.4" mbiarnes@redhat.com
+    echo "6.2.x: kie-wb without modules  DEPLOYED on EAP 6.4"  | mail -s "Deployment on EAP 6.4" -a FILE3.txt mbiarnes@redhat.com
+    date > /var/www/theme/jbpm-6-0-deploy-eap-6-1/date.txt
 fi

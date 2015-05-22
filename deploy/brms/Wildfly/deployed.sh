@@ -1,17 +1,15 @@
 #!/bin/bash
 
-LOG_DIR=/home/jbpm-deploy-brms-as/wildfly-8.1.0.Final/standalone/log
-File=$LOG_DIR/server.log
+FILE1=$HOME/scripts/logfile1.log
 
-cd $LOG_DIR
-
-grep -w 'Failed to start service jboss.deployment.unit\|started (with errors)' $File > log.txt
+grep -w 'Failed to start service jboss.deployment.unit\|started (with errors)' $FILE1 > log.txt
 
 if [ $? -eq 0 ]
 then
     # not deployed
-    echo "6.2.x: kie-drools-wb NOT DEPLOYED on Wildfly8"  | mail -s "Deployment on Wildfly8" -a server.log mbiarnes@redhat.com 
+    echo "6.2.x: kie-drools-wb NOT DEPLOYED on Wildfly8"  | mail -s "Deployment on Wildfly8" -a $FILE1 mbiarnes@redhat.com 
 else
     # deployed
-    echo "6.2.x: kie-drools-wb DEPLOYED on Wildfly8"  | mail -s "Deployment on Wildfly8" mbiarnes@redhat.com 
+    echo "6.2.x: kie-drools-wb DEPLOYED on Wildfly8"  | mail -s "Deployment on Wildfly8" -a $FILE1 mbiarnes@redhat.com 
+    date > /var/www/theme/jbpm-deploy-brms-as/date.txt
 fi

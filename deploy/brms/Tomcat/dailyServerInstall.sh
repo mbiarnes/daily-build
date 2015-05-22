@@ -2,10 +2,10 @@
 cd $HOME/scripts
 
 ./triggerJenkins.sh
-sleep 15
+sleep 10
 ./reinstall-tomcat.sh 
-sleep 15
+sleep 10
 ./deployArtifacts-a.sh
-sleep 15 
+sleep 120
 ./deployed.sh
-sleep 15
+

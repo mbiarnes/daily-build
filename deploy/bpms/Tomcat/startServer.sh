@@ -4,7 +4,17 @@
 export DEFAULT_DIR=$HOME
 export TOMCAT_HOME=$HOME/apache-tomcat-7.0.42
 
-sh $TOMCAT_HOME/bin/startup.sh &
+echo "*************************"
+echo ""
+echo " start server .sh "
+echo ""
+echo "*************************"
+echo ""
+
+nohup sh $TOMCAT_HOME/bin/startup.sh < /dev/null >> $HOME/scripts/logfile2.log 2>&1 &
+
+echo "exit startServer.sh"
+exit
 
 
 

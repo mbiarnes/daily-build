@@ -6,6 +6,13 @@ export SCRIPTS=$HOME/scripts/
 export TOMCAT_HOME=$HOME/apache-tomcat-7.0.42
 export ARTIFACTS_DIR=/var/jbpm-artifacts/6.2.x
 
+echo "*************************"
+echo ""
+echo " start reinstall server "
+echo ""
+echo "*************************"
+echo ""
+
 pkill -9 java
 killall -9 /usr/java/default/bin/java
 

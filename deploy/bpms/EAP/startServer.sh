@@ -1,14 +1,17 @@
 #!/bin/sh
 #
 # Variable definition 
-export DEFAULT_DIR=$HOME
-export JBOSS_HOME=$HOME/jboss-eap-6.4
+DEFAULT_DIR=$HOME
+JBOSS_HOME=$HOME/jboss-eap-6.4
 
+echo "*************************"
+echo ""
+echo " begin startServer.sh  "
+echo ""
+echo "*************************"
+echo ""
 
-$JBOSS_HOME/bin/standalone.sh --server-config=standalone-full.xml&
+nohup sh $JBOSS_HOME/bin/standalone.sh --server-config=standalone-full.xml < /dev/null >> $HOME/scripts/logfile2.log 2>&1 &
 
-sleep 80
-
-cd $HOME
-date > /var/www/theme/jbpm-6-0-deploy-eap-6-1/date.txt
-
+echo "exit startServer.sh"
+exit

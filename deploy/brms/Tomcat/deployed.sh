@@ -13,6 +13,6 @@ then
     echo "6.2.x: kie-drools-wb NOT DEPLOYED on Tomcat7"  | mail -s "Deployment on Tomcat7" -a catalina.out mbiarnes@redhat.com
 else
     # deployed
-    echo "6.2.x: kie-drools-wb DEPLOYED on Tomcat7"  | mail -s "Deployment on Tomcat7" mbiarnes@redhat.com 
+    echo "6.2.x: kie-drools-wb DEPLOYED on Tomcat7"  | mail -s "Deployment on Tomcat7" -a catalina.out mbiarnes@redhat.com 
     date > /var/www/theme/jbpm-deploy-brms-tomcat/date.txt
 fi

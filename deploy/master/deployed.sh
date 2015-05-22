@@ -1,17 +1,18 @@
 #!/bin/bash
 
-LOG_DIR=$HOME/wildfly-8.1.0.Final/standalone/log
-File=$LOG_DIR/server.log
+FILE1=$HOME/scripts/logfile1.log
+FILE2=$HOME/scripts/logfile2.log
 
-cd $LOG_DIR
+cat $FILE1 $FILE > FILE3.txt
 
-grep -w "Failed to start service jboss.deployment.unit." $File > log.txt
+grep -w "Failed to start service jboss.deployment.unit." FILE3.txt  > log.txt
 
 if [ $? -eq 0 ]
 then
     # not deployed
-    echo "master: kie-wb NOT DEPLOYED on Wildfly 8"  | mail -s "Deployment on Wildfly 8" -a server.log mbiarnes@redhat.com 
+    echo "master: kie-wb NOT DEPLOYED on Wildfly 8"  | mail -s "Deployment on Wildfly 8" -a FILE3.txt mbiarnes@redhat.com 
 else
     # deployed
-    echo "master: kie-wb DEPLOYED on Wildfly 8"  | mail -s "Deployment on Wildfly 8" mbiarnes@redhat.com
+    echo "master: kie-wb DEPLOYED on Wildfly 8"  | mail -s "Deployment on Wildfly 8" -a FILE3.txt mbiarnes@redhat.com
+    date > /var/www/theme/jbpm-master-deploy-as7/date.txt
 fi

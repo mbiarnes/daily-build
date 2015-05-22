@@ -4,12 +4,17 @@
 DEFAULT_DIR=/var/jbpm-artifacts/6.2.x
 JBOSS_HOME=$HOME/jboss-eap-6.4
 
+echo "**************************"
+echo ""
+echo " start deployArtifacs-a.sh "
+echo ""
+echo "**************************"
+echo ""
+
 # Copy deployments at EAP
 cp $DEFAULT_DIR/kie-drools-wb-*-eap6_4.war $JBOSS_HOME/standalone/deployments/kie-drools-wb.war
 
-$JBOSS_HOME/bin/standalone.sh --server-config=standalone-full.xml&
+nohup sh $JBOSS_HOME/bin/standalone.sh --server-config=standalone-full.xml < /dev/null >> $HOME/scripts/logfile1.log 2>&1 &
 
-sleep 80
-
-cd $HOME
-date > /var/www/theme/jbpm-deploy-brms-eap/date.txt
+echo "exit deployArtifacts-a.sh"
+exit

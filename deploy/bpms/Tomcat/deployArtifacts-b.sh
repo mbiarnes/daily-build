@@ -5,6 +5,13 @@ export DEFAULT_DIR=/var/jbpm-artifacts/6.2.x
 export TOMCAT_HOME=$HOME/apache-tomcat-7.0.42
 export CONFIG=$HOME/scripts/config
 
+echo "*************************"
+echo ""
+echo " start deploArtifacs-b.sh "
+echo ""
+echo "*************************"
+echo ""
+
 pkill -9 java
 killall -9 /usr/java/default/bin/java
 

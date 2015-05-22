@@ -2,5 +2,7 @@
 
 cd $HOME/scripts
 ./reinstall-eap.sh 
-./deployArtifacts-a.sh 
+sleep 10
+./deployArtifacts-a.sh
+sleep 120 
 ./deployed.sh

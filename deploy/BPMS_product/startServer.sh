@@ -3,6 +3,6 @@
 # Variable definition 
 export JBOSS_HOME=$HOME/jboss-eap-6.3
 
-nohup $JBOSS_HOME/bin/standalone.sh --server-config=standalone-full.xml &
+nohup sh $JBOSS_HOME/bin/start.sh &
 
 exit $?

@@ -4,6 +4,13 @@
 DEFAULT_DIR=/var/jbpm-artifacts/6.2.x/
 JBOSS_HOME=$HOME/jboss-eap-6.4
 
+echo "*****************************"
+echo ""
+echo " begin deployArtifacts-b.sh  "
+echo ""
+echo "*****************************"
+echo ""
+
 sleep 80
 
 pkill -9 java

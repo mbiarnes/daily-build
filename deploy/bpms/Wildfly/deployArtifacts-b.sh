@@ -5,7 +5,12 @@ export JAVA_HOME=/usr/java/latest
 export DEFAULT_DIR=/var/jbpm-artifacts/6.2.x/
 export JBOSS_HOME=$HOME/wildfly-8.1.0.Final
 
-sleep 80
+echo "****************************"
+echo ""
+echo " start deployArtifacts-b.sh "
+echo ""
+echo "****************************"
+echo ""
 
 pkill -9 java
 killall -9 /usr/java/latest/bin/java
