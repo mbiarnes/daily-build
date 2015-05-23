@@ -24,7 +24,7 @@ then
 else
     # deployed
     echo "6.2.x: kie-wb DEPLOYED on Tomcat7"  | mail -s "Deployment on Tomcat7" -a catalina.out mbiarnes@redhat.com 
-    date > /var/www/theme/jbpm-deploy-brms-tomcat/date.txt
+    date > /var/www/theme/jbpm-6-0-deploy-tomcat-7/date.txt
 fi
 
 echo "exit deployed.sh"
