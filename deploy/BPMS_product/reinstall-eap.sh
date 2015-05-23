@@ -4,6 +4,15 @@ export RESOURCES=$HOME/scripts/resources
 export JBOSS_HOME=$HOME/jboss-eap-6.3
 export SCRIPTS=$HOME/scripts/
 
+echo "***************************"
+echo ""
+echo " start reinstall server "
+echo " PRODUCT"
+echo " EAP 6.3"
+echo ""
+echo "***************************"
+echo ""
+
 pkill -9 java
 killall -9 /usr/java/default/bin/java
 
@@ -20,3 +29,6 @@ rm -rf $SCRIPTS/.security
 
 unzip $RESOURCES/jboss-eap.zip -d $HOME
 
+echo "exit reinstall server "
+echo "**********************"
+echo ""

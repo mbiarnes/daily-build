@@ -6,7 +6,10 @@ export JBOSS_HOME=$HOME/wildfly-8.1.0.Final
 
 echo "*************************"
 echo ""
-echo " begin reinstall.sh "
+echo " begin reinstall server "
+echo " BPMS "
+echo " Wildfly 8 "
+echo " master branch "
 echo ""
 echo "*************************"
 echo ""
@@ -29,3 +32,6 @@ cp $PERMANENT/*.properties $JBOSS_HOME/standalone/configuration
 cp $PERMANENT/standalone-full.xml $JBOSS_HOME/standalone/configuration
 cp $PERMANENT/start.sh $JBOSS_HOME/bin
 
+echo "exit reinstall server "
+echo "**********************"
+echo ""
