@@ -8,6 +8,9 @@ export CONFIG=$HOME/scripts/config
 echo "***************************"
 echo ""
 echo " start deployArtifacs-a.sh "
+echo " BRMS "
+echo " Tomcat 7 "
+echo " 6.2.x branch "
 echo ""
 echo "***************************"
 echo ""
@@ -22,4 +25,6 @@ chmod 755 $TOMCAT_HOME/webapps/kie-drools-wb.war
 nohup sh $TOMCAT_HOME/bin/startup.sh < /dev/null >> $HOME/scripts/logfile1.log 2>&1 &
 
 echo "exit deployArtifacts-a.sh"
+echo "*************************"
+echo ""
 exit

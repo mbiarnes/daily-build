@@ -6,7 +6,10 @@ export ARTIFACTS_DIR=/var/jbpm-artifacts/6.2.x
 
 echo "***************************"
 echo ""
-echo " start reinstall server.sh "
+echo " start reinstall server "
+echo " BRMS "
+echo " Tomcat 7 "
+echo " 6.2.x branch"
 echo ""
 echo "***************************"
 echo ""
@@ -38,4 +41,6 @@ cp $PERMANENT/tomcat-users.xml $TOMCAT_HOME/conf
 #add kie-tomcat-intengration
 cp $ARTIFACTS_DIR/kie-tomcat-integration-*.jar $TOMCAT_HOME/lib
 
-
+echo "exit reinstall server"
+echo "*********************"
+echo ""
