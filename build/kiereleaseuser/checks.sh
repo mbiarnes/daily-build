@@ -13,6 +13,6 @@ fi
 
 if [ -f $FILE2 ];
 then
-   ./copyToFilemgmt_drools_6.2.x.sh
-   ./copyToFilemgmt_optaplanner_6.2.x.sh
+   ./copyToFilemgmt_drools_latest.sh
+   ./copyToFilemgmt_optaplanner_latest.sh
 fi
