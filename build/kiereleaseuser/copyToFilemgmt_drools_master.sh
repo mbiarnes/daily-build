@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export ARTIFACT_DIR=/var/jbpm-artifacts/master
+export ARTIFACT_DIR=/var/kie-artifacts/master
 
 #artifacts are copied to filemagmt.jboss.org
 

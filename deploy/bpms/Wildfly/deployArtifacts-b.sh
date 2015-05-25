@@ -2,7 +2,7 @@
 #
 # Variable definition 
 export JAVA_HOME=/usr/java/latest
-export DEFAULT_DIR=/var/jbpm-artifacts/6.2.x/
+export DEFAULT_DIR=/var/kie-artifacts/6.2.x/
 export JBOSS_HOME=$HOME/wildfly-8.1.0.Final
 
 echo "****************************"

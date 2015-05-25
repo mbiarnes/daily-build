@@ -2,7 +2,7 @@
 #
 # VARIABLE DEFINITION
 #
-export ARTIFACT_DIR=/var/jbpm-artifacts/6.2.x
+export ARTIFACT_DIR=/var/kie-artifacts/6.2.x
 
 cd $ARTIFACT_DIR
 

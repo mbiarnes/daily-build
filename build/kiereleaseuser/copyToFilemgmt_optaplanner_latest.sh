@@ -2,7 +2,7 @@
 #
 # VARIABLE DEFINITION
 #
-ARTIFACT_DIR=/var/jbpm-artifacts/6.2.x
+ARTIFACT_DIR=/var/kie-artifacts/6.2.x
 
 # OPTAPLANNER
    scp $ARTIFACT_DIR/optaplanner-distribution-*.zip optaplanner@filemgmt.jboss.org:downloads_htdocs/optaplanner/release/snapshot/6.2.x

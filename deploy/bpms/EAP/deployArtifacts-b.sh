@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # Variable definition 
-DEFAULT_DIR=/var/jbpm-artifacts/6.2.x/
+DEFAULT_DIR=/var/kie-artifacts/6.2.x/
 JBOSS_HOME=$HOME/jboss-eap-6.4
 
 echo "*****************************"
