@@ -12,7 +12,7 @@ echo ""
 echo "****************************"
 echo ""
 
-nohup sh $JBOSS_HOME/bin/start.sh &
+nohup sh $JBOSS_HOME/bin/standalone.sh --server-config=standalone-full.xml&
 
 echo "exit startServer.sh"
 echo "*******************"
