@@ -1,0 +1,88 @@
+#
+# Apaxy by @adamwhitcroft
+#
+# For a full breakdown of the mod_autoindex module:
+# http://apache.org/docs/2.2/mod/mod_autoindex.html
+#
+
+	# ENABLE INDEXING
+	Options +Indexes
+
+	# INDEX OPTIONS
+	IndexOptions +Charset=UTF-8 +FancyIndexing +IgnoreCase +FoldersFirst +XHTML +HTMLTable +SuppressRules +SuppressDescription +NameWidth=* +IconsAreLinks
+
+    # META VIEWPORT
+    IndexHeadInsert "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">"
+
+	# HIDE /theme DIRECTORY
+	IndexIgnore .htaccess /theme
+
+#
+# GENERAL ICONS (BLANK, DIRECTORY, PARENT DIRECTORY)
+#
+
+#
+# Replace kie-artifacts with your directory URL eg:
+# If your directory is http://mywebsite.com/share/
+# you would change to:
+#
+# AddIcon /share/kie-artifacts/theme/icons/blank.png ^^BLANKICON^^
+#
+
+	AddIcon /kie-artifacts/theme/icons/blank.png ^^BLANKICON^^
+	AddIcon /kie-artifacts/theme/icons/folder.png ^^DIRECTORY^^
+	AddIcon /kie-artifacts/theme/icons/folder-home.png ..
+
+#
+# EXTENSION SPECIFIC ICONS
+#
+
+	AddIcon /kie-artifacts/theme/icons/archive.png .7z .bz2 .cab .gz .tar
+	AddIcon /kie-artifacts/theme/icons/audio.png .aac .aif .aifc .aiff .ape .au .flac .iff .m4a .mid .mp3 .mpa .ra .wav .wma .f4a .f4b .oga .ogg .xm .it .s3m .mod
+	AddIcon /kie-artifacts/theme/icons/bin.png .bin .hex
+	AddIcon /kie-artifacts/theme/icons/bmp.png .bmp
+	AddIcon /kie-artifacts/theme/icons/c.png .c
+	AddIcon /kie-artifacts/theme/icons/calc.png .xlsx .xlsm .xltx .xltm .xlam .xlr .xls .csv
+	AddIcon /kie-artifacts/theme/icons/cpp.png .cpp
+	AddIcon /kie-artifacts/theme/icons/css.png .css .sass .scss
+	AddIcon /kie-artifacts/theme/icons/deb.png .deb
+	AddIcon /kie-artifacts/theme/icons/doc.png .doc .docx .docm .dot .dotx .dotm .log .msg .odt .pages .rtf .tex .wpd .wps
+	AddIcon /kie-artifacts/theme/icons/draw.png .svg .svgz
+	AddIcon /kie-artifacts/theme/icons/eps.png .ai .eps
+	AddIcon /kie-artifacts/theme/icons/exe.png .exe
+	AddIcon /kie-artifacts/theme/icons/gif.png .gif
+	AddIcon /kie-artifacts/theme/icons/h.png .h
+	AddIcon /kie-artifacts/theme/icons/html.png .html .xhtml .shtml .htm .URL .url
+	AddIcon /kie-artifacts/theme/icons/ico.png .ico
+	AddIcon /kie-artifacts/theme/icons/java.png .jar .war
+	AddIcon /kie-artifacts/theme/icons/jpg.png .jpg .jpeg .jpe
+	AddIcon /kie-artifacts/theme/icons/js.png .js .json
+	AddIcon /kie-artifacts/theme/icons/markdown.png .md
+	AddIcon /kie-artifacts/theme/icons/package.png .pkg .dmg
+	AddIcon /kie-artifacts/theme/icons/pdf.png .pdf
+	AddIcon /kie-artifacts/theme/icons/php.png .php .phtml
+	AddIcon /kie-artifacts/theme/icons/playlist.png .m3u .m3u8 .pls .pls8
+	AddIcon /kie-artifacts/theme/icons/png.png .png
+	AddIcon /kie-artifacts/theme/icons/ps.png .ps
+	AddIcon /kie-artifacts/theme/icons/psd.png .psd
+	AddIcon /kie-artifacts/theme/icons/py.png .py
+	AddIcon /kie-artifacts/theme/icons/rar.png .rar
+	AddIcon /kie-artifacts/theme/icons/rb.png .rb
+	AddIcon /kie-artifacts/theme/icons/rpm.png .rpm
+	AddIcon /kie-artifacts/theme/icons/rss.png .rss
+	AddIcon /kie-artifacts/theme/icons/script.png .bat .cmd .sh
+	AddIcon /kie-artifacts/theme/icons/sql.png .sql
+	AddIcon /kie-artifacts/theme/icons/tiff.png .tiff .tif
+	AddIcon /kie-artifacts/theme/icons/text.png .txt .nfo
+	AddIcon /kie-artifacts/theme/icons/video.png .asf .asx .avi .flv .mkv .mov .mp4 .mpg .rm .srt .swf .vob .wmv .m4v .f4v .f4p .ogv
+	AddIcon /kie-artifacts/theme/icons/xml.png .xml
+	AddIcon /kie-artifacts/theme/icons/zip.png .zip
+	DefaultIcon /kie-artifacts/theme/icons/default.png
+
+#
+# THEME FILES
+#
+
+	HeaderName /kie-artifacts/theme/header.html
+	ReadmeName /kie-artifacts/theme/footer.html
+	IndexStyleSheet "/kie-artifacts/theme/style.css"
