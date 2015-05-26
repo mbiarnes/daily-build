@@ -12,7 +12,7 @@ echo ""
 echo "***************************"
 echo ""
 
-wget --no-check-certificate 'https://brms-jenkins.rhev-ci-vms.eng.rdu2.redhat.com/buildByToken/build?job=master-daily-build&token=543210'
+wget --no-check-certificate 'https://brms-jenkins.rhev-ci-vms.eng.rdu2.redhat.com/buildByToken/build?job=kie-all-build-master&token=543210'
 
 echo "exit triggerJenkins.sh"
 echo "**********************"

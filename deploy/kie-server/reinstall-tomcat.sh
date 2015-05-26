@@ -2,7 +2,7 @@
 export PERMANENT=$HOME/scripts/config
 export SCRIPTS=$HOME/scripts/
 export TOMCAT_HOME=$HOME/apache-tomcat-7.0.42
-export ARTIFACTS_DIR=/var/jbpm-artifacts/6.2.x
+export ARTIFACTS_DIR=/var/kie-artifacts/6.2.x
 
 pkill -9 java
 killall -9 /usr/java/default/bin/java
