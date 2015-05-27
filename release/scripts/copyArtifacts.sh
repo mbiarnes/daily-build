@@ -23,13 +23,13 @@ echo "4) 6.3.x"
 echo ""
 echo "Select 1,2,3 or 4"
 read USR_DIR
-dir=/var/jbpm-artifacts/master
+dir=/var/kie-artifacts/master
 case "$USR_DIR" in
-  2) dir=/var/jbpm-artifacts/6.1.x
+  2) dir=/var/kie-artifacts/6.1.x
   ;;
-  3) dir=/var/jbpm-artifacts/6.2.x
+  3) dir=/var/kie-artifacts/6.2.x
   ;;
-  4) dir=/var/jbpm-artifacts/6.3.x
+  4) dir=/var/kie-artifacts/6.3.x
   ;;
 esac
 echo ""
@@ -57,9 +57,9 @@ ARTIFACT_DIR=$REMOTE_USER$REMOTE_SERVER:$dir
 
 # creates directory on hp-dl380pg8-01.lab.eng.brq.redhat.com if it is not there
 
-ssh $REMOTE_USER$REMOTE_SERVER "cd /var/jbpm-artifacts/6.2.x; rm -rf "$releaseV";  ls -l"
+ssh $REMOTE_USER$REMOTE_SERVER "cd /var/kie-artifacts/6.2.x; rm -rf "$releaseV";  ls -l"
 echo ""
-echo $REMOTE_USER$REMOTE_SERVER "cd /var/jbpm-artifacts/6.2.x; rm -rf "$releaseV"; ls -l"
+echo $REMOTE_USER$REMOTE_SERVER "cd /var/kie-artifacts/6.2.x; rm -rf "$releaseV"; ls -l"
  
 touch server-script
 echo "mkdir" $releaseV >> server-script
