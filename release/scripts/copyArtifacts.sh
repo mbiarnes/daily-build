@@ -57,9 +57,9 @@ ARTIFACT_DIR=$REMOTE_USER$REMOTE_SERVER:$dir
 
 # creates directory on hp-dl380pg8-01.lab.eng.brq.redhat.com if it is not there
 
-ssh $REMOTE_USER$REMOTE_SERVER "cd /var/kie-artifacts/6.2.x; rm -rf "$releaseV";  ls -l"
+ssh $REMOTE_USER$REMOTE_SERVER "cd /var/kie-artifacts/$dir; rm -rf "$releaseV";  ls -l"
 echo ""
-echo $REMOTE_USER$REMOTE_SERVER "cd /var/kie-artifacts/6.2.x; rm -rf "$releaseV"; ls -l"
+echo $REMOTE_USER$REMOTE_SERVER "cd /var/kie-artifacts/$dir; rm -rf "$releaseV"; ls -l"
  
 touch server-script
 echo "mkdir" $releaseV >> server-script
@@ -155,11 +155,11 @@ ssh $REMOTE_USER$REMOTE_SERVER "cd "$dir"/"$releaseV"; rm kie-tomcat-integration
 # copy documentation
 
 ssh $REMOTE_USER$REMOTE_SERVER "cd "$dir"/"$releaseV"/docs; mkdir drools-docs"
-scp -r $REPO_DIR/droolsjbpm-knowledge/kie-docs/drools-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR\ $dir/$releaseV/docs/drools-docs
+scp -r $REPO_DIR/kie-wb-distributions/kie-docs/drools-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR\ $dir/$releaseV/docs/drools-docs
 ssh $REMOTE_USER$REMOTE_SERVER "cd "$dir"/"$releaseV"/docs; mkdir jbpm-docs"
-scp -r $REPO_DIR/droolsjbpm-knowledge/kie-docs/jbpm-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR\ $dir/$releaseV/docs/jbpm-docs
+scp -r $REPO_DIR/kie-wb-distributions/kie-docs/jbpm-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR\ $dir/$releaseV/docs/jbpm-docs
 ssh $REMOTE_USER$REMOTE_SERVER "cd "$dir"/"$releaseV"/docs; mkdir dashbuilder-docs"
-scp -r $REPO_DIR/droolsjbpm-knowledge/kie-docs/dashbuilder-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR\ $dir/$releaseV/docs/dashbuilder-docs
+scp -r $REPO_DIR/kie-wb-distributions/kie-docs/dashbuilder-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR\ $dir/$releaseV/docs/dashbuilder-docs
 ssh $REMOTE_USER$REMOTE_SERVER "cd "$dir"/"$releaseV"/docs; mkdir optaplanner-docs"
 scp -r $REPO_DIR/optaplanner/optaplanner-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR\ $dir/$releaseV/docs/optaplanner-docs
 ssh $REMOTE_USER$REMOTE_SERVER "cd "$dir"/"$releaseV"/docs; mkdir optaplanner-javadoc"
