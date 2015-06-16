@@ -30,3 +30,9 @@ scp kie-tomcat-integration-*.jar drools@filemgmt.jboss.org:downloads_htdocs/droo
 # org.drools.updatesite
 scp org.drools.updatesite-*.zip drools@filemgmt.jboss.org:downloads_htdocs/drools/release/snapshot/6.2.x
 
+# drools-distribution
+scp examples/drools-distribution-*.zip drools@filemgmt.jboss.org:downloads_htdocs/drools/release/snapshot/6.2.x
+
+# jbpm-zip
+scp jbpm-*-bin.zip drools@filemgmt.jboss.org:downloads_htdocs/drools/release/snapshot/6.2.x
+

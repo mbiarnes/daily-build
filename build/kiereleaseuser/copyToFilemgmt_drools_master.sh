@@ -24,4 +24,9 @@ cd $ARTIFACT_DIR
     scp kie-tomcat-integration-*.jar drools@filemgmt.jboss.org:downloads_htdocs/drools/release/snapshot/master
 # org.drools.updatesite
     scp org.drools.updatesite-*.zip drools@filemgmt.jboss.org:downloads_htdocs/drools/release/snapshot/master
+# drools-distribution
+scp examples/drools-distribution-*.zip drools@filemgmt.jboss.org:downloads_htdocs/drools/release/snapshot/master
+# jbpm-zip
+scp jbpm-*-bin.zip drools@filemgmt.jboss.org:downloads_htdocs/drools/release/snapshot/master
+
  
