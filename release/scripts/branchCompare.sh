@@ -8,13 +8,13 @@ if [ $# != 2 ] ; then
     echo "Usage:"
     echo "  $0 local branch 1 local branch 2"
     echo "For example:"
-    echo "  $0 bsync-6.2.x-2015.05.07 previousTag"
+    echo "  $0 6.2.x bsync-6.2.x-2015.05.07"
     echo
     exit 1
 fi
 
-echo "droolsjbpm:local branch is: "$1
-echo "previous TAG (local): "$2
+echo "local branch 1 is: "$1
+echo "local branch 2: "$2
 echo "the output file will compare" $1 "vs" $2
 echo -n "Is this ok? (Hit control-c if is not): "
 read ok
