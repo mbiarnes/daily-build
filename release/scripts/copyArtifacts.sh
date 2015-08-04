@@ -129,11 +129,11 @@ ssh $REMOTE_USER$REMOTE_SERVER "cd "$ART_PATH"/"$RELEASE_V"; rm kie-server-*-tes
 # copy documentation
 
 ssh $REMOTE_USER$REMOTE_SERVER "cd "$ART_PATH"/"$RELEASE_V"/docs; mkdir drools-docs"
-scp -r $REPO_DIR/kie-wb-distributions/kie-docs/drools-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/docs/drools-docs
+scp -r $REPO_DIR/kie-docs/drools-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/docs/drools-docs
 ssh $REMOTE_USER$REMOTE_SERVER "cd "$ART_PATH"/"$RELEASE_V"/docs; mkdir jbpm-docs"
-scp -r $REPO_DIR/kie-wb-distributions/kie-docs/jbpm-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/docs/jbpm-docs
+scp -r $REPO_DIR/kie-docs/jbpm-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/docs/jbpm-docs
 ssh $REMOTE_USER$REMOTE_SERVER "cd "$ART_PATH"/"$RELEASE_V"/docs; mkdir dashbuilder-docs"
-scp -r $REPO_DIR/kie-wb-distributions/kie-docs/dashbuilder-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/docs/dashbuilder-docs
+scp -r $REPO_DIR/kie-docs/dashbuilder-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/docs/dashbuilder-docs
 ssh $REMOTE_USER$REMOTE_SERVER "cd "$ART_PATH"/"$RELEASE_V"/docs; mkdir optaplanner-docs"
 scp -r $REPO_DIR/optaplanner/optaplanner-docs/target/docbook/publish/en-US/* $ARTIFACT_DIR/docs/optaplanner-docs
 ssh $REMOTE_USER$REMOTE_SERVER "cd "$ART_PATH"/"$RELEASE_V"/docs; mkdir optaplanner-javadoc"
