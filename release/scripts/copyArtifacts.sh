@@ -94,6 +94,9 @@ scp $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/
 scp $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/downloads_htdocs/optaplanner/release/*/optaplanner-distribution-*.zip $ARTIFACT_DIR/examples
 scp $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/downloads_htdocs/drools/release/*/drools-distribution-*.zip $ARTIFACT_DIR/examples
 
+# jbpm-installer
+
+scp $REPO_DIR/home/kiereleaseuser/droolsjbpm/jbpm/jbpm-distribution/target/jbpm-*-installer.zip $ARTIFACT_DIR
 # kie-tomcat-integration
 scp $REPO_DIR/kie-wb-distributions/kie-tomcat-integration/target/kie-tomcat-integration-*.jar $ARTIFACT_DIR
 
