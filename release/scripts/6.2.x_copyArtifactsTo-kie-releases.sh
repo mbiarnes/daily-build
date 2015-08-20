@@ -21,6 +21,12 @@ read ok
 REPO_DIR=$HOME/droolsjbpm
 TARGET_DIR=/var/kie-artifacts/$releaseVer
 
+# create directories in Release directory and kie-artifacts/<release> directory
+if [ -d "$TARGET_DIR" ]; then
+   rm -rf $TARGET_DIR
+fi
+
+mkdir -p $TARGET_DIR
 
 # dashboard-builder
 cp $REPO_DIR/dashboard-builder/builder/target/dashbuilder-*-tomcat7.war $TARGET_DIR
@@ -42,34 +48,32 @@ cp $REPO_DIR/droolsjbpm-tools/drools-eclipse/org.drools.updatesite/target/org.dr
 cp $REPO_DIR/optaplanner/optaplanner-distribution/target/optaplanner-distribution-*.zip $TARGET_DIR
 
 # BRMS
-cp $REPO_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-wildfly8.war $TARGET_DIR
 cp $REPO_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-was8.war $TARGET_DIR
 cp $REPO_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-weblogic12.war $TARGET_DIR
 cp $REPO_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-eap6_4.war $TARGET_DIR
 cp $REPO_DIR/kie-wb-distributions/kie-drools-wb/kie-drools-wb-distribution-wars/target/kie-drools-wb-*-tomcat7.war $TARGET_DIR
 
 # BPMS  
-cp $REPO_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-wildfly8.war $TARGET_DIR
 cp $REPO_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-weblogic12.war $TARGET_DIR
 cp $REPO_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-was8.war $TARGET_DIR
 cp $REPO_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-eap6_4.war $TARGET_DIR
 cp $REPO_DIR/kie-wb-distributions/kie-wb/kie-wb-distribution-wars/target/kie-wb-*-tomcat7.war $TARGET_DIR  
   
-# drools examples
-cp $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/downloads_htdocs/drools/release/*/droolsjbpm-integration-*.zip $TARGET_DIR/examples
-cp $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/downloads_htdocs/optaplanner/release/*/optaplanner-distribution-*.zip $TARGET_DIR/examples
-cp $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/downloads_htdocs/drools/release/*/drools-distribution-*.zip $TARGET_DIR/examples
-
 # kie-tomcat-integration
 cp $REPO_DIR/kie-wb-distributions/kie-tomcat-integration/target/kie-tomcat-integration-*.jar $TARGET_DIR
 
-# copy examples to $HOME/RELEASE/<release>/drools-uber-distribution
+# copy examples to $HOME/RELEASE/<release>/drools-uber-distribution and kie-artifacts/<release>/examples
 mkdir -p $HOME/Release/$releaseVer/droolsjbpm-uber-distribution
 EXAMPLE_DIR=$HOME/Release/$releaseVer/droolsjbpm-uber-distribution
+mkdir -p $TARGET_DIR/examples
 
 cp $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/downloads_htdocs/drools/release/*/drools-distribution-*.zip $EXAMPLE_DIR
+cp $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/downloads_htdocs/drools/release/*/drools-distribution-*.zip $TARGET_DIR/examples
+
 cp $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/downloads_htdocs/drools/release/*/droolsjbpm-integration-*.zip $EXAMPLE_DIR
+cp $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/downloads_htdocs/drools/release/*/droolsjbpm-integration-*.zip $TARGET_DIR/examples
 cp $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/downloads_htdocs/optaplanner/release/*/optaplanner-distribution-*.zip $EXAMPLE_DIR
+cp $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/downloads_htdocs/optaplanner/release/*/optaplanner-distribution-*.zip $TARGET_DIR/examples
 
 # kie-server-services-*.jar
 cp $REPO_DIR/droolsjbpm-integration/kie-server-parent/kie-server-services/target/kie-server-services-*.jar $TARGET_DIR
@@ -93,17 +97,17 @@ rm $TARGET_DIR/kie-tomcat-integration-*-tests.jar
 
 
 # copy documentation
-
-mkdir $TARGET_DIR/ drools-docs
+mkdir $TARGET_DIR/docs
+mkdir $TARGET_DIR/docs/drools-docs
 cp -r $REPO_DIR/droolsjbpm-knowledge/kie-docs/drools-docs/target/docbook/publish/en-US/* $TARGET_DIR/docs/drools-docs
-mkdir $TARGET_DIR/jbpm-docs
+mkdir $TARGET_DIR/docs/jbpm-docs
 cp -r $REPO_DIR/droolsjbpm-knowledge/kie-docs/jbpm-docs/target/docbook/publish/en-US/* $TARGET_DIR/docs/jbpm-docs
-mkdir $TARGET_DIR/dashbuilder-docs
+mkdir $TARGET_DIR/docs/dashbuilder-docs
 cp -r $REPO_DIR/droolsjbpm-knowledge/kie-docs/dashbuilder-docs/target/docbook/publish/en-US/* $TARGET_DIR/docs/dashbuilder-docs
-mkdir $TARGET_DIR/optaplanner-docs
+mkdir $TARGET_DIR/docs/optaplanner-docs
 cp -r $REPO_DIR/optaplanner/optaplanner-docs/target/docbook/publish/en-US/* $TARGET_DIR/docs/optaplanner-docs
-mkdir $TARGET_DIR/optaplanner-javadoc
+mkdir $TARGET_DIR/docs/optaplanner-javadoc
 cp -r $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/docs_htdocs/optaplanner/release/*/optaplanner-javadoc/* $TARGET_DIR/docs/optaplanner-javadoc
-mkdir $TARGET_DIR/kie-api-javadoc
+mkdir $TARGET_DIR/docs/kie-api-javadoc
 cp -r $REPO_DIR/droolsjbpm-build-distribution/droolsjbpm-uber-distribution/target/droolsjbpm-uber-distribution-*/docs_htdocs/drools/release/*/kie-api-javadoc/* $TARGET_DIR/docs/kie-api-javadoc
 
