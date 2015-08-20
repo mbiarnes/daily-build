@@ -12,7 +12,6 @@ echo -n "Is this ok? (Hit control-c if is not): "
 read ok
 
 
-TARGET=kiereleaseuser@hp-dl380pg8-01.lab.eng.brq.redhat.com
 TEST_DIR=failedUnitTests
 WORKING_DIR=$HOME/droolsjbpm
 RELEASE_DIR=$HOME/Release/$releaseV/$TEST_DIR
@@ -22,7 +21,7 @@ DATE_DIR=$(date +"%d.%m.%Y-%H.%M")
 
 # create directories in Release directory and kie-artifacts/<release> directory
 if [ -d "$RELEASE_DIR" ]; then
-   rm -rf $REALEASE_DIR
+   rm -rf $RELEASE_DIR
 fi
 mkdir -p $RELEASE_DIR
 
