@@ -46,16 +46,13 @@ while read line; do
            if [ "$GROUPID_1" == "$GROUPID_2" ] && [ "$ARTIFACTID_1" == "$ARTIFACTID_2" ] && [ "$VERSION_1" != "$VERSION_2" ]; then
               echo "GAV1: $GROUPID_1:$ARTIFACTID_1:$VERSION_1 -- GAV2: $GROUPID_2:$ARTIFACTID_2:$VERSION_2"
               echo "$GROUPID_1:$ARTIFACTID_1:$VERSION_1;$GROUPID_2:$ARTIFACTID_2:$VERSION_2" >> compare_GAV-1.txt
+              break
            fi
          fi
       done < $FILE2_TO_READ
    fi
 done < $FILE1_TO_READ
 
-
-
-# stores the two GAVs of input file in one line - (this can be commented out if this doesn't work)
-# sed '$!N;s/\s;/;/;P;D' compare_GAV-1.txt > compare_GAV-2.txt
 
 # order in alphabetical order
 cat compare_GAV-1.txt | sort > compare_GAV-2.txt

@@ -30,6 +30,8 @@ read ok
 EFFECTIVE_POM=$1
 OUTPUT_FILE=$2
 
+dos2unix $EFFECTIVE_POM
+
 # removes superfluous information of effective pom, only keeps everyting in <dependencyManagement>
 sed '/<dependencyManagement>/,/<\/dependencyManagement>/!d' $EFFECTIVE_POM > effectivePom-1.txt
 
@@ -61,7 +63,7 @@ sed '/<\/dependency>/d' effectivePom-8.txt > effectivePom-9.txt
 sed -e 's/^[ \t]*//' -e 's/[ \t]*$//' effectivePom-9.txt > effectivePom-10.txt
 
 # replaces </groupId> + any whitespace + line break + <artifactId> by :
-# sed '$!N;s/<\/groupId>\s\n<artifactId>/:/;P;D' effectivePom-10.txt > effectivePom-11.txt
+#sed '$!N;s/<\/groupId>\s\n<artifactId>/:/;P;D' effectivePom-10.txt > effectivePom-11.txt
 # without strange characters- some mvn help:effective-pom have bot blank character as line endings
 sed '$!N;s/<\/groupId>\n<artifactId>/:/;P;D' effectivePom-10.txt > effectivePom-11.txt
 
@@ -84,5 +86,5 @@ sed '/^org.drools/d;/^org.jbpm/d;/^org.guvnor/d;/^org.uberfire/d;/^org.optaplann
 cat effectivePom-15.txt | sort > $OUTPUT_FILE
 
 # remove all effectivePom- files
-# rm effectivePom-*.txt
+rm effectivePom-*.txt
 
