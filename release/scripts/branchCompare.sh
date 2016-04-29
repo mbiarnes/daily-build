@@ -31,11 +31,11 @@ while read line; do
       echo -e "\n**************************************************************" >> $fileDir/diff.txt
       echo "$line..:" >> $fileDir//diff.txt 
       echo "$BRANCH1" >> $fileDir/diff.txt
-      git log -25 --pretty=format:%h--%s--%an "$BRANCH1" >> $fileDir/diff.txt
+      git log -45 --pretty=format:%h--%s--%an "$BRANCH1" >> $fileDir/diff.txt
       echo -e "\n" >> $fileDir/diff.txt
       echo " --- " >> $fileDir/diff.txt     
       echo "$BRANCH2" >> $fileDir/diff.txt
-      git log -25 --pretty=format:%h--%s--%an "$BRANCH2" >> $fileDir/diff.txt
+      git log -45 --pretty=format:%h--%s--%an "$BRANCH2" >> $fileDir/diff.txt
       echo -e "\n" >> $fileDir/diff.txt
       echo -e "\n" >> $fileDir/diff.txt
       echo -e "\n" >> $fileDir/diff.txt
