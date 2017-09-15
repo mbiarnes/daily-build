@@ -68,7 +68,7 @@ sed -e 's/^[ \t]*//' -e 's/[ \t]*$//' effectivePom-9.txt > effectivePom-10.txt
 sed '$!N;s/<\/groupId>\n<artifactId>/:/;P;D' effectivePom-10.txt > effectivePom-11.txt
 
 # replaces </artifactId> + any whitespace + line break +  <version> by :
-# sed '$!N;s/<\/artifactId>\s\n<version>/:/;P;D' effectivePom-11.txt > effectivePom-12.txt
+#sed '$!N;s/<\/artifactId>\s\n<version>/:/;P;D' effectivePom-11.txt > effectivePom-12.txt
 # without strange characters - some mvn help:effective-pom have got blank character as line endings
 sed '$!N;s/<\/artifactId>\n<version>/:/;P;D' effectivePom-11.txt > effectivePom-12.txt
 

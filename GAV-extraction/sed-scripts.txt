@@ -48,3 +48,11 @@ sed '/^org.drools/d;/^org.jbpm/d;/^org.guvnor/d;/^org.uberfire/d;/^org.optaplann
 
 # order in alphabetical order
 cat effectivePom-15.txt | sort > effectivePom-16.txt
+
+
+# replace line in pom 
+sed -i '$!N;s/<version.org.uberfire>.*.<\/version.org.uberfire>/<version.org.uberfire>0.7.x.20151028<\/version.org.uberfire>/;P;D' pom.xml
+sed -i '$!N;s/<version.org.dashbuilder>.*.<\/version.org.dashbuilder>/<version.org.dashbuilder>0.3.x.20151028<\/version.org.dashbuilder>/;P;D' pom.xml
+sed -i '$!N;s/<version.org.jboss.errai>.*.<\/version.org.jboss.errai>/<version.org.jboss.errai>3.2.1.Final<\/version.org.jboss.errai>/;P;D' pom.xml
+sed -i '$!N;s/<version>.*.CR.*.<\/version>/<version>6.0.0.CR29<\/version>/;P;D' pom.xml
+sed -i '$!N;s/<version.org.jboss.integration-platform>.*.<\/version.org.jboss.integration-platform>/<version.org.jboss.integration-platform>6.0.0.CR29<\/version.org.jboss.integration-platform>/;P;D' pom.xml

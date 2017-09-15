@@ -96,6 +96,12 @@ cat compare_GAV-2.txt | sort > compare_GAV-3.txt
 
 # add this line at beginning of file
 sed -i -e '1i'$FILE1_TO_READ';'$FILE2_TO_READ'\' compare_GAV-3.txt
-mv compare_GAV-3.txt compare_GAVs.csv
+
+# gets rid of the "this GAV is not" lines
+# sed -i -e '/this GAV/d' compare_GAV-3.txt > compare_GAV-4.txt
+sed -e '/this GAV is not used/d' compare_GAV-3.txt > compare_GAV-4.txt
+
+mv compare_GAV-4.txt compare_GAVs.csv
+
 rm compare_GAV*.txt
 
