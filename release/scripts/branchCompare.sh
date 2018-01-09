@@ -1,7 +1,7 @@
 #!/bin/bash
 
-FILE_TO_READ=/home/mbiarnes/Development/git/droolsjbpm/kiegroup/droolsjbpm-build-bootstrap/script/repository-list.txt
-fileDir=/home/mbiarnes/Development/git/droolsjbpm/kiegroup
+FILE_TO_READ=/home/mbiarnes/Development/git/kiegroup/droolsjbpm-build-bootstrap/script/repository-list.txt
+fileDir=/home/mbiarnes/Development/git/kiegroup
 
 if [ $# != 3 ] ; then
     echo
