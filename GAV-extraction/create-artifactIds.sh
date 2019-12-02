@@ -2,7 +2,7 @@
 
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # This shell scripts reduces an effective pom to a                       +
-# file that shows a GAV list: <groupId>:<artifacId>:<version>            +
+# file that shows a GAV list: <artifacId>XXX                             +
 # of all artifacts inside the <dependencyManagement>                     +
 #                                                                        +
 # IMPORTANT:                                                             +
@@ -53,43 +53,30 @@ sed '/<classifier>/d' effectivePom-5.txt > effectivePom-6.txt
 # removes all lines beginning with <scope>
 sed '/<scope>/d' effectivePom-6.txt > effectivePom-7.txt
 
-# removes lines beginning with <dependency>
-sed '/<dependency>/d' effectivePom-7.txt > effectivePom-8.txt
-
-# removes lines beginning with </dependency>
-sed '/<\/dependency>/d' effectivePom-8.txt > effectivePom-9.txt
+# removes lines beginning with <version>
+sed '/<version>/d' effectivePom-7.txt > effectivePom-8.txt
 
 # removes all blank characters
-sed -e 's/^[ \t]*//' -e 's/[ \t]*$//' effectivePom-9.txt > effectivePom-10.txt
+sed -e 's/^[ \t]*//' -e 's/[ \t]*$//' effectivePom-8.txt > effectivePom-9.txt
 
-# replaces </groupId> + any whitespace + line break + <artifactId> by :
-#sed '$!N;s/<\/groupId>\s\n<artifactId>/:/;P;D' effectivePom-10.txt > effectivePom-11.txt
-# without strange characters- some mvn help:effective-pom have bot blank character as line endings
-sed '$!N;s/<\/groupId>\n<artifactId>/:/;P;D' effectivePom-10.txt > effectivePom-11.txt
+# removes line starting woth <dependency> or </dependency>
+sed '/<dependency>/d;/<\/dependency>/d' effectivePom-9.txt > effectivePom-10.txt
 
-# replaces </artifactId> + any whitespace + line break +  <version> by :
-#sed '$!N;s/<\/artifactId>\s\n<version>/:/;P;D' effectivePom-11.txt > effectivePom-12.txt
-# without strange characters - some mvn help:effective-pom have got blank character as line endings
-sed '$!N;s/<\/artifactId>\n<version>/:/;P;D' effectivePom-11.txt > effectivePom-12.txt
+# moves GAV in one line
+#sed 'N;N;N; s/\n/ /g' effectivePom-9.txt > effectivePom-10.txt
+paste -d' ' - - < effectivePom-10.txt >> effectivePom-11.txt
 
-# remove string <groupId>
-sed -e 's/<groupId>//g' effectivePom-12.txt > effectivePom-13.txt
-
-# remove string </version>
-sed -e 's/<\/version>//g' effectivePom-13.txt > effectivePom-14.txt
-
-# removes lines beginning with org.drools org.jbpm org.guvnor org.uberfire org.optaplanner org.dashbuilder org.kie org.jboss.dashboard-builder
-sed '/^org.drools/d;/^org.jbpm/d;/^org.guvnor/d;/^org.uberfire/d;/^org.optaplanner/d;/^org.dashbuilder/d;/^org.kie/d;/^org.jboss.dashboard-builder/d' effectivePom-14.txt > effectivePom-15.txt
+# removes lines beginning with <groupId>org.drools <groupId>org.jbpm <groupId>org.guvnor <groupId>org.uberfire <groupId>org.optaplanner <groupId>org.dashbuilder <groupId>org.kie <groupId>org.jboss.dashboard-builder <groupId>org.optaweb
+sed '/^<groupId>org.drools/d;/^<groupId>org.jbpm/d;/^<groupId>org.guvnor/d;/^<groupId>org.uberfire/d;/^<groupId>org.optaplanner/d;/^<groupId>org.dashbuilder/d;/^<groupId>org.kie/d;/^<groupId>org.jboss.dashboard-builder/d;/^<groupId>org.optaweb/d;' effectivePom-11.txt > effectivePom-12.txt
 
 # removes lines with <dependencies> or <dependencyManagement>
-sed '/<dependencies>/d' effectivePom-15.txt > effectivePom-16.txt
-sed '/<\/dependencies>/d' effectivePom-16.txt > effectivePom-17.txt
-sed '/<dependencyManagement>/d' effectivePom-17.txt > effectivePom-18.txt
-sed '/<\/dependencyManagement>/d' effectivePom-18.txt > effectivePom-19.txt
+sed '/<dependencies>/d' effectivePom-12.txt > effectivePom-13.txt
+sed '/<\/dependencies>/d' effectivePom-13.txt > effectivePom-14.txt
+sed '/<dependencyManagement>/d' effectivePom-14.txt > effectivePom-15.txt
+sed '/<\/dependencyManagement>/d' effectivePom-15.txt > effectivePom-16.txt
 
 # sorts file in alphabetical order
-#cat effectivePom-15.txt | sort > jboss-ip-bom_GAV.txt
-cat effectivePom-19.txt | sort > $OUTPUT_FILE
+cat effectivePom-16.txt | sort > $OUTPUT_FILE
 
 # remove all effectivePom- files
 rm effectivePom-*.txt
