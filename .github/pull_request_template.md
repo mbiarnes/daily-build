@@ -1,12 +1,13 @@
-Thank you for this pull request
+**Thank you for submitting this pull request**
 
-**JIRA**: _(if they exist, please edit here the JIRA link)_ 
 
-link here
-
-**referenced Pull Requests**: _(if they exist, please edit here referenced pullrequests)_
+**JIRA**: _(please edit the JIRA link if it exists)_ 
 
 link here
+
+**referenced Pull Requests**: _(please edit the referenced pullrequests if they exist)_
+
+link(s) here
 
 **How to retest**:
   
