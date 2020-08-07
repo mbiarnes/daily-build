@@ -6,6 +6,7 @@ def mailJob='''
 echo "true";
 '''
 
+
 job("mailJob") {
     description("test job for attaching log to mail")
 
