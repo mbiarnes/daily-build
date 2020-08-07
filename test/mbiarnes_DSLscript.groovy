@@ -1,7 +1,8 @@
 def javadk="kie-jdk1.8"
 def javaToolEnv="KIE_JDK1_8"
 
-def mailJob='''#!/bin/bash -e
+def mailJob='''
+#!/bin/bash -e
 echo "true";
 '''
 
