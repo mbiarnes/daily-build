@@ -1,7 +1,17 @@
-Thank you for this pull request
+#####Thank you for this pull request
 
-  To retest please enter: run_pr
+**JIRA**: _(if they exist, please edit here the JIRA link)_ 
+
+[link](http://example.com "Title")
+
+**referenced Pull Requests**: _(if they exist, please edit here referenced pullrequests)_
+
+[link](http://example.com "Title")
+
+#####How to retest:
   
-  To execute a full downstraem builds please enter: run_fdb
+* to retest a pull request please edit: **run_pr** or **ok to test** or **Jenkins retest this**
   
-  To execute a compile downstream build please enter: run_cdb
+* to run a full downstream builds please edit: **run_fdb**
+  
+* to run a compile downstream build please edit: **run_cdb**
