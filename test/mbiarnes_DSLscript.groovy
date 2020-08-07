@@ -55,8 +55,7 @@ job("mailJob") {
                 }
             }
         }
-    }
-  
+    }  
     steps{   
         shell(mailJob)
     }   
