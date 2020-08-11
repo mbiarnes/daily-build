@@ -21,3 +21,6 @@ paste the link from GitHub here
 
 * to run an upstream build please edit:             regex [.*[j|J]enkins,?.*(execute|run|trigger|start|do) upstream.*]
 </pre>
+
+i.e for running a full downstream build: **Jenkins do fdb**
+
