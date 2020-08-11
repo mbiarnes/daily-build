@@ -9,9 +9,17 @@
 paste the link from GitHub here
 
 **How to retest**:
+
+<pre>  
+* to retest a pull request please edit:             regex [.*[j|J]enkins,?.*(retest|test) this.*] OR ok to test
   
-* to retest a pull request please edit: **run_pr** or **ok to test** or **Jenkins retest this**
+* to run a full downstream builds please edit:      regex [.*[j|J]enkins,?.*(execute|run|trigger|start|do) fdb.*]
   
-* to run a full downstream builds please edit: **run_fdb**
-  
-* to run a compile downstream build please edit: **run_cdb**
+* to run a compile downstream build please edit:    regex [.*[j|J]enkins,?.*(execute|run|trigger|start|do) cdb.*]
+
+* to run a full production downstream please edit:  regex [.*[j|J]enkins,?.*(execute|run|trigger|start|do) product fdb.*]
+
+* to run an upstream build please edit:             regex [.*[j|J]enkins,?.*(execute|run|trigger|start|do) upstream.*]
+</pre>
+
+i.e for a full downstream build: **Jenkins do fdb**
