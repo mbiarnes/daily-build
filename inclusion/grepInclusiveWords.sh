@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash
 
 repoUrl="https://github.com/kiegroup/"
 
@@ -18,16 +18,16 @@ for repo in `cat repoList.txt` ; do
     echo "whitelist" >> seekWords.txt
     echo "blacklist" >> seekWords.txt
 
-    echo "" > $outputFile
+    touch $outputFile
     
     for inclWord in `cat seekWords.txt` ;  do
         echo $inclWord >> $outputFile
-        $(grep -rl "$inclWord" --exclude-dir=.git --exclude-dir=./idea --exclude-dir=.github --exclude=grepInclusiveWords.sh --exclude=inclusion*.csv --exclude=seekWords.txt >> $outputFile)
+        $(grep -rl "$inclWord" --exclude-dir=.git --exclude-dir=.github --exclude=inclusion*.csv --exclude=seekWords.txt >> $outputFile)
         echo ":" >> $outputFile
     done
 
     cd ..
-    
+
     cp $repo/$outputFile .
     
     rm -rf $repo
