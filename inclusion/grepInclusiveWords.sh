@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 repoUrl="https://github.com/kiegroup/"
 
@@ -22,7 +22,7 @@ for repo in `cat repoList.txt` ; do
     
     for inclWord in `cat seekWords.txt` ;  do
         echo $inclWord >> $outputFile
-        $(grep -rl "$inclWord" --exclude-dir=.git --exclude-dir=.github --exclude=inclusion*.csv --exclude=seekWords.txt >> $outputFile)
+        $(grep -rl "$inclWord" --exclude-dir=.git --exclude-dir=.github --exclude=inclusion*.csv --exclude=seekWords.txt >> $outputFile || true)
         echo ":" >> $outputFile
     done
 
