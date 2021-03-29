@@ -1,15 +1,45 @@
-#!/bin/sh
+#!/bin/bash
 
-#
-# Too many crusty old git branches? Run this to find likely candidates for deletion
-# It lists all the remote branches and sorts them by age.
-# 
-# Folks at pivotal shared this with me
-#  
-#$ . show-remote-branch-info.sh 
-# 2012-05-04 09:42:29 -0700 4 minutes ago Ted & Bill \torigin/hey_Bill
-# 2012-05-03 16:27:23 -0700 17 hours ago Anthony \torigin/develop
-# 2012-03-26 20:35:35 +0000 6 weeks ago Susan \torigin/feature/jenkins
+    outputFile="../oldBranches.txt"
+    
+for repo in `cat repository-list.txt` ; do
 
-for k in `git branch -r|awk '{print $1}'`;do echo `git show --pretty=format:"%Cgreen%ci %Cblue%cr %Cred%cn %Creset" $k|head -n 1`\\t$k;done|sort -r
-echo "If you're unable to remove a branch, it may already be gone from the remote. Try git remote prune origin (git remote prune --dry-run origin) to see what remote branch references will be deleted"
+    git clone https://github.com/kiegroup/$repo.git
+
+    cd $repo 
+    
+    git branch -r >> branches_0.txt
+
+    # stores only lines with origin
+    sed '/origin\//!d' branches_0.txt >> branches_1.txt
+    # removes any blank spaces at beginning of line
+    sed 's/ //g' branches_1.txt >> branches_2.txt
+    # removes "origin/" in the beginning of line
+    sed 's/^origin\///g' branches_2.txt >> branches_3.txt
+    # removes all lines ending with ".x"
+    sed "/.x$/d" branches_3.txt >> branches_4.txt
+    # removes all lines which have HEAD
+    sed "/^HEAD/d" branches_4.txt >> branches_5.txt
+    # removes all lines with "master"
+    sed "/^master/d" branches_5.txt >> branches_6.txt
+    # removes all lines starting with r[0-9]
+    sed "/^r[0-9]/d" branches_6.txt >> branches_7.txt
+
+    echo $repo"..:" >> $outputFile
+    for branch in `cat branches_7.txt` ; do
+        line=$(git show remotes/origin/$branch -s --format="%ci [%cn]")
+        echo $branch $line >> outputFile
+        line=""
+    done
+
+    echo "***" >> outputFile
+            
+    cut -d " " -f 1,2,5,6 outputFile >>  $outputFile
+
+    cd ..
+
+    rm -rf $repo
+done
+
+ 
+
