@@ -1,47 +1,54 @@
 #!/bin/bash
 
+if [ $# != 1 ] && [ $# != 2 ]; then
+    echo
+    echo "Usage:"
+    echo "  $0 kie root dir"
+    echo "For example:"
+    echo "  $0 /home/mbiarnes/Development/git/kiegroup /home/mbiarnes/Dokumente/docs/Tranlations"
+    echo
+    exit 1
+fi
+
+rootDir=$1
+targetDir=$2
+
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 #                                                                         +
 # This script extracts from a selected kiegroup repository                +
-# the XXXConstants.properties (English sources) for translations          +
-# This script has to be copied to thr root directory of all kiegroup reps +
-# There are only two params to define in each run:                        +
-#   rootPath: path to root directory of kiegroup reps                     +
-#   repo: name of repository                                              +
-# A zip file "name of repository"-Constants.zip will be created in        +  
-# the root directory of the selected repository                           +
+# the *Constants.properties (English sources) for translations          +
 #                                                                         +
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 
-rootPath="path/to/root/directory of kiegroup reps"
-repo="name of repository"
+# changes into root dir of kiegroup reps
+cd $rootDir
 
-cd $rootPath$repo
+# creates list with reps needed for translations
+touch reps-list
+echo "appformer" >> reps-list
+echo "drools-wb" >> reps-list
+echo "jbpm-wb" >> reps-list
+echo "jbpm-designer" >> reps-list
+echo "optaplanner-wb" >> reps-list
+echo "kie-wb-common" >> reps-list
+echo "kie-wb-distributions" >> reps-list
 
-find . ! -path "*/target/*"  -type f -name "*Constants.properties" >> propertiesFile.txt
-
-zipFile=$(echo $repo-Constants.zip)
-echo ""
-echo ""
-echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-echo "ZIP file name: "$zipFile
-echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-echo ""
-echo ""
-
-# create a en empty file to start to zip it - so warning about non existing zip file will be surpressed
-touch iii
-zip $zipFile iii
-
-# list is stored dependencies in propertiesFile.txt file
-mapfile -t < propertiesFile.txt
-
-for line in "${MAPFILE[@]}"; do
-    zip -ur $zipFile $line
+for REPOSITORY in $(cat reps-list) ; do
+   echo "************************"      
+   echo "Repository: " $REPOSITORY
+   echo "************************"
+   cd $REPOSITORY
+   pwd
+   find . ! -path "*/target/*"  -type f -name "*Constants.properties" -exec zip -u ${REPOSITORY}_AllConstants.zip {} \;
+   mv ${REPOSITORY}_AllConstants.zip /home/mbiarnes/Development/git/kiegroup/
+   cd ..
 done
 
-#remove iii file from zip file
-zip -d $zipFile iii
+# put current date as yyyy-mm-dd in $date
+date=$(date '+%Y-%m-%d')
 
-rm propertiesFile.txt
-rm iii
+zip -m ${date}-kieTranslations.zip *AllConstants.zip
+
+mv *kieTranslations.zip $targetDir
+
+rm reps-list
