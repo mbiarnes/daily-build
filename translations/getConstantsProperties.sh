@@ -39,15 +39,18 @@ for REPOSITORY in $(cat reps-list) ; do
    echo "************************"
    cd $REPOSITORY
    pwd
-   find . ! -path "*/target/*"  -type f -name "*Constants.properties" -exec zip -u ${REPOSITORY}_AllConstants.zip {} \;
-   mv ${REPOSITORY}_AllConstants.zip /home/mbiarnes/Development/git/kiegroup/
+   mvn clean
+   git clean -d -f
+   find . -type d -name "target" -exec rm -rf {} \;
+   find . -path "*/i18n/*"  -type f -name "*.properties" -exec zip -u ${REPOSITORY}_properties.zip {} \;
+   mv ${REPOSITORY}_properties.zip $rootDir
    cd ..
 done
 
 # put current date as yyyy-mm-dd in $date
 date=$(date '+%Y-%m-%d')
 
-zip -m ${date}-kieTranslations.zip *AllConstants.zip
+zip -m ${date}-kieTranslations.zip *_properties.zip
 
 mv *kieTranslations.zip $targetDir
 
