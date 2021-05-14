@@ -47,6 +47,9 @@ for REPOSITORY in $(cat reps-list) ; do
    cd ..
 done
 
+# to be sure to be in the right directory
+cd $rootDir
+
 # put current date as yyyy-mm-dd in $date
 date=$(date '+%Y-%m-%d')
 
