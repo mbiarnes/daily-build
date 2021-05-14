@@ -42,7 +42,7 @@ for REPOSITORY in $(cat reps-list) ; do
    mvn clean
    git clean -d -f
    find . -type d -name "target" -exec rm -rf {} \;
-   find . -path "*/i18n/*"  -type f -name "*.properties" -exec zip -u ${REPOSITORY}_properties.zip {} \;
+   find . -path "*/i18n/*" -type f -name "*.properties" -not -name "*_*.properties" -exec zip -u ${REPOSITORY}_properties.zip {} \;
    mv ${REPOSITORY}_properties.zip $rootDir
    cd ..
 done
