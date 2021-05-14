@@ -5,7 +5,7 @@ if [ $# != 1 ] && [ $# != 2 ]; then
     echo "Usage:"
     echo "  $0 kie root dir"
     echo "For example:"
-    echo "  $0 /home/mbiarnes/Development/git/kiegroup /home/mbiarnes/Dokumente/docs/Tranlations"
+    echo "  $0 /home/mbiarnes/Development/git/kiegroup /home/mbiarnes/Dokumente/docs/Translations"
     echo
     exit 1
 fi
