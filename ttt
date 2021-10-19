@@ -1,8 +1,0 @@
-U+0000. NUL. <Null> (NUL) aaa
-U+0001. SOH. <Start of Heading> (SOH) bbb
-U+0002. STX. <Start of Text> (STX) ccc
-U+0003. ETX. <End of Text> (ETX) ddd
-U+0004. EOT. <End of Transmission> (EOT) eee
-U+0005. ENQ. <Enquiry> (ENQ) fff
-U+0006. ACK. <Acknowledge> (ACK) ggg
-U+0007. BEL. <Alert> (BEL) hhh
