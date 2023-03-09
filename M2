@@ -1,1 +1,1 @@
-M2: changes for 1.35.0.Final release
+M2: changes for 1.36.0.Final release
