@@ -1,6 +1,6 @@
 **Thank you for submitting this pull request**
 
-**JIRA**: _(please edit the JIRA link if it exists)_ 
+**JIRA**: _(please edit the JIRA link if it exists)_ Jira fuer dn Komissar
 
 [link](https://www.example.com)
 
