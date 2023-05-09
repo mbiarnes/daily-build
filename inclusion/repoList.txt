@@ -22,3 +22,4 @@ openshift-drools-hacep
 optaweb-employee-rostering
 optaweb-vehicle-routing
 kie-docs
+kie-whatever
