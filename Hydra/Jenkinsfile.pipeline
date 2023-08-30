@@ -1,0 +1,254 @@
+import jenkins.model.Jenkins
+import com.cloudbees.hudson.plugins.folder.Folder
+
+action_pull_request = 'pull_request'
+action_issue_comment = 'issue'
+action_push = 'push'
+def skipRemainingStages = false
+
+pipeline {
+    agent {
+        label 'kie-rhel8-priority && !built-in'
+    }
+
+    tools {
+            maven BUILD_MAVEN_TOOL
+            jdk BUILD_JDK_TOOL
+    }
+
+    options {
+        timestamps()
+        timeout(time: 180, unit: 'MINUTES')
+    }
+
+    environment {
+        TRIGGER_REGEX = "(.*[j|J]enkins,?.*(retest|test) this.*)|(.*[J|j]enkins,?.*(rerun|run) (TESTS|tests|Tests).*)|(.*[J|j]enkins,?.*(rerun|run) (KOGITO-RUNTIMES|kogito-runtimes|Kogito-runtimes) (TESTS|tests|Tests).*)"
+        JOB_TO_LAUNCH = "KIE/kogito/main/pullrequest/kogito-runtimes.tests.kogito-runtimes"
+    }
+
+    stages {
+        stage('Initialize') {
+            steps {
+                script {
+                    cleanWs()
+                }
+            }
+        }
+        stage('Print CI_MESSAGE'){
+            steps {
+                script {
+                    echo "Print CI_MESSAGE: ${getCiMessage()}" 
+                }
+            }
+        }
+        stage('Parse action') {
+            steps {
+                script {
+                    echo "Got action ${getAction()}"
+                    if (getAction() == 'push') {
+                        skipRemainingStages = true
+                    }
+                }
+            }
+        }
+        stage('Is user whitelisted') {
+        when {
+            expression {!skipRemainingStages}
+        }
+            steps {
+                script {
+                    //withCredentials([string(credentialsId: getGhCredsID(), variable: 'GITHUB_TOKEN')]) { 
+                    withCredentials([string(credentialsId: 'kie-ci2-token', variable: 'GITHUB_TOKEN')]) {
+                        //echo value of IS_WHITELISTED before 
+                        echo "IS_WHITELISTED: ${IS_WHITELISTED}"
+                        def user = getUser(getAction())
+                        // test wrong user
+                        // user = 'miguelardo'
+                        echo "PR_ID: ${user}"
+                        def whitelisted = isWhiteListed(GITHUB_TOKEN,user)
+                        echo "whitelisted name: ${whitelisted}"
+                        if ( "${user}" == "${whitelisted}") {
+                            IS_WHITELISTED = 'true'
+                            echo "user is whitelisted: ${ IS_WHITELISTED }"
+                        } else {
+                            echo "user is not whitelisted: ${ IS_WHITELISTED }"
+                        }
+                    }
+                }
+            }
+        }
+        stage('Is payload a pull request?') {
+        when {
+            allOf {
+                expression {!skipRemainingStages}
+                expression {IS_WHITELISTED == 'true' }
+                expression {getAction() == 'pull_request'}
+                anyOf {
+                    expression {(getInnerAction() == 'opened')}
+                    expression {(getInnerAction() == 'synchronize')}
+                }
+            }
+        }
+            steps {
+                script{
+                    echo "Forward to a pull request job"
+                    echo "PR jobs will start now"
+                    triggerPrJobs(getAction())
+                }
+            }
+        }
+        stage('Is payload an issue comment?') {
+        when {
+            allOf {
+                expression {!skipRemainingStages}
+                expression { IS_WHITELISTED == 'true' }
+                expression { getAction() == 'issue'}
+                expression { getInnerAction() == 'created'}
+            }
+        }
+            steps {
+                script{
+                    echo "Forward to an issue command job"
+                    echo "IC job will start now"
+                    triggerIcJobs()
+                }
+            }
+        }
+    }
+}
+
+String getCiMessage() {
+    return params.CI_MESSAGE
+}
+
+/*String getGhCredsID() {
+    return env.GITHUB_TOKEN_CREDS_ID
+}*/
+
+String isWhiteListed(String ghtoken, String user){
+    def whiteList = sh(returnStdout: true, script: "curl -L -H \"Authorization: Bearer ${ghtoken}\" https://api.github.com/orgs/kiegroup/memberships/${user} | jq -r \".user.login\" ")?.trim()
+    return whiteList
+}
+
+String getRepo(action) {
+    if ( "${action}" == 'pull_request' ) {
+        return readCiMessage()?."${action}"?.head?.repo?.name
+    } else if ( "${action}" == 'issue' ) {
+        return readCiMessage()?.repository?.name
+    }
+}
+
+String getBranch(action) {
+    if ( "${action}" == 'pull_request' ) {
+        return readCiMessage()?."${action}"?.base?.ref
+    } else if ( "${action}" == 'issue' ) {
+        return readCiMessage()?.repository?.default_branch
+    }
+}
+
+String getTriggerPhrase(){
+    return env.TRIGGER_REGEX
+}
+
+String getActionLink(action) {
+    return readCiMessage()?."${action}"?.html_url
+}
+
+String getInnerAction() {
+    return readCiMessage()?.action
+}
+
+String getIssueComment() {
+    return readCiMessage()?.comment.body
+}
+
+def triggerIcJobs() {
+    /*echo "Action: ${action}"
+    def repoJobs = [:]
+    repoJobs[getRepo("${action}")] = isTriggerJob("${action}")
+    repoJobs[getRepo("${action}")].each { item ->
+        echo """
+            build job: ${item}, parameters: [string(name: 'ghprbPullLink', value: "${getActionLink(getAction())}"), string(name: 'COMMENT', value: "${getIssueComment()}")]
+        """
+    }*/
+    if ( "${getIssueComment()}" ==~ env.TRIGGER_REGEX) {
+        def item = getJob()
+        echo """
+            build job: ${item}, parameters: [string(name: 'ghprbPullLink', value: "${getActionLink(getAction())}"), string(name: 'COMMENT', value: "${getIssueComment()}")]
+        """
+    } else {
+        /*// We should do something here. I propose error to stop the pipeline directly
+        error "Unknown action"*/
+        def autoCancelled = false
+        try {
+            autoCancelled = true
+            echo "Aborting the build. Issue Comment doesn\'t match trigger phrase."
+            echo "ISSUE COMMENTS WAS: ${getIssueComment()}"
+            error('Aborting the build. Issue Comment doesn\'t match trigger phrase.')
+        } catch (e) {
+            if (autoCancelled) {
+                currentBuild.result = 'SUCCESS'
+                // return here instead of throwing error to keep the build "green"
+                return
+            }
+            // normal error handling
+            throw e
+        }
+    }    
+}
+
+def triggerPrJobs(action) {
+    echo "Action: ${action}"    
+    def repoJobs = [:]
+    repoJobs[getRepo("${action}")] = isTriggerJob("${action}")
+    repoJobs[getRepo(action)].each { item ->
+        echo """
+            build job: ${item}, parameters: [string(name: 'ghprbPullLink', value: "${getActionLink(getAction())}")]
+        """
+    }       
+}
+
+def getJob() {
+    return env.JOB_TO_LAUNCH
+}
+
+def isTriggerJob(action) {
+    def folderName = "KIE/kogito/${getBranch(action)}/pullrequest/${getRepo(action)}"
+    echo "Folder Name: ${folderName}"   
+    def jobsList = []
+    Jenkins.instance.getAllItems(Job.class).each{
+        if(it.fullName.contains(folderName)) {
+            jobsList << it.fullName
+        }
+    }
+    jobsList.each {println it}
+    return jobsList
+}
+
+String getUser(action) {
+    def prInfoObject = readJSON text: getCiMessage()
+    if ((action == 'issue') || (action == 'pull_request')) {
+        def stuff = prInfoObject[action].user.login 
+        return stuff
+    } else {
+        // We should do something here. I propose error to stop the pipeline directly
+        error "Unknown user"
+    }
+}
+
+def readCiMessage() {
+    return readJSON(text: getCiMessage())
+}
+
+String getAction() {
+    if (readCiMessage()?.pull_request?.number) {
+        return action_pull_request
+    } else if (readCiMessage()?.issue?.number) {
+        return action_issue_comment
+    } else if (readCiMessage()?.ref) {
+        return action_push
+    } else {
+        // We should do something here. I propose error to stop the pipeline directly
+        error "Unknown action"
+    }
+}
