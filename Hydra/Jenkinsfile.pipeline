@@ -1,0 +1,111 @@
+action_pull_request = 'pull_request'
+action_issue_comment = 'issue'
+
+pipeline {
+    agent {
+        label 'kie-rhel8-priority && !built-in'
+        
+    }
+    
+    tools {
+            maven BUILD_MAVEN_TOOL
+            jdk BUILD_JDK_TOOL
+    }
+    
+    options {
+        timestamps()
+        timeout(time: 180, unit: 'MINUTES')
+    }
+    
+    stages {
+        stage('Initialize') {
+            steps {
+                script {
+                    cleanWs()
+                }
+            }
+        }
+        stage('Print CI_MESSAGE'){
+            steps {
+                script {
+                    echo "Print CI_MESSAGE: ${getCiMessage()}" 
+                }
+            }
+        }
+        stage('Parse action') {
+            steps {
+                script {
+                    env.ACTION = getAction()
+                    echo "Got action ${env.ACTION}"
+                }
+            }
+        }
+        stage('Is user whitelisted') {
+            steps {
+                script {
+                    //withCredentials([string(credentialsId: getGhCredsID(), variable: 'GITHUB_TOKEN')]) { 
+                    withCredentials([string(credentialsId: 'kie-ci2-token', variable: 'GITHUB_TOKEN')]) {
+                        //echo value of IS_WHITELISTED before 
+                        echo "IS_WHITELISTED: ${IS_WHITELISTED}"
+                        def user = readPayload(env.ACTION)
+                        // test wrong user
+                        // user = 'miguelardo'
+                        echo "PR_ID: ${user}"
+                        def whitelisted = isWhiteListed(GITHUB_TOKEN,user)
+                        echo "whitelisted name: ${whitelisted}"
+                        if ( "${user}" == "${whitelisted}") {
+                            IS_WHITELISTED = 'true'
+                            echo "user is whitelisted: ${ IS_WHITELISTED }"
+                        } else {
+                            echo "user is not whitelisted: ${ IS_WHITELISTED }"
+                        }
+                    }
+                }    
+            }
+        }
+        stage('next stage') {
+        when {
+            expression { IS_WHITELISTED == 'true' }
+        }
+            steps {
+                script{
+                    echo "forward to the right job"
+                }
+            }
+        }
+    }
+}
+    
+String getCiMessage() {
+    return params.CI_MESSAGE
+}
+
+/*String getGhCredsID() {
+    return env.GITHUB_TOKEN_CREDS_ID
+}*/
+
+String isWhiteListed(String ghtoken, String user){
+    def whiteList = sh(returnStdout: true, script: "curl -L -H \"Authorization: Bearer ${ghtoken}\" https://api.github.com/orgs/kiegroup/memberships/${user} | jq -r \".user.login\" ")?.trim()
+    return whiteList
+}
+
+String readPayload(action) {
+    def prInfoObject = readJSON text: getCiMessage()
+    def stuff = prInfoObject[action].user.login
+    return stuff
+}
+
+def readCiMessage() {
+    return readJSON(text: getCiMessage())
+}
+
+String getAction() {
+    if (readCiMessage()?.pull_request?.number) {
+        return action_pull_request
+    } else if (readCiMessage()?.issue?.number) {
+        return action_issue_comment
+    } else {
+        // We should do something here. I propose error to stop the pipeline directly
+        error "Unknown action"
+    }
+}
